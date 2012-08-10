@@ -12,17 +12,7 @@ class DocumentTemplatesController < ApplicationController
     end
   end
 
-  # GET /document_templates/1
-  # GET /document_templates/1.json
-  def show
-    @document_template = DocumentTemplate.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @document_template }
-    end
-  end
-
+  
   # GET /document_templates/new
   # GET /document_templates/new.json
   def new
@@ -36,7 +26,7 @@ class DocumentTemplatesController < ApplicationController
 
   # GET /document_templates/1/edit
   def edit
-     @placeholder_details=Placeholder.all
+    @placeholder_details=Placeholder.all
     @document_template = DocumentTemplate.find(params[:id])
   end
 
@@ -44,11 +34,10 @@ class DocumentTemplatesController < ApplicationController
   # POST /document_templates.json
   def create
     @document_template = DocumentTemplate.new(params[:document_template])
-
     respond_to do |format|
       if @document_template.save
-        format.html { redirect_to @document_template, notice: 'Document template was successfully created.' }
-        format.json { render json: @document_template, status: :created, location: @document_template }
+        format.html { redirect_to "/document/index", notice: 'Document template was successfully created.' }
+        format.json { render json: "/document/index", status: :created, location: @document_template }
       else
         format.html { render action: "new" }
         format.json { render json: @document_template.errors, status: :unprocessable_entity }
@@ -63,7 +52,7 @@ class DocumentTemplatesController < ApplicationController
 
     respond_to do |format|
       if @document_template.update_attributes(params[:document_template])
-        format.html { redirect_to @document_template, notice: 'Document template was successfully updated.' }
+        format.html { redirect_to "/document/index", notice: 'Document template was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

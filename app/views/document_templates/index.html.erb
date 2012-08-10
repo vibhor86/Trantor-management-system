@@ -1,23 +1,44 @@
-<h1>Listing document_templates</h1>
-
-<table>
+<table align="center" class="table_style">
   <tr>
-    <th>Title</th>
-    <th></th>
+    <th width="70%">DOCUMENT TEMPLATES </th>
     <th></th>
     <th></th>
   </tr>
+ <% @document_templates.each do |document_template| %>
+    <tr>
+      <td ><%= document_template.title %></td>
 
-<% @document_templates.each do |document_template| %>
-  <tr>
-    <td width="40%"><%= document_template.title %></td>
-    <td><%= link_to 'Show', document_template %></td>
-    <td><%= link_to 'Edit', edit_document_template_path(document_template) %></td>
-    <td><%= link_to 'Destroy', document_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+      <td><%= link_to 'Edit', edit_document_template_path(document_template) %></td>
+      <td><%= link_to 'Destroy', document_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
 </table>
+<%= link_to 'Back', '/document/index' %>
+<style>
+  .table_style
+  {
+    width:100%;
+    
+}
+  th
+  {
+    background-color:#3897B5;
+  }
+  td 
+  {
+    text-align: center;
+    text-decoration: none;
+    background-color: #e4e4e4;
+  }
+</style>
 
-<br />
+<script>
+  $(document).ready(function()
+{
+  <%#*$("tr:even").css("background-color", "#000000");%>
+   <%#*$("tr:even").css("color", "#fff");%>
+});
 
-<%= link_to 'New Document template', new_document_template_path %>
+  </script>
+
+

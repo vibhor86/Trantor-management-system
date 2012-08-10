@@ -54,10 +54,12 @@ class DocumentController < ApplicationController
         no_header_footer(@doc[0])
       end
       @filename=(@doc[2]+'_'+@selected_template.title+'_'+Date.today.to_s).gsub(/\s+/, '')
-      File.open("/home/aastha/Desktop/pdfs/#{@filename}.pdf",'wb') do |file|
+     @save_path= Rails.root.join('pdfs', "#{@filename}.pdf")
+     @encrypted_path=Rails.root.join('pdfs/encrypted', "#{@filename}.pdf")
+      File.open(@save_path,'wb') do |file|
         file << @pdf
       end
-      system(" pdftk /home/aastha/Desktop/pdfs/#{@filename}.pdf  output /home/aastha/Desktop/pdfs/encryptedpdfs/#{@filename}.pdf user_pw #{@doc[1]} ")
+      system(" pdftk #{@save_path}  output #{@encrypted_path} user_pw #{@doc[1]} ")
       email_attachments
       redirect_to "/document/index", :alert => "Emails have been sent successfully!"
 
@@ -78,14 +80,18 @@ class DocumentController < ApplicationController
   def email_attachments
     Pony.mail(
       :to                   => @doc[3],
-      :from                 => params[:sender_email],
       :subject              => params[:subject],
       :html_body            => params[:email_body],
-      :attachments          => {File.basename("#{@filename}.pdf") => File.read("/home/aastha/Desktop/pdfs/encryptedpdfs/#{@filename}.pdf")},
+      :attachments          => {File.basename("#{@filename}.pdf") => File.read( "#{@encrypted_path}")},
       :via                  => :smtp,
       :via_options          => {
-        :address        => 'localhost',
-        :port           => 1025
+        :address              => 'smtp.gmail.com',
+        :port                 => '587',
+        :enable_starttls_auto => true,
+        :user_name            => params[:sender_email],
+        :password             => params[:sender_password],
+        :authentication       => :plain, 
+        :domain               => "localhost.localdomain"
       }
     )
   

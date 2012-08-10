@@ -44,15 +44,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-        <a class="brand" href="#"><img src="/assets/Trantor.png" width="150px" height="50px" alt="Trantor"/></a>
+          <a class="brand" href="#"><img src="/assets/Trantor.png"  alt="Trantor"/></a>
           <div class="container-fluid nav-collapse">
-           
+
             <ul class="nav pull-right">
               <% if user_signed_in? %>
                 <li class="welcome">Welcome <%= current_user.email %>. Not you?</li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-              
-              <% end %> 
+
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -62,41 +62,47 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <% if user_signed_in? %>
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-            <li class="nav-header">HR</li>
-            <li><ul><%= link_to "Documents", document_index_path  %>
-                 <li><%= link_to "Create Document Template", new_document_template_path %></li>
-                 <li><%= link_to "Edit Document Template", document_templates_path %></li></ul>
-            </li>
+          <div class="span3">
+            <div style="background-color:#e4e4e4;" id="menu" class="well sidebar-nav ">
+              <ul class="nav nav-list">
+                <li class="nav-header"><img src="/assets/tms.jpg" /></li>
+                <br/>
+                <li>
+                  <ul>
+                    <li class="nav_links"><%= link_to "Create Document Template", new_document_template_path %></li>
+                    <li class="nav_links"><%= link_to "Edit Document Template", document_templates_path %></li>
 
-          </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+                </li>
+                <% if current_user.admin? %>
+                  <li class="nav_links"><%= link_to "Admin Panel","/admin" %></li>
+                <% end %>
+              </ul>
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
         <% end %>
-       <% if user_signed_in? %>
-        <div class="span9">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <%= yield %>
-        </div>
+        <% if user_signed_in? %>
+          <div class="span9" style="background: #e4e4e4; border-radius: 4px;">
+            <p class="notice"><%= notice %></p>
+           
+            <%= yield %>
+          </div>
         <%  else %>
-        <div class="span8" >
-          <br/>
-       <img src="/assets/tms2.jpg"/>
-        </div>
-         <div class="span4">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <%= yield %>
-        </div>
+          <div class="span8" >
+            <br/>
+            <img src="/assets/tms2.jpg"/>
+          </div>
+          <div class="span4">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
+          </div>
 
         <% end %>
       </div><!--/row-->
 
       <footer>
-       
+
       </footer>
 
     </div> <!-- /container -->

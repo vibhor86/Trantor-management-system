@@ -15,3 +15,60 @@
     top: 10px;
     position: relative;
 }
+.notice{
+    
+    font-size: 18px;
+    color: #3897B5;
+    height: 20px;
+   
+}
+#menu {
+        font-family:verdana;
+        font-size:12px;
+        position:relative;
+        margin:0 auto;
+        width:200px;
+    }
+
+    #menu ul {
+        /* remove list style */
+        list-style:none;
+        padding:0;
+        margin:0;
+
+        /* set the layer position */
+        position:relative;
+        z-index:5;
+    }
+
+       .nav_links {
+            /* set the styles */
+            background:#3897B5 ;
+            padding:5px;
+            margin:2px;
+            cursor:pointer;
+            border:1px solid #ccc;
+            color:#fff !important;
+            font-weight:bold;
+            text-align:center;
+        }
+
+      #menu ul li.hover  {
+            /* on hover, change it to this image */
+            background:#fff !important;
+            color:#3897B5;
+            text-decoration:none;
+        }
+
+        #menu ul li a {
+            text-decoration:none;
+           color:#fff;
+        }
+         #menu ul li a.hover {
+           background:#fff !important;
+            color:#3897B5;
+            text-decoration:none;
+        }
+
+
+   

@@ -7,6 +7,7 @@ TrantorManagementSystem::Application.routes.draw do
 
   resources :document_templates, :documents
   match 'document' => 'document#document'
+ match 'document/index' =>  'document#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +58,7 @@ TrantorManagementSystem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'document_templates#index'
+  root :to => 'document#index'
 
   # See how all your routes lay out with "rake routes"
 
