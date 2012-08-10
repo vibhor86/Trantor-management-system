@@ -1,0 +1,60 @@
+<p class="mandatory">* marked fields are mandatory</p>
+<%= form_tag({:action => 'document'},:multipart => true,:onsubmit=>"return Checkfiles();") do %>
+  <ul>
+    <li><span id="star">*</span>Upload file: <%= file_field( "form", "file" ) %></li>
+    <li>
+      <%= select_tag("template",options_from_collection_for_select(@document_templates, "id", "title"))%>
+      <%= link_to 'Sample pdf of '+@dropdown_temp_title, "show.pdf?temp_value="+@dropdown_temp_id+"" , :id => "sampleLink" %>
+    </li>
+    <li><%= check_box_tag 'check_header_footer', 'Enable', true %>Enable Header and Footer</li>
+    <li><span id="star">*</span>Subject for email :<%= text_field_tag 'subject'%></li>
+    <li><span id="star">*</span>Body for email :<%= text_area_tag 'email_body'%></li>
+    <li>Encryption Field :<%=  select_tag "encrypt_field", "<option> pan</option><option>ecode</option><option> date_of_joining</option>".html_safe %></li>
+    <li><span id="star">*</span>Sender's Email :<%= email_field_tag 'sender_email', current_user.email %></li>
+    <br/>
+    <%= submit_tag('Submit', :id =>'submit') %>
+    <%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset" }) %> 
+  </ul>
+<% end %>
+
+<script type="text/javascript">
+  var temp_value= $('#template option:selected').val();
+ 
+  $(document).ready(function(){
+    CKEDITOR.replace( 'email_body', {
+      extraPlugins : 'autogrow',
+      removePlugins : 'resize'
+    });
+  });
+  
+  $('#template').change(function() {
+    temp_value= $('#template option:selected').val();
+    $('#sampleLink').replaceWith("<a id='sampleLink', href= 'show.pdf?temp_value="+temp_value+"'>"+ 'Pdf of ' + $('#template option:selected').text()+"</a>");
+  });
+  
+  $('#submit').click(function()
+  { 
+    if($('#subject').val() == 0)
+      confirm("Are you sure you want to send email(s) without subject?");
+    if(CKEDITOR.instances.email_body.getData().length == 0)
+      confirm("Are you sure you want to send email(s) without body?");
+    
+  });
+  
+  function Checkfiles()
+  {
+    var fup = document.getElementById('form_file');
+    var fileName = fup.value;
+    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+    if(ext == "csv" )
+    {
+      return true;
+    }
+    else
+    {
+      alert("Please upload CSV files");
+      fup.focus();
+      return false;
+    }
+  }
+</script>

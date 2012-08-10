@@ -1,0 +1,23 @@
+<h1>Listing document_templates</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @document_templates.each do |document_template| %>
+  <tr>
+    <td width="40%"><%= document_template.title %></td>
+    <td><%= link_to 'Show', document_template %></td>
+    <td><%= link_to 'Edit', edit_document_template_path(document_template) %></td>
+    <td><%= link_to 'Destroy', document_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Document template', new_document_template_path %>
