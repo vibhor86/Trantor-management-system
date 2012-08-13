@@ -9,8 +9,10 @@ class DocumentTemplatesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @document_templates }
+
     end
   end
+  
 
   
   # GET /document_templates/new

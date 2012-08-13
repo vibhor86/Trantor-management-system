@@ -47,21 +47,27 @@ class DocumentController < ApplicationController
       temp_template=@template_body.dup
       row_index += 1
       next if row_index == 1 or row.join.blank?
+
       @doc=search_replace(temp_template,row,@header)
       if (params[:check_header_footer]=='Enable')
         allow_header_footer(@doc[0])
       else
         no_header_footer(@doc[0])
       end
-      @filename=(@doc[2]+'_'+@selected_template.title+'_'+Date.today.to_s).gsub(/\s+/, '')
+      @filename=("#{@doc[2]}_#{@selected_template.title}_#{Date.today.to_s}").gsub(/\s+/, '')
      @save_path= Rails.root.join('pdfs', "#{@filename}.pdf")
      @encrypted_path=Rails.root.join('pdfs/encrypted', "#{@filename}.pdf")
       File.open(@save_path,'wb') do |file|
         file << @pdf
       end
       system(" pdftk #{@save_path}  output #{@encrypted_path} user_pw #{@doc[1]} ")
-      email_attachments
-      redirect_to "/document/index", :alert => "Emails have been sent successfully!"
+      #raise @doc[3].inspect
+      #@user =  current_user
+      mail_details=[@doc[3],params[:subject],params[:email_body],@encrypted_path]
+      #raise mail_details.inspect
+      AdminMailer.registration_confirmation(mail_details).deliver
+     # email_attachments
+      redirect_to "/document/index", :notice => "Emails have been sent successfully!"
 
     end
   end
@@ -80,18 +86,19 @@ class DocumentController < ApplicationController
   def email_attachments
     Pony.mail(
       :to                   => @doc[3],
+      :from                 => params[:sender_email],
       :subject              => params[:subject],
       :html_body            => params[:email_body],
       :attachments          => {File.basename("#{@filename}.pdf") => File.read( "#{@encrypted_path}")},
       :via                  => :smtp,
       :via_options          => {
-        :address              => 'smtp.gmail.com',
-        :port                 => '587',
+        :address              => 'mail.authsmtp.com',
+        :port                 => '25',
         :enable_starttls_auto => true,
-        :user_name            => params[:sender_email],
-        :password             => params[:sender_password],
-        :authentication       => :plain, 
-        :domain               => "localhost.localdomain"
+        :user_name            => 'ac51348',
+        :password             => 'privatenetwork',
+        :authentication       => :login,
+        :domain               => 'mail.authsmtp.com'
       }
     )
   

@@ -5954,3 +5954,21 @@ Connecting to database specified by database.yml
   [1m[36m (88.7ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
   [1m[35m (83.4ms)[0m  TRUNCATE TABLE `users`;
   [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+Connecting to database specified by database.yml
+  [1m[36m (93.3ms)[0m  [1mDROP TABLE `admins`[0m
+  [1m[35m (114.7ms)[0m  CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (216.3ms)[0m  [1mCREATE UNIQUE INDEX `index_admins_on_email` ON `admins` (`email`)[0m
+  [1m[35m (191.4ms)[0m  CREATE UNIQUE INDEX `index_admins_on_reset_password_token` ON `admins` (`reset_password_token`)
+  [1m[36m (40.8ms)[0m  [1mDROP TABLE `document_templates`[0m
+  [1m[35m (92.7ms)[0m  CREATE TABLE `document_templates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.1ms)[0m  [1mDROP TABLE `placeholders`[0m
+  [1m[35m (100.1ms)[0m  CREATE TABLE `placeholders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `column_name` varchar(255), `placeholder_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.0ms)[0m  [1mDROP TABLE `rails_admin_histories`[0m
+  [1m[35m (99.8ms)[0m  CREATE TABLE `rails_admin_histories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `message` text, `username` varchar(255), `item` int(11), `table` varchar(255), `month` smallint, `year` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (191.9ms)[0m  [1mCREATE INDEX `index_rails_admin_histories` ON `rails_admin_histories` (`item`, `table`, `month`, `year`)[0m
+  [1m[35m (49.3ms)[0m  DROP TABLE `users`
+  [1m[36m (108.6ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `admin` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (208.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (199.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35m (3.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
