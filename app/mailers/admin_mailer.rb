@@ -1,10 +1,10 @@
 class AdminMailer < ActionMailer::Base
 
 
-  def hr_document(mail_details)
-   attachments[File.basename("#{mail_details[3]}")] = File.read("#{mail_details[3]}")
+  def hr_document(recipient_email,email_subject,email_body,email_attachment_path,sender_email)
+   attachments[File.basename("#{email_attachment_path}")] = File.read("#{email_attachment_path}")
    
-    mail(:from => mail_details[4], :to => mail_details[0], :subject => mail_details[1], :body => "#{mail_details[2]}")
+    mail(:from => sender_email, :to => recipient_email, :subject => email_subject, :body => email_body)
   end
 
 end

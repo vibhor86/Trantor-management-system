@@ -62,7 +62,7 @@ class DocumentController < ApplicationController
       end
       system(" pdftk #{@save_path}  output #{@encrypted_path} user_pw #{@doc[1]} ")
      mail_details=[@doc[3],params[:subject],params[:email_body],@encrypted_path,params[:sender_email]]
-      AdminMailer.hr_document(mail_details).deliver
+      AdminMailer.hr_document(@doc[3],params[:subject],params[:email_body],@encrypted_path,params[:sender_email]).deliver
       redirect_to "/document/index", :notice => "Emails have been sent successfully!"
 
     end
