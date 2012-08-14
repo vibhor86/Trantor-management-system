@@ -9,7 +9,6 @@ gem 'sqlite3'
 gem 'mysql'
 gem "devise"
 gem 'wisepdf'
-gem 'pony'
 gem 'cancan'
 
 # Gems used only for assets and not required

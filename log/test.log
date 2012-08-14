@@ -5972,3 +5972,838 @@ Connecting to database specified by database.yml
   [1m[36m (199.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
   [1m[35m (3.3ms)[0m  SELECT version FROM `schema_migrations`
   [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  Rendered document_templates/_form.html.erb (9.3ms)
+  Rendered document_templates/new.html.erb (38.0ms)
+  [1m[36m (1.8ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.4ms)[0m  select table_name from information_schema.views where table_schema = 'tms_test'
+  [1m[36m (194.8ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (74.9ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (74.8ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (75.0ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (74.9ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (70.4ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (74.8ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (75.0ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (74.9ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (108.2ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (70.7ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.8ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (47.3ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.9ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (50.1ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (50.1ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.3ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (69.5ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (99.7ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (64.1ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (38.9ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (41.5ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (42.6ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDocumentTemplate Exists (0.4ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)[0m  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:12 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:12 UTC +00:00]]
+  [1m[35m (66.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `document_templates` [0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "test"], ["created_at", Tue, 14 Aug 2012 06:14:12 UTC +00:00], ["title", "test"], ["updated_at", Tue, 14 Aug 2012 06:14:12 UTC +00:00]]
+  [1m[36m (42.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `document_templates` 
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (40.0ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (41.7ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (41.5ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDocumentTemplate Exists (0.3ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)[0m  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:12 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:12 UTC +00:00]]
+  [1m[35m (45.8ms)[0m  COMMIT
+  [1m[36mDocumentTemplate Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (59.0ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (87.4ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (71.4ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:13 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:13 UTC +00:00]]
+  [1m[36m (45.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mDocumentTemplate Exists (0.3ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.4ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (41.5ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDocumentTemplate Exists (0.3ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)[0m  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:13 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:13 UTC +00:00]]
+  [1m[35m (45.2ms)[0m  COMMIT
+  [1m[36mDocumentTemplate Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (46.9ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.5ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (44.7ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.8ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (133.5ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mPlaceholder Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1[0m
+  [1m[35mPlaceholder Exists (0.2ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `placeholders` (`column_name`, `created_at`, `placeholder_name`, `updated_at`) VALUES (?, ?, ?, ?)[0m  [["column_name", "column"], ["created_at", Tue, 14 Aug 2012 06:14:13 UTC +00:00], ["placeholder_name", "|{placeholder}|"], ["updated_at", Tue, 14 Aug 2012 06:14:13 UTC +00:00]]
+  [1m[35m (44.1ms)[0m  COMMIT
+  [1m[36mPlaceholder Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1[0m
+  [1m[35mPlaceholder Exists (0.2ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (44.4ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (50.1ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPlaceholder Exists (0.3ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1
+  [1m[36mPlaceholder Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `placeholders` (`column_name`, `created_at`, `placeholder_name`, `updated_at`) VALUES (?, ?, ?, ?)  [["column_name", "column"], ["created_at", Tue, 14 Aug 2012 06:14:14 UTC +00:00], ["placeholder_name", "|{placeholder}|"], ["updated_at", Tue, 14 Aug 2012 06:14:14 UTC +00:00]]
+  [1m[36m (45.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mPlaceholder Exists (0.3ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1
+  [1m[36mPlaceholder Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (46.2ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mPlaceholder Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1[0m
+  [1m[35mPlaceholder Exists (0.2ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `placeholders` (`column_name`, `created_at`, `placeholder_name`, `updated_at`) VALUES (?, ?, ?, ?)[0m  [["column_name", "column"], ["created_at", Tue, 14 Aug 2012 06:14:14 UTC +00:00], ["placeholder_name", "|{placeholder}|"], ["updated_at", Tue, 14 Aug 2012 06:14:14 UTC +00:00]]
+  [1m[35m (45.3ms)[0m  COMMIT
+  [1m[36mPlaceholder Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY '' LIMIT 1[0m
+  [1m[35mPlaceholder Exists (0.2ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.0ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.6ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (50.1ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (69.6ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (94.9ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPlaceholder Exists (0.2ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1
+  [1m[36mPlaceholder Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '|{placeholder}|' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `placeholders` (`column_name`, `created_at`, `placeholder_name`, `updated_at`) VALUES (?, ?, ?, ?)  [["column_name", "column"], ["created_at", Tue, 14 Aug 2012 06:14:14 UTC +00:00], ["placeholder_name", "|{placeholder}|"], ["updated_at", Tue, 14 Aug 2012 06:14:14 UTC +00:00]]
+  [1m[36m (31.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mPlaceholder Exists (0.4ms)[0m  SELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`column_name` = BINARY 'column' LIMIT 1
+  [1m[36mPlaceholder Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `placeholders` WHERE `placeholders`.`placeholder_name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (44.2ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$0ORN0oZfJEKB/ANJ3nGokeGNuyWmoKzDDrYB.QJsYwz3tHnbV.TsC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:15 UTC +00:00]]
+  [1m[36m (44.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"suresh.kumar@trantorinc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2012-08-14 06:14:15', `current_sign_in_at` = '2012-08-14 06:14:15', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2012-08-14 06:14:15' WHERE `users`.`id` = 1
+  [1m[36m (52.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 95ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Redirected to http://www.example.com/document_templates/new
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/document_templates/new" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentTemplatesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.2ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  Rendered document_templates/_form.html.erb (2.6ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:15 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:15 UTC +00:00]]
+  [1m[36m (45.7ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/document_templates" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentTemplatesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/document_templates/1/edit" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.1ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  [1m[35mDocumentTemplate Load (0.4ms)[0m  SELECT `document_templates`.* FROM `document_templates` WHERE `document_templates`.`id` = ? LIMIT 1  [["id", "1"]]
+  Rendered document_templates/_form.html.erb (2.7ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/document_templates/1" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentTemplatesController#update as HTML
+  Parameters: {"utf8"=>"✓", "document_template"=>{"title"=>"Testing template", "body"=>"\nHi this is a sample template"}, "commit"=>"Update Document template", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mDocumentTemplate Load (0.4ms)[0m  SELECT `document_templates`.* FROM `document_templates` WHERE `document_templates`.`id` = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDocumentTemplate Exists (0.3ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE (`document_templates`.`title` = BINARY 'Testing template' AND `document_templates`.`id` != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `document_templates` SET `body` = '\nHi this is a sample template', `updated_at` = '2012-08-14 06:14:15' WHERE `document_templates`.`id` = 1[0m
+  [1m[35m (44.9ms)[0m  COMMIT
+Redirected to http://www.example.com/document/index
+Completed 302 Found in 77ms (ActiveRecord: 46.0ms)
+
+
+Started GET "/document/index" for 127.0.0.1 at 2012-08-14 11:44:15 +0530
+Processing by DocumentController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mDocumentTemplate Load (0.2ms)[0m  SELECT `document_templates`.* FROM `document_templates` 
+  [1m[36mDocumentTemplate Load (0.1ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (80.6ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.7ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.7ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$hkjs2tu8cB2TXqX7nk58Q.ZAwV/tOsMqfl.0uN9PPAtoERJfKVrQ2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:16 UTC +00:00]]
+  [1m[36m (43.9ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:22 +0530
+Processing by DocumentController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:22 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-08-14 11:44:22 +0530
+Compiled jquery.js  (1ms)  (pid 6457)
+Compiled jquery_ujs.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 6457)
+Compiled twitter/bootstrap.js  (293ms)  (pid 6457)
+Compiled bootstrap.js  (72ms)  (pid 6457)
+Compiled document.js  (0ms)  (pid 6457)
+Compiled document_templates.js  (0ms)  (pid 6457)
+Compiled jquery.pageslide.js  (0ms)  (pid 6457)
+Compiled application.js  (533ms)  (pid 6457)
+Served asset /application.js - 200 OK (601ms)
+
+
+Started GET "/assets/Trantor.png" for 127.0.0.1 at 2012-08-14 11:44:23 +0530
+Served asset /Trantor.png - 200 OK (45ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-08-14 11:44:23 +0530
+Compiled bootstrap_and_overrides.css  (482ms)  (pid 6457)
+Compiled document.css  (73ms)  (pid 6457)
+Compiled document_template_index.css  (0ms)  (pid 6457)
+Compiled document_templates.css  (0ms)  (pid 6457)
+Compiled documenttemplate_form.css  (0ms)  (pid 6457)
+Compiled jquery.pageslide.css  (0ms)  (pid 6457)
+Compiled scaffolds.css  (11ms)  (pid 6457)
+Compiled application.css  (673ms)  (pid 6457)
+Served asset /application.css - 200 OK (682ms)
+
+
+Started GET "/assets/tms2.jpg" for 127.0.0.1 at 2012-08-14 11:44:24 +0530
+Served asset /tms2.jpg - 200 OK (3ms)
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2012-08-14 11:44:24 +0530
+Served asset /images/favicon.ico - 404 Not Found (10ms)
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2012-08-14 11:44:24 +0530
+Served asset /images/favicon.ico - 404 Not Found (8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"suresh.kumar@trantorinc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2012-08-14 06:14:25', `current_sign_in_at` = '2012-08-14 06:14:25', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2012-08-14 06:14:25' WHERE `users`.`id` = 1
+  [1m[36m (122.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://127.0.0.1:33884/
+Completed 302 Found in 134ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Processing by DocumentController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Redirected to http://127.0.0.1:33884/document_templates/new
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/document_templates/new" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Processing by DocumentTemplatesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.2ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  Rendered document_templates/_form.html.erb (2.8ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/tms.jpg" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Served asset /tms.jpg - 200 OK (55ms)
+
+
+Started GET "/assets/documenttemplate_form.css" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Served asset /documenttemplate_form.css - 200 OK (69ms)
+
+
+Started GET "/assets/jquery.pageslide.css" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Served asset /jquery.pageslide.css - 200 OK (42ms)
+
+
+Started GET "/assets/jquery.pageslide.js" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Served asset /jquery.pageslide.js - 200 OK (49ms)
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:25 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:25 UTC +00:00]]
+  [1m[36m (60.7ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/document_templates/new" for 127.0.0.1 at 2012-08-14 11:44:25 +0530
+Processing by DocumentTemplatesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.1ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  Rendered document_templates/_form.html.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/document_templates" for 127.0.0.1 at 2012-08-14 11:44:26 +0530
+Processing by DocumentTemplatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "document_template"=>{"title"=>"test", "body"=>"<p>\r\n\ttest_body</p>\r\n"}, "commit"=>"Create Document template"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDocumentTemplate Exists (0.3ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'test' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)[0m  [["body", "<p>\r\n\ttest_body</p>\r\n"], ["created_at", Tue, 14 Aug 2012 06:14:26 UTC +00:00], ["title", "test"], ["updated_at", Tue, 14 Aug 2012 06:14:26 UTC +00:00]]
+  [1m[35m (92.0ms)[0m  COMMIT
+Redirected to http://127.0.0.1:33884/document/index
+Completed 302 Found in 97ms (ActiveRecord: 93.1ms)
+
+
+Started GET "/document/index" for 127.0.0.1 at 2012-08-14 11:44:26 +0530
+Processing by DocumentController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mDocumentTemplate Load (0.4ms)[0m  SELECT `document_templates`.* FROM `document_templates` 
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (133.8ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.5ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:28 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$F1gtMhWtJJ5g6iVDMcYtKO0c51ntakpkBXDM5m2OTqDd9yE/6ZVG6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:28 UTC +00:00]]
+  [1m[36m (43.7ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:28 +0530
+Processing by DocumentController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:28 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:29 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"suresh.kumar@trantorinc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2012-08-14 06:14:29', `current_sign_in_at` = '2012-08-14 06:14:29', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2012-08-14 06:14:29' WHERE `users`.`id` = 1
+  [1m[36m (70.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://127.0.0.1:33884/
+Completed 302 Found in 77ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:29 +0530
+Processing by DocumentController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.3ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Redirected to http://127.0.0.1:33884/document_templates/new
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/document_templates/new" for 127.0.0.1 at 2012-08-14 11:44:29 +0530
+Processing by DocumentTemplatesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.3ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  Rendered document_templates/_form.html.erb (3.1ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:29 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:29 UTC +00:00]]
+  [1m[36m (48.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/document_templates" for 127.0.0.1 at 2012-08-14 11:44:29 +0530
+Processing by DocumentTemplatesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/document_template_index.css" for 127.0.0.1 at 2012-08-14 11:44:30 +0530
+Served asset /document_template_index.css - 200 OK (5ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (153.6ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (58.3ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (58.6ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (75.0ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.2ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$oV2wb8YkZc.BTpNwKrun8OEVDRgAgGFIdZhbM7jtaHp6jlgtqVT0W"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:32 UTC +00:00]]
+  [1m[36m (47.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"suresh.kumar@trantorinc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2012-08-14 06:14:32', `current_sign_in_at` = '2012-08-14 06:14:32', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2012-08-14 06:14:32' WHERE `users`.`id` = 1
+  [1m[36m (46.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 56ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.3ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Redirected to http://www.example.com/document_templates/new
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/document_templates/new" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentTemplatesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.4ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  Rendered document_templates/_form.html.erb (4.7ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.6ms)
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:32 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:32 UTC +00:00]]
+  [1m[36m (50.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/document_templates" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentTemplatesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.3ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/document_templates/1/edit" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.1ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  [1m[35mDocumentTemplate Load (0.4ms)[0m  SELECT `document_templates`.* FROM `document_templates` WHERE `document_templates`.`id` = ? LIMIT 1  [["id", "1"]]
+  Rendered document_templates/_form.html.erb (4.8ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/document_templates/1" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentTemplatesController#update as HTML
+  Parameters: {"utf8"=>"✓", "document_template"=>{"title"=>"Testing template", "body"=>"\nHi this is a sample template"}, "commit"=>"Update Document template", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mDocumentTemplate Load (0.1ms)[0m  SELECT `document_templates`.* FROM `document_templates` WHERE `document_templates`.`id` = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDocumentTemplate Exists (0.3ms)[0m  SELECT 1 AS one FROM `document_templates` WHERE (`document_templates`.`title` = BINARY 'Testing template' AND `document_templates`.`id` != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `document_templates` SET `body` = '\nHi this is a sample template', `updated_at` = '2012-08-14 06:14:32' WHERE `document_templates`.`id` = 1[0m
+  [1m[35m (47.8ms)[0m  COMMIT
+Redirected to http://www.example.com/document/index
+Completed 302 Found in 51ms (ActiveRecord: 48.7ms)
+
+
+Started GET "/document/index" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mDocumentTemplate Load (0.3ms)[0m  SELECT `document_templates`.* FROM `document_templates` 
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (50.1ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (49.8ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$NOW4hhOH15EcKlTnKFMLg.di26ZTRm92l7ZUghl7vclqOPeuHgF4O"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:32 UTC +00:00]]
+  [1m[36m (48.8ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by DocumentController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-08-14 11:44:32 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"suresh.kumar@trantorinc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2012-08-14 06:14:32', `current_sign_in_at` = '2012-08-14 06:14:32', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2012-08-14 06:14:32' WHERE `users`.`id` = 1
+  [1m[36m (50.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 55ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-14 11:44:33 +0530
+Processing by DocumentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.3ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Redirected to http://www.example.com/document_templates/new
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/document_templates/new" for 127.0.0.1 at 2012-08-14 11:44:33 +0530
+Processing by DocumentTemplatesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlaceholder Load (0.3ms)[0m  [1mSELECT `placeholders`.* FROM `placeholders` [0m
+  Rendered document_templates/_form.html.erb (2.4ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mDocumentTemplate Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `document_templates` WHERE `document_templates`.`title` = BINARY 'Testing template' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `document_templates` (`body`, `created_at`, `title`, `updated_at`) VALUES (?, ?, ?, ?)  [["body", "Hi this is a sample template"], ["created_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00], ["title", "Testing template"], ["updated_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00]]
+  [1m[36m (52.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/document_templates" for 127.0.0.1 at 2012-08-14 11:44:33 +0530
+Processing by DocumentTemplatesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mDocumentTemplate Load (0.2ms)[0m  [1mSELECT `document_templates`.* FROM `document_templates` [0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (52.3ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (50.1ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (49.7ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.1ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (36.2ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$6iEsIlKgvXFEKeJbHyOi9uEJbC3U5xU6uCxfxqmSvkqGLSwMVbw4a"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00]]
+  [1m[36m (48.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (44.0ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (41.7ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$Vc.4TrF8tobU/Ym1TCEx.eXjW/7EvsgDLvzP1LugOhk8DJt7c9cJe"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00]]
+  [1m[35m (44.5ms)[0m  COMMIT
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (45.2ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.5ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.8ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$WLn0eC2OgRaOkY2.Njvm4.AKJo.w.G7tQns71BeLQ6xVa/4lonL/W"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:33 UTC +00:00]]
+  [1m[36m (43.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user@foo,com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user_at_foo.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'example.user@foo.' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (39.7ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:34 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$I9dP85BPnifbwYw/vNHra.Z4A.Au2LfV5gpkFeFmhITFcdhS1ahyK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:34 UTC +00:00]]
+  [1m[35m (43.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (46.4ms)[0m  [1mTRUNCATE TABLE `admins`;[0m
+  [1m[35m (42.5ms)[0m  TRUNCATE TABLE `document_templates`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `placeholders`;[0m
+  [1m[35m (41.7ms)[0m  TRUNCATE TABLE `rails_admin_histories`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:34 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$NIsZK/eoDULg3pws61UzVercX0SE424HTbxGp0qVMKlAohTAxE59a"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:34 UTC +00:00]]
+  [1m[35m (45.0ms)[0m  COMMIT
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user@foo.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'the_user@foo.bar.org' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'first.last@foo.jp' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (40.6ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (51.8ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (81.6ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:34 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$J7Kl8RAqy/3LqhCjX7cso.lDZUPIwYg2as3ANWcblheOoy2/BjsXe"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:34 UTC +00:00]]
+  [1m[36m (44.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (46.5ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (118.2ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:35 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$9ayC6eMvaG6flrD/ckQncu6z8D2IBN0tQ6.gK3PMCiDSz07IyiGm2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:35 UTC +00:00]]
+  [1m[36m (105.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (153.9ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (103.2ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:35 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$wNayuWaxfDSSX4ECgW/BnOgicJQjI.OOEgPVZVL.3CsFeFQqOfxnG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:35 UTC +00:00]]
+  [1m[36m (102.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (96.1ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (101.1ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (49.0ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (49.8ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$AMOF5q0TxCG7BZRW1optOuWLJZLOwWCHUVHBbo4AFKYWOkaJSpzVe"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:36 UTC +00:00]]
+  [1m[36m (43.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (45.6ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (50.1ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (50.0ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$HcnaUrZYIbVU464j9UKUEeGplh4yF9lOB1zCZWEfP.dGq297/SP3i"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:36 UTC +00:00]]
+  [1m[36m (44.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (46.3ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (99.9ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (75.0ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (50.1ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$J6sfdKilsDBOtcXr/SViu.0YfsUni6brRWf9zw21GhO4uNjYe/iIK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:36 UTC +00:00]]
+  [1m[36m (94.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (72.5ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (49.9ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:37 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$S0D5ZtWq883IPS9p7Q5MHeFmi2XCC4VIdZUnv2gLpz0UrR72yErgC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:37 UTC +00:00]]
+  [1m[36m (44.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (48.4ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (49.9ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (50.1ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'suresh.kumar@trantorinc.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Tue, 14 Aug 2012 06:14:37 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "suresh.kumar@trantorinc.com"], ["encrypted_password", "$2a$04$PBoGBs472bu3q/Guvcp5xO5raLNvQI0BNg0IqtyZn9mB0cHTs4RBq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 14 Aug 2012 06:14:37 UTC +00:00]]
+  [1m[36m (50.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (48.5ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (50.0ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (49.8ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.7ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.5ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (45.3ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (91.8ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (66.6ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.5ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  Rendered document_templates/_form.html.erb (2.6ms)
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (42.6ms)[0m  TRUNCATE TABLE `admins`;
+  [1m[36m (41.6ms)[0m  [1mTRUNCATE TABLE `document_templates`;[0m
+  [1m[35m (41.6ms)[0m  TRUNCATE TABLE `placeholders`;
+  [1m[36m (41.8ms)[0m  [1mTRUNCATE TABLE `rails_admin_histories`;[0m
+  [1m[35m (41.5ms)[0m  TRUNCATE TABLE `users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
