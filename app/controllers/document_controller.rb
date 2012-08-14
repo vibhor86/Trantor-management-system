@@ -53,15 +53,17 @@ class DocumentController < ApplicationController
       else
         no_header_footer(@doc[0])
       end
-      @filename=(@doc[2]+'_'+@selected_template.title+'_'+Date.today.to_s).gsub(/\s+/, '')
+      @filename=("#{@doc[2]}_#{@selected_template.title}_#{Date.today.to_s}").gsub(/\s+/, '')
      @save_path= Rails.root.join('pdfs', "#{@filename}.pdf")
      @encrypted_path=Rails.root.join('pdfs/encrypted', "#{@filename}.pdf")
       File.open(@save_path,'wb') do |file|
         file << @pdf
       end
       system(" pdftk #{@save_path}  output #{@encrypted_path} user_pw #{@doc[1]} ")
-      email_attachments
-      redirect_to "/document/index", :alert => "Emails have been sent successfully!"
+      #email_attachments
+      AdminMailer.welcome_email(@user).deliver
+      system(rm @save_path)
+      redirect_to "/document/index", :notice => "Emails have been sent successfully!"
 
     end
   end
@@ -80,18 +82,19 @@ class DocumentController < ApplicationController
   def email_attachments
     Pony.mail(
       :to                   => @doc[3],
+      :from                 => params[:sender_email],
       :subject              => params[:subject],
       :html_body            => params[:email_body],
       :attachments          => {File.basename("#{@filename}.pdf") => File.read( "#{@encrypted_path}")},
       :via                  => :smtp,
       :via_options          => {
-        :address              => 'smtp.gmail.com',
+        :address              => 'smtp.rediffmailpro.com',
         :port                 => '587',
-        :enable_starttls_auto => true,
+        :enable_starttls_auto => false,
         :user_name            => params[:sender_email],
         :password             => params[:sender_password],
         :authentication       => :plain, 
-        :domain               => "localhost.localdomain"
+        :domain               => "smtp.rediffmailpro.com"
       }
     )
   
