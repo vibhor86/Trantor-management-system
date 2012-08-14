@@ -1,14 +1,18 @@
 class DocumentTemplatesController < ApplicationController
- 
-  before_filter :authenticate_user!
-  
+   
   def index
     @document_templates = DocumentTemplate.all
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @document_templates }
-
+    end
+  end
+  
+  def show
+    @letter_template = LetterTemplate.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @letter_template }
     end
   end
   
@@ -16,7 +20,7 @@ class DocumentTemplatesController < ApplicationController
     @document_template = DocumentTemplate.new
     @placeholder_details=Placeholder.all
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @document_template }
     end
   end
@@ -41,7 +45,6 @@ class DocumentTemplatesController < ApplicationController
 
   def update
     @document_template = DocumentTemplate.find(params[:id])
-
     respond_to do |format|
       if @document_template.update_attributes(params[:document_template])
         format.html { redirect_to "/document/index", notice: 'Document template was successfully updated.' }
@@ -56,7 +59,6 @@ class DocumentTemplatesController < ApplicationController
   def destroy
     @document_template = DocumentTemplate.find(params[:id])
     @document_template.destroy
-
     respond_to do |format|
       format.html { redirect_to document_templates_url }
       format.json { head :no_content }
