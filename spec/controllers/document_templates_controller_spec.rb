@@ -34,131 +34,131 @@ describe DocumentTemplatesController do
     {}
   end
 
-  describe "GET index" do
-    it "assigns all document_templates as @document_templates" do
-      document_template = DocumentTemplate.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:document_templates).should eq([document_template])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested document_template as @document_template" do
-      document_template = DocumentTemplate.create! valid_attributes
-      get :show, {:id => document_template.to_param}, valid_session
-      assigns(:document_template).should eq(document_template)
-    end
-  end
-
-  describe "GET new" do
-    it "assigns a new document_template as @document_template" do
-      get :new, {}, valid_session
-      assigns(:document_template).should be_a_new(DocumentTemplate)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested document_template as @document_template" do
-      document_template = DocumentTemplate.create! valid_attributes
-      get :edit, {:id => document_template.to_param}, valid_session
-      assigns(:document_template).should eq(document_template)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new DocumentTemplate" do
-        expect {
-          post :create, {:document_template => valid_attributes}, valid_session
-        }.to change(DocumentTemplate, :count).by(1)
-      end
-
-      it "assigns a newly created document_template as @document_template" do
-        post :create, {:document_template => valid_attributes}, valid_session
-        assigns(:document_template).should be_a(DocumentTemplate)
-        assigns(:document_template).should be_persisted
-      end
-
-      it "redirects to the created document_template" do
-        post :create, {:document_template => valid_attributes}, valid_session
-        response.should redirect_to(DocumentTemplate.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved document_template as @document_template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        DocumentTemplate.any_instance.stub(:save).and_return(false)
-        post :create, {:document_template => {}}, valid_session
-        assigns(:document_template).should be_a_new(DocumentTemplate)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        DocumentTemplate.any_instance.stub(:save).and_return(false)
-        post :create, {:document_template => {}}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested document_template" do
-        document_template = DocumentTemplate.create! valid_attributes
-        # Assuming there are no other document_templates in the database, this
-        # specifies that the DocumentTemplate created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        DocumentTemplate.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => document_template.to_param, :document_template => {'these' => 'params'}}, valid_session
-      end
-
-      it "assigns the requested document_template as @document_template" do
-        document_template = DocumentTemplate.create! valid_attributes
-        put :update, {:id => document_template.to_param, :document_template => valid_attributes}, valid_session
-        assigns(:document_template).should eq(document_template)
-      end
-
-      it "redirects to the document_template" do
-        document_template = DocumentTemplate.create! valid_attributes
-        put :update, {:id => document_template.to_param, :document_template => valid_attributes}, valid_session
-        response.should redirect_to(document_template)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the document_template as @document_template" do
-        document_template = DocumentTemplate.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        DocumentTemplate.any_instance.stub(:save).and_return(false)
-        put :update, {:id => document_template.to_param, :document_template => {}}, valid_session
-        assigns(:document_template).should eq(document_template)
-      end
-
-      it "re-renders the 'edit' template" do
-        document_template = DocumentTemplate.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        DocumentTemplate.any_instance.stub(:save).and_return(false)
-        put :update, {:id => document_template.to_param, :document_template => {}}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested document_template" do
-      document_template = DocumentTemplate.create! valid_attributes
-      expect {
-        delete :destroy, {:id => document_template.to_param}, valid_session
-      }.to change(DocumentTemplate, :count).by(-1)
-    end
-
-    it "redirects to the document_templates list" do
-      document_template = DocumentTemplate.create! valid_attributes
-      delete :destroy, {:id => document_template.to_param}, valid_session
-      response.should redirect_to(document_templates_url)
-    end
-  end
+#  describe "GET index" do
+#    it "assigns all document_templates as @document_templates" do
+#      document_template = DocumentTemplate.create! valid_attributes
+#      get :index, {}, valid_session
+#      assigns(:document_templates).should eq([document_template])
+#    end
+#  end
+#
+#  describe "GET show" do
+#    it "assigns the requested document_template as @document_template" do
+#      document_template = DocumentTemplate.create! valid_attributes
+#      get :show, {:id => document_template.to_param}, valid_session
+#      assigns(:document_template).should eq(document_template)
+#    end
+#  end
+#
+#  describe "GET new" do
+#    it "assigns a new document_template as @document_template" do
+#      get :new, {}, valid_session
+#      assigns(:document_template).should be_a_new(DocumentTemplate)
+#    end
+#  end
+#
+#  describe "GET edit" do
+#    it "assigns the requested document_template as @document_template" do
+#      document_template = DocumentTemplate.create! valid_attributes
+#      get :edit, {:id => document_template.to_param}, valid_session
+#      assigns(:document_template).should eq(document_template)
+#    end
+#  end
+#
+#  describe "POST create" do
+#    describe "with valid params" do
+#      it "creates a new DocumentTemplate" do
+#        expect {
+#          post :create, {:document_template => valid_attributes}, valid_session
+#        }.to change(DocumentTemplate, :count).by(1)
+#      end
+#
+#      it "assigns a newly created document_template as @document_template" do
+#        post :create, {:document_template => valid_attributes}, valid_session
+#        assigns(:document_template).should be_a(DocumentTemplate)
+#        assigns(:document_template).should be_persisted
+#      end
+#
+#      it "redirects to the created document_template" do
+#        post :create, {:document_template => valid_attributes}, valid_session
+#        response.should redirect_to(DocumentTemplate.last)
+#      end
+#    end
+#
+#    describe "with invalid params" do
+#      it "assigns a newly created but unsaved document_template as @document_template" do
+#        # Trigger the behavior that occurs when invalid params are submitted
+#        DocumentTemplate.any_instance.stub(:save).and_return(false)
+#        post :create, {:document_template => {}}, valid_session
+#        assigns(:document_template).should be_a_new(DocumentTemplate)
+#      end
+#
+#      it "re-renders the 'new' template" do
+#        # Trigger the behavior that occurs when invalid params are submitted
+#        DocumentTemplate.any_instance.stub(:save).and_return(false)
+#        post :create, {:document_template => {}}, valid_session
+#        response.should render_template("new")
+#      end
+#    end
+#  end
+#
+#  describe "PUT update" do
+#    describe "with valid params" do
+#      it "updates the requested document_template" do
+#        document_template = DocumentTemplate.create! valid_attributes
+#        # Assuming there are no other document_templates in the database, this
+#        # specifies that the DocumentTemplate created on the previous line
+#        # receives the :update_attributes message with whatever params are
+#        # submitted in the request.
+#        DocumentTemplate.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+#        put :update, {:id => document_template.to_param, :document_template => {'these' => 'params'}}, valid_session
+#      end
+#
+#      it "assigns the requested document_template as @document_template" do
+#        document_template = DocumentTemplate.create! valid_attributes
+#        put :update, {:id => document_template.to_param, :document_template => valid_attributes}, valid_session
+#        assigns(:document_template).should eq(document_template)
+#      end
+#
+#      it "redirects to the document_template" do
+#        document_template = DocumentTemplate.create! valid_attributes
+#        put :update, {:id => document_template.to_param, :document_template => valid_attributes}, valid_session
+#        response.should redirect_to(document_template)
+#      end
+#    end
+#
+#    describe "with invalid params" do
+#      it "assigns the document_template as @document_template" do
+#        document_template = DocumentTemplate.create! valid_attributes
+#        # Trigger the behavior that occurs when invalid params are submitted
+#        DocumentTemplate.any_instance.stub(:save).and_return(false)
+#        put :update, {:id => document_template.to_param, :document_template => {}}, valid_session
+#        assigns(:document_template).should eq(document_template)
+#      end
+#
+#      it "re-renders the 'edit' template" do
+#        document_template = DocumentTemplate.create! valid_attributes
+#        # Trigger the behavior that occurs when invalid params are submitted
+#        DocumentTemplate.any_instance.stub(:save).and_return(false)
+#        put :update, {:id => document_template.to_param, :document_template => {}}, valid_session
+#        response.should render_template("edit")
+#      end
+#    end
+#  end
+#
+#  describe "DELETE destroy" do
+#    it "destroys the requested document_template" do
+#      document_template = DocumentTemplate.create! valid_attributes
+#      expect {
+#        delete :destroy, {:id => document_template.to_param}, valid_session
+#      }.to change(DocumentTemplate, :count).by(-1)
+#    end
+#
+#    it "redirects to the document_templates list" do
+#      document_template = DocumentTemplate.create! valid_attributes
+#      delete :destroy, {:id => document_template.to_param}, valid_session
+#      response.should redirect_to(document_templates_url)
+#    end
+#  end
 
 end

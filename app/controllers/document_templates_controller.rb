@@ -1,6 +1,5 @@
 class DocumentTemplatesController < ApplicationController
-  # GET /document_templates
-  # GET /document_templates.json
+ 
   before_filter :authenticate_user!
   
   def index
@@ -13,10 +12,6 @@ class DocumentTemplatesController < ApplicationController
     end
   end
   
-
-  
-  # GET /document_templates/new
-  # GET /document_templates/new.json
   def new
     @document_template = DocumentTemplate.new
     @placeholder_details=Placeholder.all
@@ -26,14 +21,11 @@ class DocumentTemplatesController < ApplicationController
     end
   end
 
-  # GET /document_templates/1/edit
   def edit
     @placeholder_details=Placeholder.all
     @document_template = DocumentTemplate.find(params[:id])
   end
 
-  # POST /document_templates
-  # POST /document_templates.json
   def create
     @document_template = DocumentTemplate.new(params[:document_template])
     respond_to do |format|
@@ -47,8 +39,6 @@ class DocumentTemplatesController < ApplicationController
     end
   end
 
-  # PUT /document_templates/1
-  # PUT /document_templates/1.json
   def update
     @document_template = DocumentTemplate.find(params[:id])
 
@@ -63,8 +53,6 @@ class DocumentTemplatesController < ApplicationController
     end
   end
 
-  # DELETE /document_templates/1
-  # DELETE /document_templates/1.json
   def destroy
     @document_template = DocumentTemplate.find(params[:id])
     @document_template.destroy

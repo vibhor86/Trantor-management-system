@@ -8,15 +8,15 @@
       <td> <%= link_to 'Sample pdf of '+@dropdown_temp_title, "show.pdf?temp_value="+@dropdown_temp_id+"" , :id => "sampleLink" %></td>
     </tr>
 
-    <tr><td colspan="3"><%= check_box_tag 'check_header_footer', 'Enable', true %>Enable Header and Footer</td></tr>
-    <tr><td><span id="star">*</span>Subject for email :</td><td colspan="2"><%= text_field_tag 'subject'%></td></tr>
+    <tr><td colspan="3" style="text-align:left;"><%= check_box_tag 'check_header_footer', 'Enable', true %>Enable Header and Footer</td></tr>
+    <tr><td><span id="star">*</span>Subject for email :</td><td align="left"><%= text_field_tag 'subject'%></td><td></td></tr>
 
   </table>
 <span id="star">*</span>Body for email :<%= text_area_tag 'email_body'%>
 <table>
-  <tr><td>Encryption Field :</td><td><%=  select_tag "encrypt_field", "<option> pan</option><option>ecode</option><option> date_of_joining</option>".html_safe %></td></tr>
+  <tr><td>Encryption Field :</td><td><%=  select_tag "encrypt_field", "<option> pan</option><option>ecode</option><option> date_of_birth</option>".html_safe %></td></tr>
     <tr><td><span id="star">*</span>Sender's Email :</td><td><%= email_field_tag 'sender_email', current_user.email %></td></tr>
-    
+   
     <tr>
       <td> <%= submit_tag('Submit', :id =>'submit') %></td>
       <td> <%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset" }) %> </td></tr>
@@ -25,42 +25,53 @@
 
 <script type="text/javascript">
   var temp_value= $('#template option:selected').val();
- 
+
   $(document).ready(function(){
     CKEDITOR.replace( 'email_body', {
       extraPlugins : 'autogrow',
       removePlugins : 'resize'
     });
   });
-  
+
   $('#template').change(function() {
     temp_value= $('#template option:selected').val();
     $('#sampleLink').replaceWith("<a id='sampleLink', href= 'show.pdf?temp_value="+temp_value+"'>"+ 'Pdf of ' + $('#template option:selected').text()+"</a>");
   });
-  
+
   $('#submit').click(function()
-  { 
+  {
     if($('#subject').val() == 0)
       confirm("Are you sure you want to send email(s) without subject?");
     if(CKEDITOR.instances.email_body.getData().length == 0)
       confirm("Are you sure you want to send email(s) without body?");
-    
+
   });
-  
+
   function Checkfiles()
   {
     var fup = document.getElementById('form_file');
+    var email=document.getElementById('sender_email');
+    var password=document.getElementById('sender_password');
     var fileName = fup.value;
     var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
-    if(ext == "csv" )
+    if(ext == "csv" && $('#sender_email').val() != 0 )
     {
       return true;
     }
-    else
+    if(ext != "csv" )
     {
       alert("Please upload CSV files");
       fup.focus();
       return false;
     }
+       if($('#sender_email').val() == 0 )
+    {
+      alert("Email can't be blank");
+      email.focus();
+      return false;
+    }
+      
+
   }
+
 </script>
