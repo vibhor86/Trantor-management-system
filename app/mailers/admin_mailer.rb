@@ -1,8 +1,12 @@
 class AdminMailer < ActionMailer::Base
-  default :from => "aastha.tangri@trantorinc.com"
- 
-  def welcome_email(user)
-  attachments[File.basename("#{@filename}.pdf")]= File.read("#{@encrypted_path}")
-    mail(:to => user.email, :subject => "Welcome to My Awesome Site")
+  default :from => "suresh_torlapati@yahoo.com"
+
+  def registration_confirmation(mail_details)
+    attachments[File.basename("#{mail_details[3]}")] = File.read("#{mail_details[3]}")
+    mail(:to => "<#{mail_details[0]}>", :subject => "#{mail_details[1]}", :body => "#{mail_details[2]}") do |format|
+      format.html
+      format.text
+    end
   end
 end
+

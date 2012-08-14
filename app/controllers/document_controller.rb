@@ -47,6 +47,7 @@ class DocumentController < ApplicationController
       temp_template=@template_body.dup
       row_index += 1
       next if row_index == 1 or row.join.blank?
+
       @doc=search_replace(temp_template,row,@header)
       if (params[:check_header_footer]=='Enable')
         allow_header_footer(@doc[0])
@@ -60,9 +61,12 @@ class DocumentController < ApplicationController
         file << @pdf
       end
       system(" pdftk #{@save_path}  output #{@encrypted_path} user_pw #{@doc[1]} ")
-      #email_attachments
-      AdminMailer.welcome_email(@user).deliver
-      system(rm @save_path)
+      #raise @doc[3].inspect
+      #@user =  current_user
+      mail_details=[@doc[3],params[:subject],params[:email_body],@encrypted_path]
+      #raise mail_details.inspect
+      AdminMailer.registration_confirmation(mail_details).deliver
+     # email_attachments
       redirect_to "/document/index", :notice => "Emails have been sent successfully!"
 
     end
@@ -88,13 +92,13 @@ class DocumentController < ApplicationController
       :attachments          => {File.basename("#{@filename}.pdf") => File.read( "#{@encrypted_path}")},
       :via                  => :smtp,
       :via_options          => {
-        :address              => 'smtp.rediffmailpro.com',
-        :port                 => '587',
-        :enable_starttls_auto => false,
-        :user_name            => params[:sender_email],
-        :password             => params[:sender_password],
-        :authentication       => :plain, 
-        :domain               => "smtp.rediffmailpro.com"
+        :address              => 'mail.authsmtp.com',
+        :port                 => '25',
+        :enable_starttls_auto => true,
+        :user_name            => 'ac51348',
+        :password             => 'privatenetwork',
+        :authentication       => :login,
+        :domain               => 'mail.authsmtp.com'
       }
     )
   

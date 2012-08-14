@@ -14,9 +14,9 @@
   </table>
 <span id="star">*</span>Body for email :<%= text_area_tag 'email_body'%>
 <table>
-  <tr><td>Encryption Field :</td><td><%=  select_tag "encrypt_field", "<option> pan</option><option>ecode</option><option> date_of_birth</option>".html_safe %></td></tr>
+  <tr><td>Encryption Field :</td><td><%=  select_tag "encrypt_field", "<option> pan</option><option>ecode</option><option> date_of_joining</option>".html_safe %></td></tr>
     <tr><td><span id="star">*</span>Sender's Email :</td><td><%= email_field_tag 'sender_email', current_user.email %></td></tr>
-    <tr><td><span id="star">*</span>Sender's Email Password: </td><td> <%=  password_field_tag 'sender_password', current_user.password %></td></tr>
+    
     <tr>
       <td> <%= submit_tag('Submit', :id =>'submit') %></td>
       <td> <%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset" }) %> </td></tr>
@@ -44,39 +44,23 @@
       confirm("Are you sure you want to send email(s) without subject?");
     if(CKEDITOR.instances.email_body.getData().length == 0)
       confirm("Are you sure you want to send email(s) without body?");
-        
+    
   });
   
   function Checkfiles()
   {
     var fup = document.getElementById('form_file');
-    var email=document.getElementById('sender_email');
-    var password=document.getElementById('sender_password');
     var fileName = fup.value;
     var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
-    if(ext == "csv" && $('#sender_email').val() != 0 && $('#sender_password').val() != 0 )
+    if(ext == "csv" )
     {
       return true;
     }
-    if(ext != "csv" )
+    else
     {
       alert("Please upload CSV files");
       fup.focus();
       return false;
     }
-       if($('#sender_email').val() == 0 )
-    {
-      alert("Email can't be blank");
-      email.focus();
-      return false;
-    }
-       if($('#sender_password').val() == 0 )
-    {
-      alert("Password can't be blank");
-      password.focus();
-      return false;
-    }
-   
   }
-  
 </script>
