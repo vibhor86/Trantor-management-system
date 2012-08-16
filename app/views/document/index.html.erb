@@ -1,0 +1,48 @@
+<%= javascript_include_tag "document_index.js" %>
+
+<p class = "mandatory">* marked fields are mandatory</p>
+<%= form_tag({:action => 'document'},:multipart => true,:onsubmit => "return Checkfiles();") do %>
+  <table>
+    <tr>
+      <td><span id = "star">*</span>Upload file: </td>
+      <td><%= file_field( "form", "file" ) %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Select Template :</td>
+      <td><%= select_tag("template",options_from_collection_for_select(@document_templates, "id", "title"))%></td>
+      <td> <%= link_to 'Pdf of '+@dropdown_temp_title, "show.pdf?temp_value="+@dropdown_temp_id+"" , :id => "sampleLink" %></td>
+    </tr>
+    <tr>
+      <td colspan = "3" style="text-align:left;"><%= check_box_tag 'check_header_footer', 'Enable', true %>Enable Header and Footer</td>
+    </tr>
+    <tr>
+      <td><span id = "star">*</span>Subject for email :</td>
+      <td align = "left"><%= text_field_tag 'subject'%></td>
+      <td></td>
+    </tr>
+  </table>
+  <span id = "star">*</span>Body for email :<%= text_area_tag 'email_body'%>
+  <table>
+    <tr>
+      <td>Encryption Field :</td>
+      <td><%= select_tag "encrypt_field", "<option> pan</option><option>ecode</option><option> date_of_birth</option>".html_safe %></td>
+    </tr>
+    <tr>
+      <td><span id = "star">*</span>Sender's Email :</td>
+      <td><%= email_field_tag 'sender_email', current_user.email %></td>
+    </tr>
+    <tr>
+      <td> <%= submit_tag('Submit', :id =>'submit') %></td>
+      <td> <%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset" }) %></td>
+    </tr>
+  </table>
+<% end %>
+  <script>
+    $(document).ready(function(){
+    CKEDITOR.replace( 'email_body', {
+      extraPlugins : 'autogrow',
+      removePlugins : 'resize'
+    });
+  });
+    </script>
