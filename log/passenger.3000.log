@@ -1,0 +1,6 @@
+***************
+"/usr/bin/wkhtmltopdf" "--encoding" "UTF-8" "--margin-bottom" "20" "--margin-left" "20" "--margin-right" "20" "--page-size" "A4" "--header-spacing" "5" "--header-html" "file:///tmp/wisepdf_header_pdf20120820-10840-11it6tb.html" "--footer-html" "file:///tmp/wisepdf_footer_pdf20120820-10840-13i7dwz.html" "--quiet" "-" "-"
+***************
+***************
+"/usr/bin/wkhtmltopdf" "--encoding" "UTF-8" "--margin-bottom" "20" "--margin-left" "20" "--margin-right" "20" "--page-size" "A4" "--header-spacing" "5" "--header-html" "file:///tmp/wisepdf_header_pdf20120820-10840-1edqr9q.html" "--footer-html" "file:///tmp/wisepdf_footer_pdf20120820-10840-1nwse1l.html" "--quiet" "-" "-"
+***************

@@ -1,0 +1,63 @@
+<%#= stylesheet_link_tag "jquery.pageslide.css","documenttemplate_form.css" %>
+<%#= javascript_include_tag "jquery.pageslide.js", "document_template.js" %>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <div id="content">
+      <%= form_for(@document_template) do |f| %>
+        <% if @document_template.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@document_template.errors.count, "error") %> prohibited this document_template from being saved:</h2>
+            <ul>
+              <% @document_template.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :title %><br />
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :body %><br />
+          <% if @placeholder_details.empty? %>
+          <%  else %>
+            <a href="#placeholder_list" id="showhide" class="placeholder">show/hide placeholders</a><br/>
+          <%  end %>
+          <%= f.text_area :body %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+      <div id="placeholder_list" >
+        <button class="show_hide"><b>Choose Required PlaceHolder:  </b></button><br />
+        <% @placeholder_details.each do |placeholder|%>
+          <button onclick = CKEDITOR.instances.document_template_body.insertText("<%= placeholder.placeholder_name%>") > <%=  placeholder.column_name.upcase %></button><br/>
+        <% end %>
+      </div>
+    </div>
+<script src="/assets/jquery.pageslide.min.js" type="text/javascript"></script>
+
+  </body>
+</html>
+
+<script>
+ 
+$(document).ready(function(){
+    CKEDITOR.replace( 'document_template_body', {
+        extraPlugins : 'autogrow',
+        removePlugins : 'resize'
+    });
+   
+  $("#showhide").pageslide({
+	    direction: "left",
+	    placeholder_list: true
+	});
+
+	  
+});
+
+  </script>
