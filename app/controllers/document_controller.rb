@@ -28,7 +28,7 @@ class DocumentController < ApplicationController
     @template_body = @selected_template.body
     file_field = params[:form][:file]
     @file_content = file_field.read
-    
+    row_index = 0
     CSV.parse(@file_content) do |row|
       if row_index == 0
         @header=row
