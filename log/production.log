@@ -4719,3 +4719,16 @@ ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
 
 
   Rendered /home/trantor/.rvm/gems/ruby-1.9.3-p194@tms/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-07 15:00:15 +0530
+Processing by DocumentController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-07 15:00:15 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 128ms (Views: 59.3ms | ActiveRecord: 1.7ms)
