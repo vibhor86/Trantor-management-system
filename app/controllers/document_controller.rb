@@ -68,7 +68,9 @@ class DocumentController < ApplicationController
   
   def search_replace(template,row,headers)
   headers.collect! {|i| i.downcase}
+ 
   @header_row_hash = Hash[headers.zip(row.map {|r| r.include?(',') ? (r.split /, /) : r})]
+
     placeholder_data = Placeholder.find(:all,:conditions => ["column_name IN (?)",headers])
     placeholder_data.each do |placeholder|
 	template.gsub!(placeholder.placeholder_name, @header_row_hash[placeholder.column_name.downcase])
@@ -78,7 +80,6 @@ class DocumentController < ApplicationController
       :ecode => @header_row_hash["ecode"],
       :email => @header_row_hash["email"]
     }
-    template_with_row_data
   end
 
   def allow_header_footer(document)
