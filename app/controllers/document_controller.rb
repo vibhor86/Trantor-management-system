@@ -1,5 +1,4 @@
 require 'csv'
-require 'tempfile'
 class DocumentController < ApplicationController
   
   def index
@@ -29,12 +28,8 @@ class DocumentController < ApplicationController
     @template_body = @selected_template.body
     file_field = params[:form][:file]
     @file_content = file_field.read
-    row_index = 0
-    file = Tempfile.new(['document_file', '.csv'], :encoding => 'ascii-8bit')
-    file.write(@file_content)
-    file.rewind
     
-    CSV.foreach(Rails.root.join(file.path)) do |row|
+    CSV.parse(@file_content) do |row|
       if row_index == 0
         @header=row
       end
