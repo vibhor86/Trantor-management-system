@@ -30,7 +30,7 @@ class DocumentController < ApplicationController
     file_field = params[:form][:file]
     @file_content = file_field.read
     row_index = 0
-    file = Tempfile.new(['document_file', '.csv'])
+    file = Tempfile.new(['document_file', '.csv'], :encoding => 'ascii-8bit')
     file.write(@file_content)
     file.rewind
     
