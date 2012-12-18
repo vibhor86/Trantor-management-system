@@ -24,3 +24,9 @@ group :development do
   gem 'debugger'
 end
 
+group :test do
+  gem "rspec-rails", ">= 2.11.0"
+  gem "email_spec", ">= 1.2.1"
+  gem "cucumber-rails", ">= 1.3.0", :require => false
+  gem "capybara", ">= 1.1.2"
+end
