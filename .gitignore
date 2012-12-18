@@ -16,6 +16,7 @@
 coverage
 # minimal Rails specific artifacts
 log/service_log/
+log/development.log
 /tmp
 db/*.sqlite3
 /log/*.log
