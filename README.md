@@ -1,2 +1,0 @@
-Trantor-management-system
-=========================

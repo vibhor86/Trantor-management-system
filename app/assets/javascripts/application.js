@@ -12,9 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-//= require document_templates.js
-//= require document_index.js
 //= require_tree .
-     
-

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-TrantorManagementSystem::Application.load_tasks
+Tms::Application.load_tasks
