@@ -1,4 +1,7 @@
 Tms::Application.routes.draw do
   devise_for :users
-  root :to => "dashboards#index"
+  root :to => "admin/dashboards#index"
+  namespace :admin do
+    resources :dashboards, :only => :index
+  end
 end
