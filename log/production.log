@@ -4732,3 +4732,4 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/shared/_links.erb (1.0ms)
   Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
 Completed 200 OK in 128ms (Views: 59.3ms | ActiveRecord: 1.7ms)
+Connecting to database specified by database.yml
