@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,7 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag :application, '/ckeditor/ckeditor', '/assets/jquery.pageslide.min.js' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+
     <%= favicon_link_tag '/assets/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
@@ -20,11 +20,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/document/index"><img src="/assets/Trantor.png"  alt="Trantor"/></a>
+          <a class="brand" href="/document/index">Trantor Inc.</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav pull-right">
               <% if user_signed_in? %>
-                <li class="welcome">Welcome <%= current_user.email %>. Not you?</li>
+                <li ><%= link_to "Welcome  "+current_user.email, "#"%></li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
               <% end %>
             </ul>
@@ -60,15 +60,9 @@
             <%= yield %>
           </div>
         <%  else %>
-          <div class="span8" >
-            <br/>
-            <img src="/assets/tms2.jpg"/>
-          </div>
-          <div class="span4">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-            <%= yield %>
-          </div>
+          
+           <%= yield %>
+          
         <% end %>
       </div>
       <footer>

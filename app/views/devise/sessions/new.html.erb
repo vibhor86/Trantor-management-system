@@ -1,15 +1,26 @@
+
+<div class="span4 offset4">
+<%= image_tag("/assets/logo3.png",:style=>"margin-left: 26px; margin-bottom: 5px;") %>
+</div>
+<div class="span4 offset4 looks-like-glass">
+<div style = "margin-left: 61px;">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :ecode %><br />
-  <%= f.text_field :ecode ,:required=>"required" %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password ,:required=>"required"%></div>
-
+<h2>Login</h2>
+  <div>
+    <%= f.text_field :ecode ,:required=>"required", :placeholder => "Ecode" %>
+  </div>
+  <div>
+    <%= f.password_field :password ,:required=>"required" , :placeholder => "Password" %>
+  </div>
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div style = "margin-bottom:10px;"><%= f.check_box :remember_me, :style => "margin-top:0px;padding-top:0px;margin-right:5px;" %>Remember Me</div>
   <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
+  <div>
+    <%= f.submit "Sign in" , :class => "btn btn-primary" %>
+  </div>
 <% end %>
-
+<div style="margin-bottom:25px;">
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
