@@ -1,0 +1,11 @@
+<table id ="designation_table">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>action</th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render :partial => 'tbody' ,:collection => @designations,:as => :designation %>
+  </tbody>

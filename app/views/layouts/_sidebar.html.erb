@@ -1,0 +1,30 @@
+<div class="looks-like-glass">
+  <div  style="padding-bottom: 20px;">
+    <ul class="nav nav-list">
+      <li><a href="#employee_collapse" data-toggle="collapse" class="nav-header">Employee</a>  
+        <ul id ="employee_collapse" class="nav nav-list collapse">           
+          <li><a href="#">Leave Details</a></li>
+          <li><a href="#">Apply Leave</a></li>
+          <li><a href="#">Leave History</a></li>
+          <li><a href="#">Leave Calculation</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#salary_collapse" data-toggle="collapse" class="nav-header">Salary Management</a>
+        <ul class="nav nav-list collapse" id ="salary_collapse">
+          <li><%= link_to "Create Document Template", new_document_template_path, :id => 'newdocument'%></li>
+          <li><%= link_to "Edit Document Template", document_templates_path , :id => 'editdocument' %></li>
+        </ul>
+      </li>
+      <li><a href="#quicklinks_collapse" data-toggle="collapse" class="nav-header">Quick Links</a>
+        <ul class="nav nav-list collapse" id ="quicklinks_collapse">
+          <li><a href="#">Leave Policy</a></li>
+          <li><a href="#">Holiday List</a></li>
+          <li><a href="#">Leave FAQ</a></li>
+        </ul>
+      </li>
+
+
+    </ul>
+  </div>
+</div><!--/.well -->

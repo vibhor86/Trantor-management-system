@@ -83,7 +83,7 @@
         }
 
 body {
-  background-image:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/gray_jean.png') !important; 
+  background-image:url('/assets/gray_jean.png') !important; 
 }
 
    

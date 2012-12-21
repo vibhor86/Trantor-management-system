@@ -8,7 +8,6 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag :application, '/ckeditor/ckeditor', '/assets/jquery.pageslide.min.js' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
-
     <%= favicon_link_tag '/assets/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
@@ -20,11 +19,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/document/index">Trantor Inc.</a>
+          <a class="brand" href="/dashboard">Trantor Inc.</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav pull-right">
               <% if user_signed_in? %>
-                <li ><%= link_to "Welcome  "+current_user.email, "#"%></li>
+                <li ><%= link_to "Welcome  "+current_user.email, "/dashboard"%></li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
               <% end %>
             </ul>
@@ -37,22 +36,9 @@
       <div class="row-fluid">
         <% if user_signed_in? %>
           <div class="span3">
-            <div style="background-color:#e4e4e4;" id="menu" class="well sidebar-nav ">
-              <ul class="nav nav-list">
-                <li class="nav-header"><img src="/assets/tms.jpg" /></li>
-                <br/>
-                <li>
-                  <ul>
-                    <li class="nav_links"><%= link_to "Create Document Template", new_document_template_path %></li>
-                    <li class="nav_links"><%= link_to "Edit Document Template", document_templates_path %></li>
-                </li>
-                <% if current_user.admin? %>
-                  <li class="nav_links"><%= link_to "Admin Panel","/admin" %></li>
-                <% end %>
-              </ul>
-              </ul>
-            </div>
+           <%= render 'layouts/sidebar' %> 
           </div>
+          
         <% end %>
         <% if user_signed_in? %>
           <div class="span9" style="background: #e4e4e4; border-radius: 4px;">

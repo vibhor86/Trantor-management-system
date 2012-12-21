@@ -1,4 +1,14 @@
 TrantorManagementSystem::Application.routes.draw do
+  resources :projects
+
+  resources :bands
+
+  resources :designations do
+    collection do
+     get :all_record
+    end
+  end
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   get "document/index"
@@ -7,8 +17,8 @@ TrantorManagementSystem::Application.routes.draw do
 
   resources :document_templates, :documents
   match 'document' => 'document#document'
- match 'document/index' =>  'document#index'
-
+  match 'document/index' =>  'document#index'
+  match 'dashboard' =>  'dashboard#dashboard'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,11 +68,11 @@ TrantorManagementSystem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'document#index'
+  root :to => 'dashboard#dashboard'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+   match ':controller(/:action(/:id))(.:format)'
 end
