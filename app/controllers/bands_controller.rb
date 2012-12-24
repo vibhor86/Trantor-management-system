@@ -67,9 +67,9 @@ class BandsController < ApplicationController
   def update
     @band = Band.find(params[:id])
     respond_to do |format|
-      if @band.update_attributes(params[:project])
+      if @band.update_attributes(params[:band])
         format.html { redirect_to @band, notice: 'Band was successfully updated.' }
-        format.json { render :json => {:valid => true, :designation => @band, :notice => "band was successfully updated."} }
+        format.json { render :json => {:valid => true, :band => @band, :notice => "band was successfully updated."} }
       else
         format.html { render action: "edit" }
         format.json {render :json => {:valid => false, :errors => @band.errors}}
