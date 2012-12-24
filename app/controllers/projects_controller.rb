@@ -1,12 +1,26 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
-  def index
+  
+  def all_record
+    @project = Project.new
     @projects = Project.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
+    end
+  end
+  
+  
+  
+  
+  
+  def index
+    @projects = Project.all
+    @project = Project.new
+    respond_to do |format|
+      format.html { render :layout => false }
+      format.json  { render :json => response }
     end
   end
 
@@ -42,13 +56,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
 
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render json: @project, status: :created, location: @project }
+   respond_to do |format|
+      if  @project.save
+        format.json { render :json => {:valid => true, :designation =>  @project, :notice => " project was successfully created."}}
       else
         format.html { render action: "new" }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { render :json => {:valid => false, :errors =>  @project.errors}}
       end
     end
   end
@@ -58,13 +71,13 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
 
-    respond_to do |format|
+   respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to @project, notice: 'project was successfully updated.' }
+        format.json { render :json => {:valid => true, :designation => @project, :notice => "project was successfully updated."} }
       else
         format.html { render action: "edit" }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json {render :json => {:valid => false, :errors => @project.errors}}
       end
     end
   end
@@ -77,7 +90,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to projects_url }
-      format.json { head :no_content }
+     format.json { render :json => {:valid => true} }
     end
   end
 end

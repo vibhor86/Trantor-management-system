@@ -12,13 +12,13 @@
   <% end %>
 
   
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name ,:data => "" %>
+  <div class="field row">
+    <div class="span2 offset1">
+<%= f.label :name %></div><div class="span4"><%= f.text_field :name ,:data => "" %></div>
   </div>
-  <div class="actions">
-    <button type="submit" class="des_create btn" >Create</button>
-    <button type="button" class="des_update btn" >Update</button>
-    <button type="button" class="des_reset btn" >Reset</button>
+  <div class="actions row">
+    <div class="span2 offset6"><button type="submit" class="des_create btn" >Create</button></div>
+    <div class="span2"><button type="button" class="des_update btn" >Update</button></div>
+    <div class="span2"><button type="button" class="des_reset btn" >Reset</button></div>
   </div>
 <% end %>

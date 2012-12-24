@@ -87,8 +87,8 @@ class DesignationsController < ApplicationController
     @designation = Designation.find(params[:id])
     @designation.destroy
     respond_to do |format|
-      format.html { redirect_to sms_templates_url }
-       format.json { render :json => {:valid => true,  :notice => "Template was deleted successfully."}}
+      
+       format.json { render :json => {:valid => true,  :notice => "destination was deleted successfully."}}
     end
   end
 end

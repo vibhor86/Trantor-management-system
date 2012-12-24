@@ -1,7 +1,17 @@
 TrantorManagementSystem::Application.routes.draw do
-  resources :projects
+  resources :projects do
+    collection do
+     get :all_record
+    end
+  end
 
-  resources :bands
+
+  resources :bands do
+    collection do
+     get :all_record
+    end
+  end
+
 
   resources :designations do
     collection do

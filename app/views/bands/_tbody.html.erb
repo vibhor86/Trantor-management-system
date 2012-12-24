@@ -1,0 +1,5 @@
+<tr>
+  <td><%= check_box_tag "Project" %></td>
+  <td id ="name_<%=  project.id%>"><%= project.name %></td>
+  <td><%= link_to  image_tag('/assets/edit.png'), edit_project_path(project),:title => "Edit" ,:class => "project_update" , :data => project.id %><%= link_to image_tag('/assets/delete.png'), project, :title => "Delete"  ,:class => "project_delete" , :data => project.id%></td>
+</tr>
