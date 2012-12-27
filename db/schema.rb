@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221044501) do
+ActiveRecord::Schema.define(:version => 20121226180257) do
+
+  create_table "audits", :force => true do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "associated_id"
+    t.string   "associated_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "username"
+    t.string   "action"
+    t.text     "audited_changes"
+    t.integer  "version",         :default => 0
+    t.string   "comment"
+    t.string   "remote_address"
+    t.datetime "created_at"
+  end
+
+  add_index "audits", ["associated_id", "associated_type"], :name => "associated_index"
+  add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
+  add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
+  add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
   create_table "bands", :force => true do |t|
     t.string   "name"
@@ -51,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20121221044501) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 8
+    t.integer  "year",       :limit => 5
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
@@ -59,30 +80,30 @@ ActiveRecord::Schema.define(:version => 20121221044501) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                                 :default => "",        :null => false
-    t.string   "encrypted_password",                                    :default => "",        :null => false
+    t.string   "email",                  :default => "",        :null => false
+    t.string   "encrypted_password",     :default => "",        :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                                   :null => false
-    t.datetime "updated_at",                                                                   :null => false
-    t.boolean  "admin",                                                 :default => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.boolean  "admin",                  :default => false
     t.string   "ecode"
     t.string   "role"
     t.string   "name"
     t.string   "gender"
-    t.string   "confirmation_status",                                   :default => "pending"
+    t.string   "confirmation_status",    :default => "pending"
     t.string   "blood_group"
     t.string   "marital_status"
     t.string   "pan_no"
     t.string   "father_name"
     t.string   "spouse_name"
-    t.decimal  "salary",                 :precision => 10, :scale => 0
+    t.decimal  "salary"
     t.text     "bank_detail"
     t.datetime "date_of_anniversary"
     t.datetime "date_of_birth"
