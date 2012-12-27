@@ -1,4 +1,12 @@
 TrantorManagementSystem::Application.routes.draw do
+ 
+ resources :employees do
+    collection do
+     get :read_csv,:csv_import
+    end
+  end
+  
+  
   resources :projects do
     collection do
      get :all_record

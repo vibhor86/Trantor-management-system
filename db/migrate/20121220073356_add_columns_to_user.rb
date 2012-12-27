@@ -15,11 +15,13 @@ class AddColumnsToUser < ActiveRecord::Migration
     add_column :users, :date_of_anniversary, :datetime 
     add_column :users, :date_of_birth, :datetime
     add_column :users, :photo_id, :integer
-    add_column :users, :manager_id, :integer
+    add_column :users, :manager_ecode, :string
     add_column :users, :location, :text
-    add_column :users, :band_id, :integer
+    add_column :users, :band, :reference 
     add_column :users, :date_of_joining, :datetime
-    add_column :users, :designation_id, :integer 
+    add_column :users, :designation, :reference 
+    add_column :users, :project, :reference 
+   
      
   end
 end
