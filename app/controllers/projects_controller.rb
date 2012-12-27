@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def all_record
     @project = Project.new
     @projects = Project.all
+    @managers = User.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }

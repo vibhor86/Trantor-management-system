@@ -62,8 +62,9 @@ ActiveRecord::Schema.define(:version => 20121226180257) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "manager_ecode"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -105,13 +106,13 @@ ActiveRecord::Schema.define(:version => 20121226180257) do
     t.string   "spouse_name"
     t.decimal  "salary",                 :precision => 10, :scale => 0
     t.text     "bank_detail"
-    t.datetime "date_of_anniversary"
-    t.datetime "date_of_birth"
+    t.date     "date_of_anniversary"
+    t.date     "date_of_birth"
     t.integer  "photo_id"
     t.string   "manager_ecode"
     t.text     "location"
     t.integer  "band_id"
-    t.datetime "date_of_joining"
+    t.date     "date_of_joining"
     t.integer  "designation_id"
     t.integer  "project_id"
   end

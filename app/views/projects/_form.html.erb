@@ -4,17 +4,22 @@
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  
-<div class="field row">
-    <div class="span2 offset1">
-<%= f.label :name %></div><div class="span4"><%= f.text_field :name ,:data => "" %></div>
+
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :name %><%= f.text_field :name ,:data => "" %>
+    </div>
+    <div class="span4">
+      <%= f.label :managerEcode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name}",d.ecode]}, "select"), :class => 'genForm_dropBox' %>
+    </div>
+
   </div>
   <div class="actions row">
     <div class="span2 offset6"><button type="submit" class="project_create btn" >Create</button></div>
