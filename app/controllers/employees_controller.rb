@@ -5,12 +5,12 @@ class EmployeesController < ApplicationController
     @user = User.new
   end
   def create
-    
     @user  = User.create(params[:user])
+    @user.password = @user.password_confirmation = Devise.friendly_token 
     if @user.save
       render :text => "create"
     else
-      render :text => @user.errors
+     redirect_to :action => "new"
     end  
   end 
   def show
@@ -20,11 +20,11 @@ class EmployeesController < ApplicationController
     @user = User.find(params[:id])
   end
   def update
-    @user = User.find(params[:id])
-
+    @user = User.find(params[:user][:id])
+    
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'Designation was successfully updated.' }
+        format.html { redirect_to :action => "new", notice: 'Designation was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
