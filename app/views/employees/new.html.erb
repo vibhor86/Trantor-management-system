@@ -1,3 +1,4 @@
+<%= flash[:notice] %>
 <a href="#upload" role="button" class="btn" data-toggle="modal">Upload CSV for Employee Creation</a>
 <div id="upload" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -8,91 +9,99 @@
     <%= form_for :dump, :url=>{:controller=>"employees", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
       <div class="field row span12">
         <div class="span4">
-         <%= f.file_field :file -%>
+          <%= f.file_field :file -%>
         </div>
         <div class="span4">
         </div>
         <div class="span4">
           <%= submit_tag 'Submit' -%>
         </div>
-        <%end%>
-      </div>
-   </div>
+      <%end%>
+    </div>
   </div>
-  <%= form_for(:user , :url => '/employees') do |f| %>
-    <div class="field row span12">
-      <div class="span4">
-        <%= f.label :ecode %><%= f.text_field :ecode ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :date_of_joining %><%= f.text_field :date_of_joining ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :band_id %><%= f.text_field :band_id ,:data => "" %>
-      </div>
+</div>
+<%= form_for(:user , :url => '/employees') do |f| %>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :ecode %><%= f.text_field :ecode ,:data => "" %>
+    </div>
+    <div class="span4">
+      <%= f.label :name %><%= f.text_field :name ,:data => "" %>
+    </div>
+    <div class="span4">
+      <%= f.label :date_of_joining %><%= f.text_field :date_of_joining ,:class=>"datepicker" %>
     </div>
 
-    <div class="field row span12">
 
-      <div class="span4">
-        <%= f.label :gender %><%= f.text_field :gender ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :location %><%= f.text_field :location ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :manager_ecode %><%= f.text_field :manager_ecode   ,:data => "" %>
-      </div>
+  </div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :designation %><%= f.select :designation_id, options_for_select(Designation.all.map{|d| ["#{d.name}",d.id]}, "select")%>
     </div>
-    <div class="field row span12">
-      <div class="span4">
-        <%= f.label :blood_group %><%= f.text_field :blood_group ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :date_of_birth %><%= f.text_field :date_of_birth ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :marital_status %><%= f.text_field :marital_status,:data => "" %>
-      </div>
+    <div class="span4">
+      <%= f.label :band_id %><%= f.select :band_id, options_for_select(Band.all.map{|d| ["#{d.name}",d.id]}, "select")%>
     </div>
-    <div class="field row span12">
-      <div class="span4">
-        <%= f.label :date_of_anniversary %><%= f.text_field :date_of_anniversary ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :pan_no %><%= f.text_field :pan_no ,:data => "" %>
-      </div>
-
-      <div class="span4">
-        <%= f.label :bank_detail %><%= f.text_field :bank_detail ,:data => "" %>
-      </div>
+    <div class="span4">
+      <%= f.label :email %><%= f.text_field :email ,:value => "@trantorinc.com" %>
     </div>
-    <div class="field row span12">
-      <div class="span4">
-        <%= f.label :father_name %><%= f.text_field :father_name ,:data => "" %>
-      </div>
+  </div>
+  <div class="field row span12">
 
-      <div class="span4">
-        <%= f.label :spouse_name %><%= f.text_field :spouse_name ,:data => "" %>
-      </div>
-      <div class="span4">
-        <%= f.label :salary %><%= f.text_field :salary ,:data => "" %>
-      </div>
+    <div class="span4">
+      <%= f.label :gender %><%= f.select :gender, options_for_select(["M","F"])%>
     </div>
-    <div class="field row span12">
-      <div class="span4">
-        <%= f.label :email %><%= f.text_field :email ,:data => "" %>
-      </div>
 
+    <div class="span4">
+      <%= f.label :location %><%= f.text_field :location ,:data => "" %>
     </div>
-    <div class="actions row">
-      <div class="span2 offset6"><button type="submit"  >Create</button></div>
+
+    <div class="span4">
+      <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(User.all.map{|d| ["#{d.name} #{d.ecode}",d.ecode]}, "select")%>
     </div>
-  <% end %>
+  </div>
+
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :blood_group %><%= f.text_field :blood_group ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :date_of_birth %><%= f.text_field :date_of_birth ,:class=>"datepicker" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Unmarried","Married","divorced"])%>
+    </div>
+  </div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :date_of_anniversary %><%= f.text_field :date_of_anniversary ,:class=>"datepicker" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :pan_no %><%= f.text_field :pan_no ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :bank_detail %><%= f.text_field :bank_detail ,:data => "" %>
+    </div>
+  </div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :father_name %><%= f.text_field :father_name ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :spouse_name %><%= f.text_field :spouse_name ,:data => "" %>
+    </div>
+
+  </div>
+  <div class="field row span12">
+
+
+  </div>
+  <div class="actions row">
+    <div class="span2 offset6"><button type="submit"  >Create</button></div>
+  </div>
+
+<% end %>

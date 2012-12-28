@@ -1,27 +1,33 @@
-<%= @user.attributes %>
+
   <div class="field row span12">
     <div class="span4">
       Ecode :   <%= @user.ecode  %>
     </div>
-
+    <div class="span4">
+      Name :   <%= @user.name  %>
+    </div>
     <div class="span4">
       date_of_joining :   <%= @user.date_of_joining %>
     </div>
-
-    <div class="span4">
-      band_id :   <%= @user.band_id %>
+</div>
+<div class="field row span12">
+   <div class="span4">
+      Designation :   <%= @user.desination.name unless @user.designation.nil? %>
+    </div> 
+  <div class="span4">
+      band :   <%= @user.band.name unless @user.band.nil? %>
+    </div> 
+  <div class="span4">
+      Email :   <%= @user.email %>
     </div>
   </div>
   <div class="field row span12">
-
     <div class="span4">
       gender :   <%= @user.gender %>
     </div>
-
     <div class="span4">
       location :   <%= @user.location %>
     </div>
-
     <div class="span4">
       manager_ecode :   <%= @user.manager_ecode %>
     </div>
@@ -59,17 +65,6 @@
 
     <div class="span4">
       spouse_name :   <%= @user.spouse_name %>
-    </div>
-    <div class="span4">
-      salary :   <%= @user.salary %>
-    </div>
-  </div>
-<div class="field row span12">
-    <div class="span4">
-      Email :   <%= @user.email %>
-    </div>
-    <div class="span4">
-      Name :   <%= @user.name %>
     </div>
     
   </div>
