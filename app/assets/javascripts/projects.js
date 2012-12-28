@@ -18,6 +18,7 @@ function resetproject()
     
         event.preventDefault();
         $('#project_name').val('');
+        $('#project_manager_ecode').val(0);
         $('.project_create').attr('disabled',false);
         $('.project_update').attr('disabled',true);
     
@@ -30,6 +31,7 @@ $(document).ready(function() {
         event.preventDefault();
         id = $(this).attr('data');
         $('#project_name').val($('#name_'+id).text());
+        $('#project_manager_ecode').val($('#manger_'+id).text())
         $('.project_create').attr('disabled',true);
         $('.project_update').attr('disabled',false);
          $('#project_name').attr('data',id)
@@ -72,8 +74,10 @@ $(document).ready(function() {
     $('.project_create').on('click', function(event){
         event.preventDefault();
         name =  $('#project_name').val();
+        ecode =  $('#project_manager_ecode').val();
         data  = {
-            'project[name]' : name 
+            'project[name]' : name,
+            'project[manager_ecode]' : ecode
         }
         
         $.ajax({
@@ -105,8 +109,10 @@ $(document).ready(function() {
         event.preventDefault();
         id = $('#project_name').attr('data')
         name =  $('#project_name').val();
+        ecode =  $('#project_manager_ecode').val();
         data  = {
             'project[name]' : name,
+            'project[manager_ecode]' : ecode,
             '_method': 'put'
         }
         

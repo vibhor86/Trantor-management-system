@@ -64,9 +64,6 @@ class EmployeesController < ApplicationController
         else
           user.password = user.password_confirmation = Devise.friendly_token 
           if header_row[col] && !header_row[col].scan("date").empty?
-            puts col
-            puts row[col]
-            puts Date.parse(row[col])
             user.send(header_row[col]+'=',Date.parse(row[col])) if user_attributes.include?(header_row[col])
           else
             user.send(header_row[col]+'=',row[col]) if user_attributes.include?(header_row[col])

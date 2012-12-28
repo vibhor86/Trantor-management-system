@@ -17,7 +17,7 @@
       <%= f.label :name %><%= f.text_field :name ,:data => "" %>
     </div>
     <div class="span4">
-      <%= f.label :managerEcode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name}",d.ecode]}, "select"), :class => 'genForm_dropBox' %>
+      <%= f.label :managerEcode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name} #{d.ecode}",d.ecode]}, "select"), :class => 'genForm_dropBox' %>
     </div>
 
   </div>
