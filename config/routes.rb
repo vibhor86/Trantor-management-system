@@ -31,7 +31,10 @@ TrantorManagementSystem::Application.routes.draw do
 
   get "document/index"
   get "document/show"
-  devise_for :users
+  as :user do
+    match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
+  end
+  devise_for :users, :controllers => { :confirmations => "confirmations" }
 
   resources :document_templates, :documents
   match 'document' => 'document#document'
