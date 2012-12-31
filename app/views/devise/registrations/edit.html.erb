@@ -103,13 +103,13 @@
         <div class="modal-body">
           <div class="field row span12">
             Reason :-
-              <%= g.text_area "reason" ,:name => "reason" ,:cols=> "70" ,:style => "width: 450px;"%>
+              <%= g.text_area "reason",:cols=> "70" ,:style => "width: 450px;"%>
           </div>
        </div>
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <%= f.submit "Information" ,:class => "btn btn-primary" %>
-        </div>
+          <button class="btn btn-primary" aria-hidden="true">Information</button>
+       </div>
       </div>
       <%end%>
     </div>
