@@ -21,7 +21,7 @@ end
 
 # new function to provide access to protected method unless_confirmed
 def only_if_unconfirmed
-  unless_confirmed {yield}
+  pending_any_confirmation {yield}
 end
 def password_required?
   # Password is required if it is being set, but not for new records

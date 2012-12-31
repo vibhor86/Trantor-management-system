@@ -42,7 +42,7 @@ class EmployeesController < ApplicationController
     end
   end
   
-  def read_csv
+  def unconfirmed_user
     
   end
   def csv_import

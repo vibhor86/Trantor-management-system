@@ -2,7 +2,7 @@ TrantorManagementSystem::Application.routes.draw do
  
  resources :employees do
     collection do
-     get :read_csv,:csv_import
+     get :unconfirmed_user,:csv_import
     end
   end
   
