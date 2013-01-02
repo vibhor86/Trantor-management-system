@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   require 'date'
   require 'csv'
+  before_filter :check_confimation
   def new
     @user = User.new
   end
@@ -8,9 +9,12 @@ class EmployeesController < ApplicationController
     @user  = User.create(params[:user])
     @user.password = @user.password_confirmation = Devise.friendly_token 
     if @user.save
-      render :text => "create"
+      flash[:notice] = "User Save"
+      redirect_to :action => "new"
     else
-     redirect_to :action => "new"
+      flash[:error] = "Can't be able to create "
+      puts flash[:error]
+      redirect_to :action => "new"
     end  
   end 
   def show
@@ -43,8 +47,11 @@ class EmployeesController < ApplicationController
   end
   
   def unconfirmed_user
-    unconfirmation_mail params[:reason][:reason] , current_user
+    AdminMailer.unconfirmation_mail(params[:reason] , current_user).deliver
+    reset_session
+    render :text => "Message Send Successfuly Hr Will Responce this message very soon "
   end
+  
   def csv_import
     data = nil
     user_attributes = []

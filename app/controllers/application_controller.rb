@@ -20,4 +20,13 @@ class ApplicationController < ActionController::Base
       super
     end
   end
+  
+  def check_confimation 
+    
+    if current_user &&  current_user.confirmation_status == "pending"
+      flash[:notice]  =  "Please First Confirm your Account"
+      redirect_to "/users/edit"
+    end
+  end
+  
 end
