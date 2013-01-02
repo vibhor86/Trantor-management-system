@@ -2,7 +2,7 @@ TrantorManagementSystem::Application.routes.draw do
  
  resources :employees do
     collection do
-     get :read_csv,:csv_import
+     get :read_csv,:csv_import,:all_employees
     end
   end
   
