@@ -1,0 +1,42 @@
+<table>
+<thead>
+<tr>
+    <td>Ecode</td>
+    <td>Role</td>
+    <td>Name</td> 
+    <td>Gender</td> 
+    <td>Blood Group</td> 
+    <td>Marital Status</td> 
+    <td>Pan No</td> 
+    <td>Father's Name </td> 
+    <td>Spouse Name</td> 
+    <td>Bank Detail </td> 
+    <td>Date Of Anniversary </td> 
+    <td>Date Of Birth </td> 
+    <td>Manager Ecode </td>  
+    <td>Location </td>
+    <td>Date Of Joining </td> 
+ </tr>
+ </thead>
+ <tbody>
+<% @employee.each do |emp|%> 
+  <tr>
+    <td><%= emp.ecode %></td>
+    <td><%= emp.role %></td>
+    <td><%= emp.name %></td> 
+    <td><%= emp.gender %></td> 
+    <td><%= emp.blood_group %></td> 
+    <td><%= emp.marital_status %></td> 
+    <td><%= emp.pan_no %></td> 
+    <td><%= emp.father_name %></td> 
+    <td><%= emp.spouse_name %></td> 
+    <td><%= emp.bank_detail %></td> 
+    <td><%= emp.date_of_anniversary %></td> 
+    <td><%= emp.date_of_birth %></td> 
+    <td><%= emp.manager_ecode %></td>  
+    <td><%= emp.location %></td>
+    <td><%= emp.date_of_joining %></td> 
+ </tr>
+ <% end %>
+ </tbody>
+ </table>

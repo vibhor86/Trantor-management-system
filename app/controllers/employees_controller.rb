@@ -98,7 +98,9 @@ class EmployeesController < ApplicationController
     end
     return user
   end
-  
+  def all_employees
+    @employee = User.all
+  end
   
   
 end
