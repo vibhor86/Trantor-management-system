@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, 
     :recoverable, :rememberable, :trackable, :validatable,:registerable, :confirmable
   attr_accessible :email, :password, :password_confirmation, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :manager_ecode, :blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_detail, :father_name, :spouse_name, :salary
-  validates  :email,:ecode , :uniqueness => true
+  validates  :email,:ecode , :presence => true , :uniqueness => true
+  validates  :name ,:date_of_joining,:date_of_birth, :presence => true
+  validate :date_of_joining , :validate_joining_date_before_birth_date
   belongs_to :band
   belongs_to :project
   belongs_to :designation
@@ -31,5 +33,11 @@ def password_required?
     !password.nil? || !password_confirmation.nil?
   end
 end
+
+ def validate_joining_date_before_birth_date
+    if date_of_joining && date_of_birth
+      errors.add(:date_of_joining, "should be more than D.O.B") if date_of_joining < date_of_birth
+    end
+  end
 
 end

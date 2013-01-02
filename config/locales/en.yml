@@ -2,4 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      validate_joining_date_before_birth_date : "D.O.J should be greater than D.O.B"

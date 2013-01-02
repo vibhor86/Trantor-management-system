@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "TrantorManagementSystem" %></title>
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag :application, '/ckeditor/ckeditor', '/assets/jquery.pageslide.min.js' %>
+    <%= javascript_include_tag :application, '/ckeditor/ckeditor', '/assets/jquery.pageslide.min.js'%>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag :defaults, "rails.validations", "rails.validations.custom" %>
     <%= favicon_link_tag '/assets/favicon.ico', :rel => 'shortcut icon' %>
+    <%= yield(:user_validators) %>
+    
   </head>
   <body>
+  
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">

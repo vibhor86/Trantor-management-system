@@ -86,4 +86,14 @@ body {
   background-image:url('/assets/gray_jean.png') !important; 
 }
 
+.error_form
+{
+  color : red;
+  font-size: 12px;
+}
+
+.row
+{
+  margin-top:10px !important;
+}
    
