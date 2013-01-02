@@ -2,24 +2,127 @@
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="field row span12">
+    <div class="span4"> 
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+      <%= f.password_field :password, :autocomplete => "off" %>
+    </div>
+    <div class="span4"><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div class="span4"><%= f.label :current_password %> <i>(current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password %></div>
+  </div>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :ecode %><%= f.text_field :ecode ,:data => "" %>
+    </div>
+    <div class="span4">
+      <%= f.label :name %><%= f.text_field :name ,:data => "" %>
+    </div>
+    <div class="span4">
+      <%= f.label :date_of_joining %><%= f.text_field :date_of_joining ,:class=>"datepicker" %>
+    </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+  </div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :designation %><%= f.select :designation_id, options_for_select(Designation.all.map{|d| ["#{d.name}",d.id]}, "select")%>
+    </div>
+    <div class="span4">
+      <%= f.label :band_id %><%= f.select :band_id, options_for_select(Band.all.map{|d| ["#{d.name}",d.id]}, "select")%>
+    </div>
+    <div class="span4">
+      <%= f.label :email %><%= f.email_field :email %>
+    </div>
+  </div>
+  <div class="field row span12">
 
-  <div><%= f.submit "Update" %></div>
+    <div class="span4">
+      <%= f.label :gender %><%= f.select :gender, options_for_select(["M","F"])%>
+    </div>
+
+    <div class="span4">
+      <%= f.label :location %><%= f.text_field :location ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(User.all.map{|d| ["#{d.name} #{d.ecode}",d.ecode]})%>
+    </div>
+  </div>
+
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :blood_group %><%= f.text_field :blood_group ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :date_of_birth %><%= f.text_field :date_of_birth ,:class=>"datepicker" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Unmarried","Married","divorced"])%>
+    </div>
+  </div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :date_of_anniversary %><%= f.text_field :date_of_anniversary ,:class=>"datepicker" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :pan_no %><%= f.text_field :pan_no ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :bank_detail %><%= f.text_field :bank_detail ,:data => "" %>
+    </div>
+  </div>
+  <div class="field row span12">
+    <div class="span4">
+      <%= f.label :father_name %><%= f.text_field :father_name ,:data => "" %>
+    </div>
+
+    <div class="span4">
+      <%= f.label :spouse_name %><%= f.text_field :spouse_name ,:data => "" %>
+    </div>
+
+  </div>
+  <div class="actions row span12">
+    <div class="span6"></div>
+    <div class="span6"> 
+      <%= f.submit "Confirm Information" ,:class => "btn btn-primary" %>
+      <a href="#report" role="button" class="btn" data-toggle="modal" style="width: 161px;" title="Report to Admin">Wrong Information</a>
+      <%= form_for(:reason, :url => "/employees/unconfirmed_user") do |g| %>
+      <div id="report" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Report To Admin</h3>
+        </div>
+        <div class="modal-body">
+          <div class="field row span12">
+            Reason :-
+              <%= g.text_area "reason",:cols=> "70" ,:style => "width: 450px;"%>
+          </div>
+       </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary" aria-hidden="true">Information</button>
+       </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+
+
+
+
 <% end %>
 
-<h3>Cancel my account</h3>
+<%#*<h3>Cancel my account</h3>%>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+<%#*<p>Unhappy?%> 
+<%#= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 
-<%= link_to "Back", :back %>
+<%#= link_to "Back", :back %>

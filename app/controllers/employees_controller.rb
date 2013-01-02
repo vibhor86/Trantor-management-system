@@ -42,8 +42,8 @@ class EmployeesController < ApplicationController
     end
   end
   
-  def read_csv
-    
+  def unconfirmed_user
+    unconfirmation_mail params[:reason][:reason] , current_user
   end
   def csv_import
     data = nil

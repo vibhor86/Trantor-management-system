@@ -34,4 +34,14 @@ TrantorManagementSystem::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default :content_type => "text/html"
+  config.action_mailer.smtp_settings = {
+  :address              => "smtp.mandrillapp.com",
+  :port                 => 587,
+  :domain               => "mandrillapp.com",
+  :user_name            => "raman.bedi@trantorinc.com",
+  :password             => "493d3174-2694-46bc-9ff6-9cb9aa394402",
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
 end

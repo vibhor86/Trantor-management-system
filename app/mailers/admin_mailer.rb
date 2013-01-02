@@ -12,4 +12,12 @@ class AdminMailer < ActionMailer::Base
       :body => email_body)
   end
 
+  def unconfirmation_mail message , user
+     mail(:from => user.email,
+      :to => "mahinder.kumar@trantorinc.com",
+      :subject => "reason for unconfirm",
+      :body => message)
+  end
+  
+  
 end
