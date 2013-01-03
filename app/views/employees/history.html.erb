@@ -1,0 +1,31 @@
+<%= form_for "emp_history" do |f|%>
+    <%=f.text_field "ecode"%>
+    <%=f.submit "search"  %>
+<%end%>
+<%unless @employee_info.empty?%>
+  <table>
+<thead>
+<tr>
+    <td>Action upon user</td>
+    <td>Role</td>
+    <td>designation</td> 
+    <td>project</td> 
+    <td>Confirmation Status</td> 
+</tr>
+ </thead>
+ <tbody>
+<% @employee_info.each do |emp|%>
+   <%if emp.audited_changes["designation_id"] || emp.audited_changes["project_id"] || emp.audited_changes["confirmation_status"]%>
+   <tr>
+     <td><%= emp.action %></td>
+    <td><%= emp.audited_changes["role"] %></td>
+    <td><%= Designation.find_by_id(emp.audited_changes["designation_id"]).name if emp.audited_changes["designation_id"] %></td>
+    <td><%=  Project.find_by_id(emp.audited_changes["project_id"]).name if emp.audited_changes["project_id"] %></td>
+    <td><%= emp.audited_changes["confirmation_status"] %></td>
+ </tr>
+ <% end %>
+ <% end %>
+ </tbody>
+ </table>
+
+<%end%>
