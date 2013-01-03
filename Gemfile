@@ -23,6 +23,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
   gem "less-rails"
   gem 'therubyracer'
+  gem 'client_side_validations'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

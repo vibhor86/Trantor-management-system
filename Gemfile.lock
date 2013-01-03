@@ -53,6 +53,7 @@ GEM
     cancan (1.6.8)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
+    client_side_validations (3.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -237,6 +238,7 @@ DEPENDENCIES
   audited-activerecord (~> 3.0)
   cancan
   capybara!
+  client_side_validations
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner

@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
   User.create(:email => 'mahinder.kumar@trantorinc.com', :password => 'rorteam', :password_confirmation => 'rorteam',:ecode => 'e0001')
+  User.create(:email => 'raman.bedi@trantorinc.com', :password => 'rorteam', :password_confirmation => 'rorteam',:ecode => 'e0002')

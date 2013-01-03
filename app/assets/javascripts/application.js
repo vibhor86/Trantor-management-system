@@ -16,9 +16,10 @@
 //= require document_templates.js
 //= require document_index.js
 //= require_tree .
-     
+ //= require rails.validations    
 $(function() {
         $( ".datepicker" ).datepicker({dateFormat: 'dd-mm-yy',
         changeMonth: true,
         changeYear: true});
     });
+
