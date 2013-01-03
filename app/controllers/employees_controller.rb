@@ -6,6 +6,7 @@ class EmployeesController < ApplicationController
     @user = User.new
   end
   def create
+   [ :email,:confirmation_status,:designation_id,:project_id, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :manager_ecode]
     @user  = User.create(params[:user])
     @user.password = @user.password_confirmation = Devise.friendly_token 
     if @user.save
