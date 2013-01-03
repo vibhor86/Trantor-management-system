@@ -1,8 +1,8 @@
 TrantorManagementSystem::Application.routes.draw do
  
- resources :employees do
+ resources   :employees do
     collection do
-      get :unconfirmed_user,:csv_import,:all_employees
+      get :unconfirmed_user,:csv_import,:all_employees,:history
     end
   end
   

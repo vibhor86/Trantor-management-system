@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
-  
   def all_record
     @project = Project.new
     @projects = Project.all
@@ -11,10 +10,6 @@ class ProjectsController < ApplicationController
       format.json { render json: @projects }
     end
   end
-  
-  
-  
-  
   
   def index
     @projects = Project.all
