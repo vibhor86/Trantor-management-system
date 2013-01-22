@@ -1,5 +1,7 @@
 TrantorManagementSystem::Application.routes.draw do
  
+  resources :banks
+
  resources   :employees do
     collection do
       get :unconfirmed_user,:csv_import,:all_employees,:history

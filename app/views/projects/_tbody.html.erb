@@ -2,5 +2,5 @@
   <td><%= check_box_tag "project" %></td>
   <td id ="name_<%=  project.id%>"><%= project.name %></td>
   <td id ="manger_<%=  project.id%>"><%= project.manager_ecode %></td>
-  <td><%= link_to  image_tag('/assets/edit.png'), edit_project_path(project),:title => "Edit" ,:class => "project_update" , :data => project.id %><%= link_to image_tag('/assets/delete.png'), project, :title => "Delete"  ,:class => "project_delete" , :data => project.id%></td>
+  <td class = "action"><%= link_to "", edit_project_path(project),:title => "Edit" ,:class => "project_update icon-pencil" , :data => project.id %><%= link_to "", project, :title => "Delete"  ,:class => "project_delete icon-remove" , :data => project.id%></td>
 </tr>

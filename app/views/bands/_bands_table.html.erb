@@ -1,11 +1,12 @@
-<table id ="band_table">
+<table id ="band_table" class ="table table-striped">
   <thead>
   <tr>
     <th></th>
     <th>Name</th>
-    <th>action</th>
+    <th>Action</th>
   </tr>
   </thead>
   <tbody>
     <%= render :partial => 'tbody' ,:collection => @bands,:as => :band %>
   </tbody>
+</table>

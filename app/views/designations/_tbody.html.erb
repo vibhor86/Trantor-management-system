@@ -1,5 +1,5 @@
 <tr>
   <td><%= check_box_tag "designation" %></td>
-  <td id ="name_<%=  designation.id%>"><%= designation.name %></td>
-  <td><%= link_to  image_tag('/assets/edit.png'), edit_designation_path(designation),:title => "Edit" ,:class => "destination_update" , :data => designation.id %><%= link_to image_tag('/assets/delete.png'), designation, :title => "Delete"  ,:class => "destination_delete" , :data => designation.id%></td>
+  <td id ="name_<%=  designation.id%>"><%= designation.name %>
+  <td class = "action"><%= link_to  "", edit_designation_path(designation),:title => "Edit" ,:class => "destination_update icon-pencil" , :data => designation.id %><%= link_to "", designation, :title => "Delete"  ,:class => "destination_delete icon-remove" , :data => designation.id%></td>
 </tr>

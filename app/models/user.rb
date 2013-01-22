@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   audited
   devise :database_authenticatable, 
     :recoverable, :rememberable, :trackable, :validatable,:registerable, :confirmable
-  attr_accessible :email, :password, :password_confirmation,:confirmation_status,:designation_id,:project_id, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :manager_ecode, :blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_detail, :father_name, :spouse_name, :salary
+  attr_accessible :email, :password, :password_confirmation,:confirmation_status,:blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_number,:bank_id, :father_name, :spouse_name, :salary
   validates  :email,:ecode , :presence => true , :uniqueness => true
   validates  :name ,:date_of_joining,:date_of_birth, :presence => true
   validate :date_of_joining , :validate_joining_date_before_birth_date
@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   belongs_to :project
   belongs_to :designation
   belongs_to :manager, :class_name => :user
+  Roles = ["Admin"] 
+  
   def attempt_set_password(params)
     p = {}
     p[:password] = params[:password]

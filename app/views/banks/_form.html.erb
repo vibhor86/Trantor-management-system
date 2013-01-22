@@ -1,0 +1,13 @@
+<%= form_for(@bank) do |f| %>
+    <div class="field row">
+      <div class="span2 offset1">
+        <%= f.label :name %>
+      </div>
+      <div class="span4">
+        <%= f.text_field :name ,:data => "" %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit  "create",:style => "margin-left: 432px;" ,:class => "btn-primary"%>
+    </div>
+<% end %>

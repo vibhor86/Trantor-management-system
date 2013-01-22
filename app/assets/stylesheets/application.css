@@ -14,15 +14,48 @@
  *= require_tree .
 */
 
+form label
+{
+    float:right ;
+}
+
+.dataTables_length ,.dataTables_info
+{
+    float: left;
+    margin-top: 10px;
+}
+.dataTables_filter , .dataTables_paginate
+{
+   float: right;
+   margin-top: 10px;
+}
+#change_table
+{
+    border-top: 4px solid gray;
+}
+.block_border h1 {
+    position: absolute;
+    left: 8.5em;
+    top: 1.5em;
+    margin: 0;
+    z-index: 100;
+    color: black;
+}
+
+.dataTable  th ,.dataTable  td{
+    text-align: center !important;
+}
+.action a
+{
+  margin: 10px;
+}
+
  .looks-like-glass {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
     -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
 }
-
-
-
 .welcome {
     top: 10px;
     position: relative;

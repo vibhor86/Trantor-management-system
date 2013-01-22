@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226180257) do
+ActiveRecord::Schema.define(:version => 20130104062741) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(:version => 20121226180257) do
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
   create_table "bands", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "banks", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -105,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20121226180257) do
     t.string   "father_name"
     t.string   "spouse_name"
     t.decimal  "salary",                 :precision => 10, :scale => 0
-    t.text     "bank_detail"
+    t.string   "bank_number"
     t.date     "date_of_anniversary"
     t.date     "date_of_birth"
     t.integer  "photo_id"
@@ -114,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20121226180257) do
     t.integer  "band_id"
     t.date     "date_of_joining"
     t.integer  "designation_id"
+    t.integer  "bank_id"
     t.integer  "project_id"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
