@@ -20,6 +20,7 @@ function resetdis()
         $('#designation_name').val('');
         $('.des_create').attr('disabled',false);
         $('.des_update').attr('disabled',true);
+        $('.message').empty()
     
 }
 
@@ -51,7 +52,14 @@ $(document).ready(function() {
                     updatedesignation(data);
                     resetdis();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },
@@ -86,7 +94,14 @@ $(document).ready(function() {
                     updatedesignation(data);
                     resetdis();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },
@@ -120,7 +135,14 @@ $(document).ready(function() {
                     updatedesignation(data);
                     resetdis();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },

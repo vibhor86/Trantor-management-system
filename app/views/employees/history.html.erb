@@ -3,8 +3,8 @@
     <%=f.submit "search"  %>
 <%end%>
 <%unless @employee_info.empty?%>
-  <table>
-<thead>
+  <table  id ="band_table" class ="table table-striped">
+<thead >
 <tr>
     <td>Action upon user</td>
     <td>Role</td>
@@ -15,7 +15,7 @@
  </thead>
  <tbody>
 <% @employee_info.each do |emp|%>
-   <%if emp.audited_changes["designation_id"] || emp.audited_changes["project_id"] || emp.audited_changes["confirmation_status"]%>
+   <%if emp.audited_changes["designation_id"] || emp.audited_changes["project_id"] || emp.audited_changes["confirmation_status"] || emp.audited_changes["role"]%>
    <tr>
      <td><%= emp.action %></td>
     <td><%= emp.audited_changes["role"] %></td>
@@ -27,5 +27,4 @@
  <% end %>
  </tbody>
  </table>
-
 <%end%>

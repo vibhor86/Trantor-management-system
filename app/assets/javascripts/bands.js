@@ -6,20 +6,18 @@ var updateband = function(data) {
     }).error(function(jqXHR, textStatus, errorThrown) {
         window.location.href = "/dashboard"
     });
-    
 }
-
 function configurebandTable(tableNode)
 {
     $(tableNode).dataTable(); 
 }
 function resetband()
 {
-    
         event.preventDefault();
         $('#band_name').val('');
         $('.band_create').attr('disabled',false);
         $('.band_update').attr('disabled',true);
+        $('.message').empty();
     
 }
 
@@ -32,7 +30,7 @@ $(document).ready(function() {
         $('#band_name').val($('#name_'+id).text());
         $('.band_create').attr('disabled',true);
         $('.band_update').attr('disabled',false);
-         $('#band_name').attr('data',id)
+         $('#band_name').attr('data',id);
     }); 
     $('body').delegate('.band_delete','click', function(event){
         event.preventDefault();
@@ -40,7 +38,6 @@ $(document).ready(function() {
        data  = {
              '_method': 'delete'
         }
-        
         $.ajax({
             url: '/bands/'+id,
             dataType : 'json',
@@ -51,7 +48,14 @@ $(document).ready(function() {
                     updateband(data);
                     resetdis();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },
@@ -62,10 +66,8 @@ $(document).ready(function() {
                    
                 }	
             }
-	
         });
-        
-    }); 
+    });
    $('.band_reset').on('click', function(event){
        resetband();
    }); 
@@ -86,8 +88,14 @@ $(document).ready(function() {
                     updateband(data);
                     resetband();
                 } else {
-                    var errorText = getErrorText(data.errors);
-                    
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                          errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                 }
             },
             error : function(jqXHR, textStatus, errorThrown) {
@@ -97,7 +105,6 @@ $(document).ready(function() {
                    
                 }	
             }
-	
         });
     });  
     
@@ -109,7 +116,6 @@ $(document).ready(function() {
             'band[name]' : name,
             '_method': 'put'
         }
-        
         $.ajax({
             url: '/bands/'+id,
             dataType : 'json',
@@ -120,8 +126,14 @@ $(document).ready(function() {
                     updateband(data);
                     resetband();
                 } else {
-                    var errorText = getErrorText(data.errors);
-                    
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                 }
             },
             error : function(jqXHR, textStatus, errorThrown) {
@@ -134,11 +146,6 @@ $(document).ready(function() {
 	
         });
     });
-    
-    
-    
-    
- 
 } );
 
 

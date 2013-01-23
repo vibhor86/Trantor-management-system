@@ -21,7 +21,8 @@ function resetproject()
         $('#project_manager_ecode').val(0);
         $('.project_create').attr('disabled',false);
         $('.project_update').attr('disabled',true);
-    
+        $('.message').empty()
+
 }
 
 $(document).ready(function() {
@@ -53,7 +54,14 @@ $(document).ready(function() {
                     updateproject(data);
                     resetdis();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },
@@ -90,7 +98,14 @@ $(document).ready(function() {
                     updateproject(data);
                     resetproject();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },
@@ -126,7 +141,14 @@ $(document).ready(function() {
                     updateproject(data);
                     resetproject();
                 } else {
-                    var errorText = getErrorText(data.errors);
+                    var errorText = data.errors;
+                    var errorString = "";
+                    for (var key in errorText)
+                    {
+                        errorString += key+" " +errorText[key];
+                    }
+                    $('.message').empty();
+                    $('.message').append(errorString)
                     
                 }
             },

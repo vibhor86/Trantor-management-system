@@ -1,4 +1,4 @@
-<table>
+<table  id ="band_table" class ="table table-striped">
 <thead>
 <tr>
     <td>Ecode</td>
@@ -10,7 +10,7 @@
     <td>Pan No</td> 
     <td>Father's Name </td> 
     <td>Spouse Name</td> 
-    <td>Bank Detail </td> 
+    <td>Bank Number </td>
     <td>Date Of Anniversary </td> 
     <td>Date Of Birth </td> 
     <td>Manager Ecode </td>  
@@ -21,7 +21,7 @@
  <tbody>
 <% @employee.each do |emp|%> 
   <tr>
-    <td><%= emp.ecode %></td>
+    <td><%= link_to emp.ecode  , edit_employee_path(emp)%></td>
     <td><%= emp.role %></td>
     <td><%= emp.name %></td> 
     <td><%= emp.gender %></td> 
@@ -30,7 +30,7 @@
     <td><%= emp.pan_no %></td> 
     <td><%= emp.father_name %></td> 
     <td><%= emp.spouse_name %></td> 
-    <td><%= emp.bank_detail %></td> 
+    <td><%= emp.bank_number %></td>
     <td><%= emp.date_of_anniversary %></td> 
     <td><%= emp.date_of_birth %></td> 
     <td><%= emp.manager_ecode %></td>  

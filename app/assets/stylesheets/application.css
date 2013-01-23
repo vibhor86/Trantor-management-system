@@ -14,9 +14,18 @@
  *= require_tree .
 */
 
-form label
-{
-    float:right ;
+/*form label*/
+/*{*/
+    /*float:right ;*/
+/*}*/
+.block div{
+    text-align: center;
+    font-size: 28px;
+    margin: 25px;
+    float: left;
+}
+td {
+    font-size: 11px !important;
 }
 
 .dataTables_length ,.dataTables_info

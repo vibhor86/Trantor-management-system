@@ -56,7 +56,7 @@
     </div>
 
     <div class="span4">
-      <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(User.all.map{|d| ["#{d.name} #{d.ecode}",d.ecode]}, "select")%>
+      <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name} #{d.ecode}",d.ecode]}, "select")%>
     </div>
   </div>
 
@@ -88,7 +88,7 @@
   </div>
   <div class="field row span12">
     <div class="span4">
-      <%= f.label :bank_id %><%= f.select :bank_id, options_for_select(Bank.all.map{|d| ["#{d.name} ",d.id]}, "select"}) %>
+      <%= f.label :bank_id %><%= f.select :bank_id, options_for_select(Bank.all.map{|d| ["#{d.name} ",d.id]}, "select") %>
     </div>
     <div class="span4">
       <%= f.label :father_name %><%= f.text_field :father_name ,:data => "" %>
@@ -100,7 +100,9 @@
 
   </div>
   <div class="field row span12">
-
+    <div class="span4">
+      <%= f.label :role %><%= f.select :role, options_for_select(User::ROLES.map{|d| ["#{d}"]}, "select") %>
+    </div>
 
   </div>
   <div class="actions row">
