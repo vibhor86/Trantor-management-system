@@ -1,4 +1,4 @@
-<%= form_for(@designation) do |f| %>
+<%= form_for(@designation,:validate => true ,:validate => :user_validators) do |f| %>
   <% if @designation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@designation.errors.count, "error") %> prohibited this designation from being saved:</h2>
