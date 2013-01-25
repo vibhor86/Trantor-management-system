@@ -102,7 +102,7 @@ $(document).ready(function() {
                     var errorString = "";
                     for (var key in errorText)
                     {
-                        errorString += key+" " +errorText[key];
+                        errorString += key+" " +errorText[key]+ " , " ;
                     }
                     $('.message').empty();
                     $('.message').append(errorString)

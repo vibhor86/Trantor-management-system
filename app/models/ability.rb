@@ -6,7 +6,9 @@ class Ability
     elsif user.hr?
       can :manage, :all
     elsif user.employee?
-      can :update, :user, [:name]
+
+    elsif user.manager?
+
     end
   end
 end
