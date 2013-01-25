@@ -2,33 +2,40 @@ class EmployeesController < ApplicationController
   require 'date'
   require 'csv'
   before_filter :check_confimation
-  before_filter :blacklist ,:only => [:create,:update]
+  before_filter :blacklist , :only => [:create,:update]
+  load_and_authorize_resource :class => "User"
+
   def new
     @user = User.new
     @managers = User.find(:all,:conditions => {:role => "manager"})
-
   end
+
   def create
-    #    @user  = User.create(params[:user])
+    puts params
+    @user = User.new(@data)
     if @user.save
       flash[:notice] = "User Save"
       redirect_to :action => "new"
     else
-      flash[:error] = "Can't be able to create "
-      puts flash[:error]
+      flash[:notice] = @user.errors.full_messages
       redirect_to :action => "new"
-    end  
+    end
+
   end 
+
   def show
     @user = User.find_by_id(params[:id])
   end 
+
   def edit
     @user = User.find(params[:id])
     @managers = User.find(:all,:conditions => {:role => "manager"})
   end
+
   def update
+    @user = User.find(params[:user][:id])
     respond_to do |format|
-      if @user.save
+      if @user.update_attributes(@data)
         format.html { redirect_to "/employees/all_employees", notice: 'Employee was successfully updated.' }
       else
         format.html { render action: "edit" }
@@ -74,7 +81,6 @@ class EmployeesController < ApplicationController
           end
         end 
       end
-      puts user.attributes
       if user.save
         data =  "create"
       else
@@ -109,29 +115,11 @@ class EmployeesController < ApplicationController
   end
 private
   def blacklist
-    @data = {}
-      blacklist = [ :email,:designation_id,:project_id, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :id, :manager_ecode]
+    access_role = ["admin","hr"]
     @data = params[:user]
-    @data.reject! { |h| blacklist.include? h }
-    if params[:action] == "create"
-      @user = User.create(@data)
-    elsif params[:action] == "update"
-      @user = User.find(params[:user][:id])
-      @user.update_attributes(@data)
-      @user = @user
-    end
+    decline = ["manager_ecode","email","designation_id","project_id", "remember_me" ,"ecode","name", "date_of_joining", "band_id", "gender", "location", "id"]
+    @data.delete_if {|key, value| dicline.include? key  puts "" }   unless access_role.include? current_user.role
 
-      @user.email = params[:user][:email]
-      @user.designation_id = params[:user][:designation_id]
-      @user.ecode = params[:user][:ecode]
-      @user.name = params[:user][:name]
-      @user.date_of_joining = params[:user][:date_of_joining]
-      @user.band_id = params[:user][:band_id]
-      @user.gender = params[:user][:gender]
-      @user.location = params[:user][:location]
-      @user.manager_ecode = params[:user][:manager_ecode]
-    project = Project.find_by_manager_ecode params[:user][:manager_ecode]
-      @user.project_id = project.id if project
   end
   
 end

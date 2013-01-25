@@ -138,4 +138,17 @@ body {
 {
   margin-top:10px !important;
 }
-   
+
+table {border:none;font-size: 12px;}
+td{border:none; padding: 5px;}
+
+table {border: 1px solid #dcdcdc; margin: 10px 0px 20px 0px; width: 97%; border-collapse: collapse;font-size: 12px;}
+th {padding: 8px 4px 8px 4px;border: 1px solid #dcdcdc; background: url(/images/green.jpg)repeat left center;text-shadow: 1px 0px #003362;color: #fff }
+td {padding: 4px; border: 1px solid #dcdcdc;color: #5b5b5b;vertical-align: top;}
+tr {background: #fff}
+tr :hover {background: #feffdc;}
+tr small a{color: #fff;}
+tr small{color: #fff;}
+tr :hover small a{color: #527e19;}
+tr :hover small a:hover{color: #000;}
+tr :hover small {color: #5b5b5b;}

@@ -1,25 +1,26 @@
-
 <div class="span12 block">
- <div>
-    <a href="/bands/all_record">Manage Bands</a>
- </div>
- <div>
-   <a href="/designations/all_record">Manage designations</a>
- </div>
- <div>
-   <a href="/banks/new">Create banks</a>
- </div>
- <div>
-   <a href="/banks/">Manage banks</a>
- </div>
- <div>
-   <a href="/employees/new">Employee Create</a>
- </div>
- <div>
-   <a href="/employees/all_employees">All Employees</a>
- </div>
- <div>
-   <a href="/employees/history">Employee History</a>
- </div>
+  <% if can? :manage ,:all  %>
+     <div>
+        <a href="/bands/all_record">Manage Bands</a>
+     </div>
+     <div>
+       <a href="/designations/all_record">Manage designations</a>
+     </div>
+     <div>
+       <a href="/banks/new">Create banks</a>
+     </div>
+     <div>
+       <a href="/banks/">Manage banks</a>
+     </div>
+     <div>
+       <a href="/employees/new">Employee Create</a>
+     </div>
+     <div>
+       <a href="/employees/all_employees">All Employees</a>
+     </div>
+     <div>
+       <a href="/employees/history">Employee History</a>
+     </div>
+ <%end%>
 </div>
 

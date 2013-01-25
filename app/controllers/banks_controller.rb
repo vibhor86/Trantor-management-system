@@ -1,6 +1,7 @@
 class BanksController < ApplicationController
   # GET /banks
   # GET /banks.json
+  load_and_authorize_resource
   def index
     @banks = Bank.all
 
@@ -41,7 +42,6 @@ class BanksController < ApplicationController
   # POST /banks.json
   def create
     @bank = Bank.new(params[:bank])
-
     respond_to do |format|
       if @bank.save
         flash[:notice] = "Bank was successfully created."

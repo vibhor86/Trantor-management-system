@@ -1,7 +1,15 @@
-<div class="well">
-  <div  style="padding-bottom: 20px;">
+<style>
+  body{
+      background: url(/assets/latar.jpg) !important;
+  }
+
+</style>
+
+<div class="well"  style="background: white url(/assets/bg_kiri.png) repeat;">
+  <div  style="padding-bottom: 20px ;">
     <ul class="nav nav-list">
-      <li><a href="#employee_collapse" data-toggle="collapse" class="nav-header">Employee</a>  
+      <% if can? :manage ,:all  %>
+      <li><a href="#employee_collapse" data-toggle="collapse" class="nav-header">Employee</a>
         <ul id ="employee_collapse" class="nav nav-list collapse">
           <li><a href="/bands/all_record">Manage Bands</a></li>
           <li><a href="/designations/all_record">Manage designations</a></li>
@@ -14,6 +22,7 @@
         </ul>
       </li>
       <li>
+      <%end%>
         <a href="#salary_collapse" data-toggle="collapse" class="nav-header">Salary Management</a>
         <ul class="nav nav-list collapse" id ="salary_collapse">
           <li><%= link_to "Create Document Template", new_document_template_path, :id => 'newdocument'%></li>

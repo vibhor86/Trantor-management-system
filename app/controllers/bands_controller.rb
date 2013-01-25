@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
   # GET /bands
   # GET /bands.json
-  
+  load_and_authorize_resource
   def all_record
     @band = Band.new
     @bands = Band.all
