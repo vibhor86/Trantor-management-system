@@ -10,6 +10,17 @@ GIT
       selenium-webdriver (~> 2.0)
       xpath (~> 1.0.0)
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: aa6338a9ee7da7abce8c5c38a80612e922a576c4
+  specs:
+    paperclip (3.4.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,6 +65,10 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     client_side_validations (3.2.1)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -250,6 +265,7 @@ DEPENDENCIES
   less-rails
   libv8
   mysql2
+  paperclip!
   passenger
   pg
   rails (= 3.2.7)

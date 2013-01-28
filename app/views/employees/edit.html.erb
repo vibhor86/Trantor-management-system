@@ -1,87 +1,97 @@
+<div class="row" style="margin: 10px;">
+  <%= form_for(:user ,:url => "/employees/update/",:html => { :_method => :put, :multipart => true}) do |f| %>
+      <div >
+       <%= f.file_field :avatar %>
+      </div>
+      <div class="span2">
+        <%= image_tag @user.avatar.url(:thumb) %>
+      </div>
+      <div class="span9">
+        <%= f.hidden_field  "id", :value => @user.id  %>
+          <div class="field row span12">
 
-<%= form_for(:user ,:url => "/employees/update/",:html => { :_method => :put}) do |f| %>
-  <%= f.hidden_field  "id", :value => @user.id  %>
-  <div class="field row span12">
-    <div class="span4">
-      <%= f.label :ecode %><%= f.text_field :ecode ,:data => "" %>
-    </div>
-    <div class="span4">
-      <%= f.label :name %><%= f.text_field :name ,:data => "" %>
-    </div>
-    <div class="span4">
-      <%= f.label :date_of_joining %><%= f.text_field :date_of_joining ,:class=>"datepicker" %>
-    </div>
+            <div class="span4">
+              <%= f.label :ecode %><%= f.text_field :ecode ,:data => "" %>
+            </div>
+            <div class="span4">
+              <%= f.label :name %><%= f.text_field :name ,:data => "" %>
+            </div>
+            <div class="span4">
+              <%= f.label :date_of_joining %><%= f.text_field :date_of_joining ,:class=>"datepicker" %>
+            </div>
+        </div>
+          <div class="field row span12">
+            <div class="span4">
+              <%= f.label :designation %><%= f.select :designation_id, options_for_select(Designation.all.map{|d| ["#{d.name}",d.id]}, "select")%>
+            </div>
+            <div class="span4">
+              <%= f.label :band_id %><%= f.select :band_id, options_for_select(Band.all.map{|d| ["#{d.name}",d.id]}, "select")%>
+            </div>
+            <div class="span4">
+              <%= f.label :email %><%= f.text_field :email  %>
+            </div>
+          </div>
+          <div class="field row span12">
 
+            <div class="span4">
+              <%= f.label :gender %><%= f.select :gender, options_for_select(["M","F"])%>
+            </div>
 
-  </div>
-  <div class="field row span12">
-    <div class="span4">
-      <%= f.label :designation %><%= f.select :designation_id, options_for_select(Designation.all.map{|d| ["#{d.name}",d.id]}, "select")%>
-    </div>
-    <div class="span4">
-      <%= f.label :band_id %><%= f.select :band_id, options_for_select(Band.all.map{|d| ["#{d.name}",d.id]}, "select")%>
-    </div>
-    <div class="span4">
-      <%= f.label :email %><%= f.text_field :email  %>
-    </div>
-  </div>
-  <div class="field row span12">
+            <div class="span4">
+              <%= f.label :location %><%= f.text_field :location ,:data => "" %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :gender %><%= f.select :gender, options_for_select(["M","F"])%>
-    </div>
+            <div class="span4">
+              <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name} #{d.ecode}",d.ecode]})unless @managers.nil?%>
+            </div>
+          </div>
 
-    <div class="span4">
-      <%= f.label :location %><%= f.text_field :location ,:data => "" %>
-    </div>
+          <div class="field row span12">
+            <div class="span4">
+              <%= f.label :blood_group %><%= f.text_field :blood_group ,:data => "" %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name} #{d.ecode}",d.ecode]})unless @managers.nil?%>
-    </div>
-  </div>
+            <div class="span4">
+              <%= f.label :date_of_birth %><%= f.text_field :date_of_birth ,:class=>"datepicker" %>
+            </div>
 
-  <div class="field row span12">
-    <div class="span4">
-      <%= f.label :blood_group %><%= f.text_field :blood_group ,:data => "" %>
-    </div>
+            <div class="span4">
+              <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Unmarried","Married","divorced"])%>
+            </div>
+          </div>
+          <div class="field row span12">
+            <div class="span4">
+              <%= f.label :date_of_anniversary %><%= f.text_field :date_of_anniversary ,:class=>"datepicker" %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :date_of_birth %><%= f.text_field :date_of_birth ,:class=>"datepicker" %>
-    </div>
+            <div class="span4">
+              <%= f.label :pan_no %><%= f.text_field :pan_no ,:data => "" %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Unmarried","Married","divorced"])%>
-    </div>
-  </div>
-  <div class="field row span12">
-    <div class="span4">
-      <%= f.label :date_of_anniversary %><%= f.text_field :date_of_anniversary ,:class=>"datepicker" %>
-    </div>
+            <div class="span4">
+              <%= f.label :bank_number %><%= f.text_field :bank_number ,:data => "" %>
+            </div>
+          </div>
+          <div class="field row span12">
+            <div class="span4">
+              <%= f.label :father_name %><%= f.text_field :father_name ,:data => "" %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :pan_no %><%= f.text_field :pan_no ,:data => "" %>
-    </div>
+            <div class="span4">
+              <%= f.label :spouse_name %><%= f.text_field :spouse_name ,:data => "" %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :bank_number %><%= f.text_field :bank_number ,:data => "" %>
-    </div>
-  </div>
-  <div class="field row span12">
-    <div class="span4">
-      <%= f.label :father_name %><%= f.text_field :father_name ,:data => "" %>
-    </div>
+          </div>
+          <div class="field row span12">
+            <div class="span4">
+              <%= f.label :role %><%= f.select :role, options_for_select(User::ROLES.map{|d| ["#{d}"]}, :selected => @user.role) %>
+            </div>
 
-    <div class="span4">
-      <%= f.label :spouse_name %><%= f.text_field :spouse_name ,:data => "" %>
-    </div>
+           </div>
+          <div class="actions row">
+            <div class="span2 offset6"><button type="submit"  >Update</button></div>
+          </div>
+      </div>
+  <%end%>
 
-  </div>
-  <div class="field row span12">
-    <div class="span4">
-      <%= f.label :role %><%= f.select :role, options_for_select(User::ROLES.map{|d| ["#{d}"]}, :selected => @user.role) %>
-    </div>
-   </div>
-  <div class="actions row">
-    <div class="span2 offset6"><button type="submit"  >Update</button></div>
-  </div>
-<% end %>
+</div>
