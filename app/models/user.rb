@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   audited
   devise :database_authenticatable, 
-    :recoverable, :rememberable, :trackable, :validatable,:registerable, :confirmable
+    :recoverable, :rememberable, :trackable, :validatable,:registerable, :confirmable, :async
   attr_accessible :avatar ,:password, :password_confirmation,:confirmation_status,:blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_number,:bank_id, :father_name, :spouse_name,:ecode, :name, :date_of_joining, :gender, :location ,:manager_ecode,:email,:designation_id,:project_id, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :id ,:role
   validates  :email,:ecode , :presence => true , :uniqueness => true
   validates  :name ,:date_of_joining,:date_of_birth, :presence => true
@@ -48,4 +48,7 @@ class User < ActiveRecord::Base
       errors.add(:date_of_joining, "should be more than D.O.B") if date_of_joining < date_of_birth
     end
   end
+
+
+
 end

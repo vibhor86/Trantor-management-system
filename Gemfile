@@ -31,7 +31,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'delayed_job_active_record'
+gem "devise-async"
 gem "rspec-rails",:group => [:development, :test]
 gem "factory_girl_rails",:group => [:development, :test]
 gem "email_spec",:group => :test

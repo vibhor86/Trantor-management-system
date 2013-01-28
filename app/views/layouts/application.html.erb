@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag :application, '/ckeditor/ckeditor', '/assets/jquery.pageslide.min.js'%>
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag :defaults, "rails.validations", "rails.validations.custom" %>
+    <%= javascript_include_tag   "rails.validations", "rails.validations.custom" %>
     <%= favicon_link_tag '/assets/favicon.ico', :rel => 'shortcut icon' %>
     <%= yield(:user_validators) %>
   </head>
@@ -43,7 +43,7 @@
           </div>
         <% end %>
         <% if user_signed_in? %>
-          <div class="span9 " style="border-radius: 4px;padding: 0.833em; border: 8px solid white; background: white url(/assets/bg_kiri.png) repeat;-webkit-box-shadow: 0px 0px 8px !important;height: 52em;overflow: auto;">
+          <div class="span9 " style="border-radius: 4px;padding: 0.833em; background: white url(/assets/bg_kiri.png) repeat;-webkit-box-shadow: 0px 0px 8px !important;height: 52em;overflow: auto;">
             <p class="notice"><%= notice %></p>
             <%= yield %>
           </div>
