@@ -42,14 +42,14 @@ td {
 {
     border-top: 4px solid gray;
 }
-.block_border h1 {
-    position: absolute;
-    left: 8.5em;
-    top: 1.5em;
-    margin: 0;
-    z-index: 100;
-    color: black;
-}
+/*.block_border h1 {*/
+    /*position: absolute;*/
+    /*left: 8.5em;*/
+    /*top: 1.5em !important;*/
+    /*margin: 0;*/
+    /*z-index: 100;*/
+    /*color: black;*/
+/*}*/
 
 .dataTable  th ,.dataTable  td{
     text-align: center !important;
@@ -152,3 +152,31 @@ tr small{color: #fff;}
 tr :hover small a{color: #527e19;}
 tr :hover small a:hover{color: #000;}
 tr :hover small {color: #5b5b5b;}
+
+ul.admin-dashboard-list h1 {
+    font-size: 20px;
+    border: 1px solid black;
+    background-color: #2FA4E7;
+    color: white;
+    box-shadow: 2px 2px 2px 2px #000;
+    border-radius: 10px;
+    text-align: center;
+}
+
+ul.admin-dashboard-list li {
+    font-size:14px;
+    display: inline;
+    padding: 10px;
+}
+ul.admin-dashboard-list li a{
+    color:#000;
+}
+h1.block_heading{
+    font-size: 20px;
+    border: 1px solid black;
+    background-color: #2FA4E7;
+    color: white !important;
+    box-shadow: 2px 2px 2px 2px #000;
+    border-radius: 10px;
+    text-align: center;
+}

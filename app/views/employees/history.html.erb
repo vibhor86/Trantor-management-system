@@ -1,6 +1,9 @@
-<%= form_for "emp_history" do |f|%>
+<h1 class="block_heading">Employee History</h1>
+<%= form_for "emp_history" ,:html => {:style=>"text-align: center;"} do |f|%>
+  <div class="input-append">
     <%=f.text_field "ecode"%>
-    <%=f.submit "search"  %>
+    <%=f.submit "search" ,:class => "btn" %>
+  </div>
 <%end%>
 <%unless @employee_info.empty?%>
   <table  id ="band_table" class ="table table-striped">

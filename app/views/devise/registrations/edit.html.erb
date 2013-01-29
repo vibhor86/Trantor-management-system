@@ -23,7 +23,7 @@
        </div>
 </div>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h1 class="block_heading">Edit <%= resource_name.to_s.humanize %></h1>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:validate => true ,:validate => :user_validators , :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -120,6 +120,7 @@
     <div class="span6"></div>
     <div class="span6"> 
       <%= f.hidden_field :confirmation_status ,:value => "confirmed" %>
+      <%= f.hidden_field :confirmed_at ,:value => DateTime.now%>
       <%= f.submit "Confirm Information" ,:class => "btn btn-primary" , :id => "data_sub"%>
       <a href="#report" role="button" class="btn" data-toggle="modal" style="width: 161px;" title="Report to Admin">Wrong Information</a>
       

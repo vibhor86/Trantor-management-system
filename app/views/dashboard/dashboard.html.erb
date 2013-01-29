@@ -1,26 +1,22 @@
-<div class="span12 block">
-  <% if can? :manage ,:all  %>
-     <div>
-        <a href="/bands/all_record">Manage Bands</a>
-     </div>
-     <div>
-       <a href="/designations/all_record">Manage designations</a>
-     </div>
-     <div>
-       <a href="/banks/new">Create banks</a>
-     </div>
-     <div>
-       <a href="/banks/">Manage banks</a>
-     </div>
-     <div>
-       <a href="/employees/new">Employee Create</a>
-     </div>
-     <div>
-       <a href="/employees/all_employees">All Employees</a>
-     </div>
-     <div>
-       <a href="/employees/history">Employee History</a>
-     </div>
- <%end%>
-</div>
+<style>
+
+</style>
+<% if can? :manage, :all %>
+    <ul class="admin-dashboard-list"><h1>Settings</h1>
+      <li><a href="/bands/all_record">Manage Bands</a></li>
+      <li><a href="/designations/all_record">Manage designations</a></li>
+      <li><a href="/projects/all_record">Manage projects</a></li>
+      <li><a href="/banks/new">Create banks</a></li>
+      <li><a href="/banks/">Manage banks</a></li>
+    </ul>
+    <ul class="admin-dashboard-list"><h1>Employee Management</h1>
+      <li><a href="/employees/all_employees">All Employees</a></li>
+      <li><a href="/employees/new">Create Employee</a></li>
+      <li><a href="/employees/history">Employee History</a></li>
+    </ul>
+    <ul class="admin-dashboard-list"><h1>Salary Management </h1>
+      <li><%= link_to "Create Document Template", new_document_template_path %></li>
+      <li><%= link_to "Edit Document Template", document_templates_path %></li>
+    </ul>
+<% end %>
 

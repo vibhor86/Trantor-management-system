@@ -55,10 +55,8 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def do_confirm
-    puts "sdsadasd#{@confirmable.id}"
-    @confirmable.confirm!
-    
-    set_flash_message :notice, :confirmed
+    #@confirmable.confirm!
+    set_flash_message :notice, :access
     sign_in(resource_name, @confirmable)
     redirect_to :controller => "users" , :action => "edit" 
   end

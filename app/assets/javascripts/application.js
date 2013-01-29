@@ -21,5 +21,11 @@ $(function() {
         $( ".datepicker" ).datepicker({dateFormat: 'dd-mm-yy',
         changeMonth: true,
         changeYear: true});
+
+
+    $('li a').filter(function(){
+        return $(this).attr('href') == document.location.pathname
+    }).parent('li').addClass('active')
+        .parents('.collapse').collapse('show');
     });
 

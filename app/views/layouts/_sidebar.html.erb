@@ -2,40 +2,35 @@
   body{
       background: url(/assets/latar.jpg) !important;
   }
-
 </style>
-
 <div class="well"  style="background: white url(/assets/bg_kiri.png) repeat;">
   <div  style="padding-bottom: 20px ;">
     <ul class="nav nav-list">
       <% if can? :manage ,:all  %>
-      <li><a href="#employee_collapse" data-toggle="collapse" class="nav-header">Employee</a>
+          <li><a href="#setting_collapse" data-toggle="collapse" class="nav-header">Settings</a>
+            <ul id ="setting_collapse" class="nav nav-list collapse">
+              <li><a href="/bands/all_record">Manage Bands</a></li>
+              <li><a href="/designations/all_record">Manage designations</a></li>
+              <li><a href="/projects/all_record">Manage projects</a></li>
+              <li><a href="/banks/new">Create banks</a></li>
+              <li><a href="/banks/">Manage banks</a></li>
+            </ul>
+          </li>
+      <li><a href="#employee_collapse" data-toggle="collapse" class="nav-header">Employee Management</a>
         <ul id ="employee_collapse" class="nav nav-list collapse">
-          <li><a href="/bands/all_record">Manage Bands</a></li>
-          <li><a href="/designations/all_record">Manage designations</a></li>
-          <li><a href="/projects/all_record">Manage projects</a></li>
-           <li><a href="/banks/new">Create banks</a></li>
-           <li><a href="/banks/">Manage banks</a></li>
-           <li><a href="/employees/new">Employee Create</a></li>
           <li><a href="/employees/all_employees">All Employees</a></li>
+          <li><a href="/employees/new">Create Employee</a></li>
           <li><a href="/employees/history">Employee History</a></li>
         </ul>
       </li>
       <li>
-      <%end%>
         <a href="#salary_collapse" data-toggle="collapse" class="nav-header">Salary Management</a>
         <ul class="nav nav-list collapse" id ="salary_collapse">
-          <li><%= link_to "Create Document Template", new_document_template_path, :id => 'newdocument'%></li>
-          <li><%= link_to "Edit Document Template", document_templates_path , :id => 'editdocument' %></li>
+          <li><%= link_to "Create Document Template", new_document_template_path%></li>
+          <li><%= link_to "Edit Document Template", document_templates_path%></li>
         </ul>
       </li>
-      <li><a href="#quicklinks_collapse" data-toggle="collapse" class="nav-header">Quick Links</a>
-        <ul class="nav nav-list collapse" id ="quicklinks_collapse">
-          <li><a href="#">Leave Policy</a></li>
-          <li><a href="#">Holiday List</a></li>
-          <li><a href="#">Leave FAQ</a></li>
-        </ul>
-      </li>
+      <%end%>
     </ul>
   </div>
 </div><!--/.well -->
