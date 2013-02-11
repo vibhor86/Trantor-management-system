@@ -30,4 +30,5 @@ user =  User.new(:email => 'mahinder124@gmail.com', :password => 'rorteam', :pas
  user.date_of_joining = "10-12-2001"
  user.date_of_birth = "10-12-2000"
 user.role = "admin"
+user.emptype_id = 2
  user.save!
