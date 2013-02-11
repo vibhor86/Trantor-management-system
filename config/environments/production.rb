@@ -64,4 +64,15 @@ TrantorManagementSystem::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.assets.debug = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default :content_type => "text/html"
+  config.action_mailer.smtp_settings = {
+      :address              => "smtp.mandrillapp.com",
+      :port                 => 587,
+      :domain               => "mandrillapp.com",
+      :user_name            => "raman.bedi@trantorinc.com",
+      :password             => "493d3174-2694-46bc-9ff6-9cb9aa394402",
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
 end
