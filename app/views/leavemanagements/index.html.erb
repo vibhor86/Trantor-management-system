@@ -1,0 +1,33 @@
+<h1>Listing leavemanagements</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Reason</th>
+    <th>Type</th>
+    <th>Approved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leavemanagements.each do |leavemanagement| %>
+  <tr>
+    <td><%= leavemanagement.user %></td>
+    <td><%= leavemanagement.start_date %></td>
+    <td><%= leavemanagement.end_date %></td>
+    <td><%= leavemanagement.reason %></td>
+    <td><%= leavemanagement.type %></td>
+    <td><%= leavemanagement.approved %></td>
+    <td><%= link_to 'Show', leavemanagement %></td>
+    <td><%= link_to 'Edit', edit_leavemanagement_path(leavemanagement) %></td>
+    <td><%= link_to 'Destroy', leavemanagement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Leavemanagement', new_leavemanagement_path %>

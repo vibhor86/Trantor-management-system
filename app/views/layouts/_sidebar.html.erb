@@ -3,7 +3,7 @@
       background: url(/assets/latar.jpg) !important;
   }
 </style>
-<div class="well"  style="background: white url(/assets/bg_kiri.png) repeat;">
+<div   style="background: white url(/assets/bg_kiri.png) repeat;padding-top: 10px;">
   <div  style="padding-bottom: 20px ;">
     <ul class="nav nav-list">
       <% if can? :manage ,:all  %>
@@ -24,10 +24,10 @@
         </ul>
       </li>
       <li>
-        <a href="#salary_collapse" data-toggle="collapse" class="nav-header">Salary Management</a>
+        <a href="#salary_collapse" data-toggle="collapse" class="nav-header">Document Management</a>
         <ul class="nav nav-list collapse" id ="salary_collapse">
-          <li><%= link_to "Create Document Template", new_document_template_path%></li>
-          <li><%= link_to "Edit Document Template", document_templates_path%></li>
+          <li><%= link_to "Create Template", new_document_template_path%></li>
+          <li><%= link_to "Edit Template", document_templates_path%></li>
         </ul>
       </li>
       <%end%>

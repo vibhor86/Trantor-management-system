@@ -6,7 +6,7 @@ RailsAdmin.config do |config|
   # If your default_local is different from :en, uncomment the following 2 lines and set your default locale here:
   # require 'i18n'
   # I18n.default_locale = :de
-
+  config.audit_with :paper_trail, User
   config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
@@ -19,8 +19,7 @@ RailsAdmin.config do |config|
   config.main_app_name = ['Trantor Management System', 'Admin']
   # or for a dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
-
-
+  config.audit_with :history, User
   #  ==> Global show view settings
   # Display empty fields in show views
   # config.compact_show_view = false
@@ -31,7 +30,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  # config.excluded_models = [DocumentTemplate, Placeholder, User]
+   config.excluded_models = [DocumentTemplate, Placeholder, Leavemanagement]
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [DocumentTemplate, Placeholder, User]

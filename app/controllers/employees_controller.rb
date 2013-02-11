@@ -7,11 +7,11 @@ class EmployeesController < ApplicationController
 
   def new
     @user = User.new
+    @projects = []
     @managers = User.find(:all,:conditions => {:role => "manager"})
   end
 
   def create
-    puts params
     @user = User.new(@data)
     if @user.save
       flash[:notice] = "User Save"
@@ -28,6 +28,7 @@ class EmployeesController < ApplicationController
   end 
 
   def edit
+    @projects = []
     @user = User.find(params[:id])
     @managers = User.find(:all,:conditions => {:role => "manager"})
   end
@@ -105,12 +106,17 @@ class EmployeesController < ApplicationController
   def all_employees
     @employee = User.all
   end
-  
+  def render_projects
+    @user = User.find(params[:id]) if params[:id]
+    @projects = Project.find_all_by_manager_ecode(params[:ecode])
+    render "_project"  ,:layout => false
+  end
   def history
-   @employee_info = []
+  @users_history = User.all
+  @employee_info = []
      unless params[:emp_history].nil?
        user = User.find_by_ecode(params[:emp_history][:ecode])
-        @employee_info = user.audits if user
+        @employee_info = user.audits
       end
   end
 private

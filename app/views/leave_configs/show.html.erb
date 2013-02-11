@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Emptype:</b>
+  <%= @leave_config.emptype %>
+</p>
+
+<p>
+  <b>Sl:</b>
+  <%= @leave_config.sl %>
+</p>
+
+<p>
+  <b>Cl:</b>
+  <%= @leave_config.cl %>
+</p>
+
+<p>
+  <b>El:</b>
+  <%= @leave_config.el %>
+</p>
+
+
+<%= link_to 'Edit', edit_leave_config_path(@leave_config) %> |
+<%= link_to 'Back', leave_configs_path %>

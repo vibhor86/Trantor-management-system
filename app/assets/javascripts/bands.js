@@ -2,15 +2,12 @@ var updateband = function(data) {
     $.get('/bands', function(data) {
         $('#change_table').empty();
         $('#change_table').html(data);
-        configurebandTable($('#band_table'));
+        configureTable($('#band_table'));
     }).error(function(jqXHR, textStatus, errorThrown) {
         window.location.href = "/dashboard"
     });
 }
-function configurebandTable(tableNode)
-{
-    $(tableNode).dataTable(); 
-}
+
 function resetband()
 {
         event.preventDefault();
@@ -22,7 +19,8 @@ function resetband()
 }
 
 $(document).ready(function() {
-    $('#band_table').dataTable();
+    configureTable($('#band_table'));
+    configureTable($('#banktable'));
     $('.band_update').attr('disabled',true);
     $('body').delegate('.band_update','click', function(event){
         event.preventDefault();

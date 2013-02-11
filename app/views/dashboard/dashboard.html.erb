@@ -1,6 +1,3 @@
-<style>
-
-</style>
 <% if can? :manage, :all %>
     <ul class="admin-dashboard-list"><h1>Settings</h1>
       <li><a href="/bands/all_record">Manage Bands</a></li>
@@ -14,7 +11,7 @@
       <li><a href="/employees/new">Create Employee</a></li>
       <li><a href="/employees/history">Employee History</a></li>
     </ul>
-    <ul class="admin-dashboard-list"><h1>Salary Management </h1>
+    <ul class="admin-dashboard-list"><h1>Document Management </h1>
       <li><%= link_to "Create Document Template", new_document_template_path %></li>
       <li><%= link_to "Edit Document Template", document_templates_path %></li>
     </ul>

@@ -1,5 +1,5 @@
 module EmployeeHelper
   def setspan
-    current_user.confirmed? ? 'span9' : ''
+    current_user.confirmed? ? 'span10' : ''
   end
 end

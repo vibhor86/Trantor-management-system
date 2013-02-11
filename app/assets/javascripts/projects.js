@@ -2,31 +2,22 @@ var updateproject = function(data) {
     $.get('/projects', function(data) {
         $('#change_table').empty();
         $('#change_table').html(data);
-        configureprojectTable($('#project_table'));
+        configureTable($('#project_table'));
     }).error(function(jqXHR, textStatus, errorThrown) {
         window.location.href = "/dashboard"
     });
-    
-}
-
-function configureprojectTable(tableNode)
-{
-    $(tableNode).dataTable(); 
 }
 function resetproject()
 {
-    
         event.preventDefault();
         $('#project_name').val('');
         $('#project_manager_ecode').val(0);
         $('.project_create').attr('disabled',false);
         $('.project_update').attr('disabled',true);
         $('.message').empty()
-
 }
-
 $(document).ready(function() {
-    $('#project_table').dataTable();
+    configureTable($('#project_table'));
     $('.project_update').attr('disabled',true);
     $('body').delegate('.project_update','click', function(event){
         event.preventDefault();
@@ -35,7 +26,7 @@ $(document).ready(function() {
         $('#project_manager_ecode').val($('#manger_'+id).text())
         $('.project_create').attr('disabled',true);
         $('.project_update').attr('disabled',false);
-         $('#project_name').attr('data',id)
+        $('#project_name').attr('data',id)
     }); 
     $('body').delegate('.project_delete','click', function(event){
         event.preventDefault();
@@ -43,7 +34,6 @@ $(document).ready(function() {
        data  = {
              '_method': 'delete'
         }
-        
         $.ajax({
             url: '/projects/'+id,
             dataType : 'json',
@@ -74,8 +64,7 @@ $(document).ready(function() {
             }
 	
         });
-        
-    }); 
+    });
    $('.project_reset').on('click', function(event){
        resetproject();
    }); 

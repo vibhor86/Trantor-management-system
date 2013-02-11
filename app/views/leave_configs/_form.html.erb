@@ -1,0 +1,33 @@
+<%= form_for(@leave_config) do |f| %>
+  <% if @leave_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leave_config.errors.count, "error") %> prohibited this leave_config from being saved:</h2>
+
+      <ul>
+      <% @leave_config.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :emptype %><br />
+    <%= f.text_field :emptype %>
+  </div>
+  <div class="field">
+    <%= f.label :sl %><br />
+    <%= f.number_field :sl %>
+  </div>
+  <div class="field">
+    <%= f.label :cl %><br />
+    <%= f.number_field :cl %>
+  </div>
+  <div class="field">
+    <%= f.label :el %><br />
+    <%= f.number_field :el %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

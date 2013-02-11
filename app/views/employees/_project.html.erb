@@ -1,0 +1,1 @@
+<%= "Project" %><br/> <%= select "user" , "project_id", options_for_select(@projects.map{|d| ["#{d.name}",d.id]}, :selected => (@user.project_id if @user)),:prompt => "select"%>

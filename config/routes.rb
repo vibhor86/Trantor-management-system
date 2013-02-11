@@ -1,10 +1,22 @@
 TrantorManagementSystem::Application.routes.draw do
  
+  resources :events
+
+  resources :holidays
+
+  resources :leavemanagements  do
+    collection do
+      get :add
+    end
+  end
+
+  resources :leave_configs
+
   resources :banks
 
  resources   :employees do
     collection do
-      get :unconfirmed_user,:csv_import,:all_employees,:history
+      get :unconfirmed_user,:csv_import,:all_employees,:history ,:render_projects
     end
   end
   
@@ -42,6 +54,7 @@ TrantorManagementSystem::Application.routes.draw do
   match 'document' => 'document#document'
   match 'document/index' =>  'document#index'
   match 'dashboard' =>  'dashboard#dashboard'
+  match 'calender' => 'leavemanagements#calender'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

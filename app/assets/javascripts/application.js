@@ -16,7 +16,10 @@
 //= require document_templates.js
 //= require document_index.js
 //= require_tree .
- //= require rails.validations    
+//= require rails.validations
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/TableTools
+//= require dataTables/extras/ZeroClipboard.js
 $(function() {
         $( ".datepicker" ).datepicker({dateFormat: 'dd-mm-yy',
         changeMonth: true,
@@ -28,4 +31,5 @@ $(function() {
     }).parent('li').addClass('active')
         .parents('.collapse').collapse('show');
     });
+
 

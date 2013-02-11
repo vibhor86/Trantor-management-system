@@ -5,6 +5,7 @@
     <%=f.submit "search" ,:class => "btn" %>
   </div>
 <%end%>
+<%= User.first.versions.last.changeset %>
 <%unless @employee_info.empty?%>
   <table  id ="band_table" class ="table table-striped">
 <thead >
@@ -26,8 +27,8 @@
     <td><%=  Project.find_by_id(emp.audited_changes["project_id"]).name if emp.audited_changes["project_id"] %></td>
     <td><%= emp.audited_changes["confirmation_status"] %></td>
  </tr>
- <% end %>
- <% end %>
+   <%end%>
+  <%end%>
  </tbody>
  </table>
-<%end%>
+<%      end%>

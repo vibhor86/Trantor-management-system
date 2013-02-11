@@ -2,16 +2,18 @@ class User < ActiveRecord::Base
   audited
   devise :database_authenticatable, 
     :recoverable, :rememberable, :trackable, :validatable,:registerable, :confirmable, :async
-  attr_accessible :confirmed_at ,:avatar ,:password, :password_confirmation,:confirmation_status,:blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_number,:bank_id, :father_name, :spouse_name,:ecode, :name, :date_of_joining, :gender, :location ,:manager_ecode,:email,:designation_id,:project_id, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :id ,:role
+  attr_accessible :confirmed_at ,:avatar ,:password, :password_confirmation,:confirmation_status,:blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_number,:bank_id, :father_name, :spouse_name,:ecode, :name, :date_of_joining, :gender, :location ,:manager_ecode,:email,:designation_id,:project_id, :remember_me ,:ecode,:name, :date_of_joining, :band_id, :gender, :location, :id ,:role ,:emptype_id
   validates  :email,:ecode , :presence => true , :uniqueness => true
-  validates  :name ,:date_of_joining,:date_of_birth, :presence => true
+  validates  :name ,:date_of_joining,:date_of_birth,:emptype_id, :presence => true
   validate :date_of_joining , :validate_joining_date_before_birth_date
   belongs_to :band
   belongs_to :project
   belongs_to :designation
+  belongs_to :emptype
   belongs_to :manager, :class_name => :user
-  ROLES = ["admin","hr","manager","employee"]
-  has_attached_file :avatar,:styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_paper_trail
+  ROLES = ["admin","hr","manager","individual"]
+  has_attached_file :avatar,:styles => { :medium => "300x300>"},:url => "/system/:class/:ecode.:extension",:path => ":rails_root/public/system/:class/:ecode.:extension"
 
   def attempt_set_password(params)
     p = {}

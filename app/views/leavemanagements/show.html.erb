@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @leavemanagement.user %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @leavemanagement.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @leavemanagement.end_date %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @leavemanagement.reason %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @leavemanagement.type %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @leavemanagement.approved %>
+</p>
+
+
+<%= link_to 'Edit', edit_leavemanagement_path(@leavemanagement) %> |
+<%= link_to 'Back', leavemanagements_path %>

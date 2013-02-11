@@ -1,0 +1,100 @@
+<style>
+
+    body {
+        margin-top: 40px;
+
+        font-size: 13px;
+        font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+        background-image: url('/assets/gray_jean.png') !important;
+    }
+
+    #calendar {
+        width: 900px;
+        margin: 0 auto;
+    }
+
+    .fc-transparent,
+    .fc-agenda .fc-transparent .fc-event-time,
+    .fc-transparent a {
+        padding-left: 1px;
+        border-color: transparent;
+        background-color: transparent;
+        color: #fff;
+
+    }
+    .fc-sat {
+        color:red;
+        background : #ffef8f url("/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png") 50% top repeat-x !important;
+    }
+    .fc-sun {
+        color:red;
+        background : #ffef8f url("/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png") 50% top repeat-x !important;
+    }
+    .fc-today{
+        background : #deedf7 url("/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png") 50% top repeat-x !important;
+        border: 1px solid #DDD;
+      }
+</style>
+<div id="calenderevent" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Apply for Leave</h3>
+  </div>
+  <div class="modal-body">
+    <div class="field row">
+      <div class="span2 offset1">
+        Leave Type
+      </div>
+      <div class="span4">
+        <select>
+          <option>Casual Leave</option>
+          <option>Sick Leave</option>
+          <option>Earned Leave</option>
+        </select>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="span2 offset1">
+        Start Date
+      </div>
+      <div class="span4">
+        <%= text_field "startdate" ,"",:data => "" ,:class => "datepicker" , :id => "start_date" %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="span2 offset1">
+        Number of Days
+      </div>
+      <div class="span4">
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="span2 offset1">
+        End Date
+      </div>
+      <div class="span4">
+        <%= text_field "enddate" ,"",:data => "" ,:id => "end_date"%>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="span2 offset1">
+        Reason for Leave
+      </div>
+      <div class="span8">
+        <%= text_area "leave_reason","", :rows => 5,:cols => 7 , :id => "leave_reason"%>
+      </div>
+    </div>
+   </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary" id="event_create" >Save event</button>
+  </div>
+</div>
+
+
+<div id='calendar'></div>
