@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207070031) do
+ActiveRecord::Schema.define(:version => 20130212080510) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -106,6 +106,16 @@ ActiveRecord::Schema.define(:version => 20130207070031) do
 
   create_table "leave_types", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "leavebalances", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "cl"
+    t.integer  "sl"
+    t.integer  "el"
+    t.integer  "co"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
