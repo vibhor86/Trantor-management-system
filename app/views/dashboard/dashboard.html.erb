@@ -1,3 +1,24 @@
+<h3>Weekly Attendance</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% 5.times do |time| %>
+     <%unless @dates.blank? %>
+      <% first =  @fist_day_of_week + (time.to_i).day%>
+      <td> <%if @dates.include? first %> A <%  elsif first <= Date.today%> P <%else%> - <%end%> </td>
+     <%end%>
+    <%end%>
+ </tbody>
+</table>
+
 <% if can? :manage, :all %>
     <ul class="admin-dashboard-list"><h1>Settings</h1>
       <li><a href="/bands/all_record">Manage Bands</a></li>
@@ -16,4 +37,7 @@
       <li><%= link_to "Edit Document Template", document_templates_path %></li>
     </ul>
 <% end %>
+
+
+
 

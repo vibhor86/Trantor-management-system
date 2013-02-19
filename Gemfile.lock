@@ -36,7 +36,7 @@ GIT
       mime-types
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://bundler-api.herokuapp.com/
   specs:
     actionmailer (3.2.7)
       actionpack (= 3.2.7)
@@ -241,6 +241,8 @@ GEM
     rspec-rails (2.0.1)
       rspec (~> 2.0.0)
     rubyzip (0.9.9)
+    rufus-scheduler (2.0.17)
+      tzinfo (>= 0.3.23)
     safe_yaml (0.7.1)
     sass (3.2.5)
     sass-rails (3.2.6)
@@ -310,6 +312,7 @@ DEPENDENCIES
   rails (= 3.2.7)
   rails_admin
   rspec-rails
+  rufus-scheduler
   sass-rails (~> 3.2.3)
   therubyracer
   twitter-bootstrap-rails

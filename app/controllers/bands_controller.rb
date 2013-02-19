@@ -4,15 +4,6 @@ class BandsController < ApplicationController
   load_and_authorize_resource
   require 'net/http'
  def all_record
-    ecodes = User.all.map(& :ecode).join(',')
-    url = URI.parse('http://192.168.173.55:4567/tables.json')
-    full_path = "#{url.path}?data=#{ecodes}"
-    req = Net::HTTP::Get.new(full_path)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
-    puts res.body
-    raise
     @band = Band.new
     @bands = Band.all
     respond_to do |format|

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://bundler-api.herokuapp.com'
 
 gem 'rails', '3.2.7'
 gem 'rails_admin'
@@ -47,7 +47,7 @@ gem "capybara",:git => 'git://github.com/jnicklas/capybara.git',:group => [:deve
 gem "launchy", :group => :test
 gem "database_cleaner",:group => [:development, :test]
 gem 'jquery-datatables-tabletools-rails' ,:git => 'git://github.com/kindjal/jquery-datatables-tabletools-rails.git'
-
+gem 'rufus-scheduler'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
