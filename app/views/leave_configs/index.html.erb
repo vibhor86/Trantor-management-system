@@ -3,9 +3,9 @@
 <table>
   <tr>
     <th>Emptype</th>
-    <th>Sl</th>
-    <th>Cl</th>
-    <th>El</th>
+    <th>Leave type</th>
+    <th>Count</th>
+    <th>Max</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +13,10 @@
 
 <% @leave_configs.each do |leave_config| %>
   <tr>
-    <td><%= leave_config.emptype %></td>
-    <td><%= leave_config.sl %></td>
-    <td><%= leave_config.cl %></td>
-    <td><%= leave_config.el %></td>
+    <td><%= leave_config.emptype_id %></td>
+    <td><%= leave_config.leave_type_id %></td>
+    <td><%= leave_config.count %></td>
+    <td><%= leave_config.max %></td>
     <td><%= link_to 'Show', leave_config %></td>
     <td><%= link_to 'Edit', edit_leave_config_path(leave_config) %></td>
     <td><%= link_to 'Destroy', leave_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>

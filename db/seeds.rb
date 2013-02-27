@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 LeaveType.create(:name => "EL")
 LeaveType.create(:name => "CL")
-LeaveType.create(:name => "SL")
-#LeaveType.create(:name => "probated")
-#LeaveType.create(:name => "confirmed")
-#LeaveType.create(:name => "Trainee")
-#LeaveType.create(:name => "probated")
-#LeaveType.create(:name => "confirmed")
-#LeaveType.create(:name => "Trainee")
+LeaveType.create(:name => "CO")
+LeaveType.create(:name => "FSL")
+LeaveType.create(:name => "HSL")
+LeaveType.create(:name => "PCNS")
+LeaveType.create(:name => "ML")
+LeaveType.create(:name => "OSD")
+LeaveType.create(:name => "COC")
 
 
 

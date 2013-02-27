@@ -1,6 +1,7 @@
 class LeavemanagementsController < ApplicationController
   # GET /leavemanagements
   # GET /leavemanagements.json
+  require 'ruby-debug'
   def index
     @leavemanagements = Leavemanagement.all
 
@@ -40,6 +41,7 @@ class LeavemanagementsController < ApplicationController
   # POST /leavemanagements
   # POST /leavemanagements.json
   def create
+    puts params
     @leavemanagement = Leavemanagement.new(params[:leavemanagement])
     @leavemanagement.user_id =  current_user.id
     respond_to do |format|

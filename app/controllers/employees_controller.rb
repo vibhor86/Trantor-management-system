@@ -66,7 +66,7 @@ class EmployeesController < ApplicationController
     user.attributes.each do |key,val|
       user_attributes << key   
     end
-    CSV.foreach(params[:dump][:file].tempfile.to_path.to_s) do |row|
+     CSV.foreach(params[:dump][:file].tempfile.to_path.to_s) do |row|
       first_row = row  if index == 0
       header_row = row if index == 1
       next if (index += 1) < 3 

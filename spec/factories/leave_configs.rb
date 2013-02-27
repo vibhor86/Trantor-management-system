@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :leave_config do
-    emptype "MyString"
-    sl 1
-    cl 1
-    el 1
+    emptype_id 1
+    leave_type_id 1
+    count 1
+    max 1
   end
 end

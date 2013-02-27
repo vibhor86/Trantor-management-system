@@ -46,11 +46,7 @@
         Leave Type
       </div>
       <div class="span4">
-        <select>
-          <option>Casual Leave</option>
-          <option>Sick Leave</option>
-          <option>Earned Leave</option>
-        </select>
+        <%=  select_tag "type_of_leave" , options_from_collection_for_select(LeaveType.all , 'id', 'name') , :id => "type_leave_id"%>
       </div>
     </div>
     <div class="field row">

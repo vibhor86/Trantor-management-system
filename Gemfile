@@ -19,6 +19,8 @@ gem "twitter-bootstrap-rails"
 # in production environments by default.
 gem 'therubyracer'
 gem 'libv8'
+#gem 'thin'
+gem 'dalli'
 group :assets do
 
   gem 'sass-rails',   '~> 3.2.3'
