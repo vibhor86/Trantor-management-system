@@ -36,7 +36,6 @@ class DocumentController < ApplicationController
       temp_template = @template_body.dup
       row_index += 1
       next if row_index == 1 or row.join.blank?
-
       @doc = search_replace(temp_template,row,@header)
       if (params[:check_header_footer] == 'Enable')
        allow_header_footer(@doc[:template])
@@ -63,7 +62,7 @@ class DocumentController < ApplicationController
   
   def search_replace(template,row,headers)
   headers.collect! {|i| i.downcase}
- 
+  
   @header_row_hash = Hash[headers.zip(row.map {|r| r.include?(',') ? (r.split /, /) : r})]
 
     placeholder_data = Placeholder.find(:all,:conditions => ["column_name IN (?)",headers])
