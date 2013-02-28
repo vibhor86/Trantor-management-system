@@ -6,7 +6,7 @@ TrantorManagementSystem::Application.routes.draw do
 
   resources :leavemanagements  do
     collection do
-      get :add
+      get :add,:total_balance
     end
   end
 

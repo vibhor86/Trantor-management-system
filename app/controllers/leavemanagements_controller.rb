@@ -4,24 +4,20 @@ class LeavemanagementsController < ApplicationController
   require 'ruby-debug'
   def index
     @leavemanagements = Leavemanagement.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @leavemanagements }
     end
   end
-
   # GET /leavemanagements/1
   # GET /leavemanagements/1.json
   def show
     @leavemanagement = Leavemanagement.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @leavemanagement }
     end
   end
-
   # GET /leavemanagements/new
   # GET /leavemanagements/new.json
   def new
@@ -86,4 +82,12 @@ class LeavemanagementsController < ApplicationController
       format.json {render :json => {:data => params }}
     end
   end
+  
+def total_balance 
+  balance_instance = Leavebalance.first(conditions: {:user_id => current_user.id, :leave_type_id => params[:leave_type_id] } )
+  @balance = balance_instance ? balance_instance.balance.to_i : 0  
+  render :partial => "total_balance"
+end  
+  
+
 end

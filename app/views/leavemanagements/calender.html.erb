@@ -57,18 +57,14 @@
         <%= text_field "startdate" ,"",:data => "" ,:class => "datepicker" , :id => "start_date" %>
       </div>
     </div>
-    <div class="field row">
-      <div class="span2 offset1">
-        Number of Days
-      </div>
-      <div class="span4">
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-      </div>
-    </div>
+    <%#*<div class="field row">%>
+      <%#*<div class="span2 offset1">%>
+        <%#*Number of Days%>
+      <%#*</div>%>
+      <%#*<div class="span4" id ="balance_change">%>
+        <%#=  select_tag "balance" , options_from_collection_for_select([] , 'id', 'name') , :id => "balance_id"%>
+      <%#*</div>%>
+    <%#*</div>%>
     <div class="field row">
       <div class="span2 offset1">
         End Date
@@ -92,5 +88,26 @@
   </div>
 </div>
 
-
+<div class="row-fluid">
+  <div class="span12"> 
+    <h3>Weekly Attendance</h3>
+    <table>
+      <thead>
+        <tr>
+          <%leaves_type.each do |lv| %>
+             <th><%= lv.name %></th>
+          <%end%>
+        </tr>
+      </thead>
+      <tbody>
+        <% 5.times do |time| %>
+          <%#unless @dates.blank? %>
+            <% first =  @fist_day_of_week + (time.to_i).day%>
+          <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
+          <%#end%>
+      <%end%>
+      </tbody>
+    </table>
+  </div>
+ </div>
 <div id='calendar'></div>
