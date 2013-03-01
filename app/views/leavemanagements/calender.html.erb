@@ -70,7 +70,7 @@
         End Date
       </div>
       <div class="span4">
-        <%= text_field "enddate" ,"",:data => "" ,:id => "end_date"%>
+        <%= text_field "enddate" ,"",:data => "" ,:id => "end_date",:class => "datepicker"%>
       </div>
     </div>
     <div class="field row">
@@ -90,7 +90,7 @@
 
 <div class="row-fluid">
   <div class="span12"> 
-    <h3>Weekly Attendance</h3>
+    <h3>Leave Balance</h3>
     <table>
       <thead>
         <tr>
@@ -100,12 +100,9 @@
         </tr>
       </thead>
       <tbody>
-        <% 5.times do |time| %>
-          <%#unless @dates.blank? %>
-            <% first =  @fist_day_of_week + (time.to_i).day%>
-          <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
-          <%#end%>
-      <%end%>
+        <%leaves_type.each do |lv| %>
+        <td><%= leaves_balances(lv.id) %></td>
+         <%end%>
       </tbody>
     </table>
   </div>

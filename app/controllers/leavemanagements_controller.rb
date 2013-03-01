@@ -37,18 +37,20 @@ class LeavemanagementsController < ApplicationController
   # POST /leavemanagements
   # POST /leavemanagements.json
   def create
-    puts params
-    @leavemanagement = Leavemanagement.new(params[:leavemanagement])
-    @leavemanagement.user_id =  current_user.id
-    respond_to do |format|
-      if @leavemanagement.save
-        format.html { redirect_to @leavemanagement, notice: 'Leavemanagement was successfully created.' }
-        format.json {render :json => {:data => params }}
-      else
-        format.html { render action: "new" }
-        format.json { render json: @leavemanagement.errors, status: :unprocessable_entity }
-      end
-    end
+   totaldata = []
+   working_day =  ((params[:leavemanagement][:start_date].to_date)..(params[:leavemanagement][:end_date].to_date)).select {|d| (1..5).include?(d.wday) }
+   holidays = Holiday.all(:conditions => ["DATE(date) BETWEEN ? AND ?", params[:leavemanagement][:start_date],params[:leavemanagement][:start_date]]) 
+   totaldata =  working_day - holidays.collect!{|holiday| holiday.date.to_date}
+   leave_type = params[:leavemanagement][:leave_type]
+   
+   totaldata.each do |td|
+     @leavemanagement = Leavemanagement.new(:start_date => td,:end_date => td,:user_id => current_user.id,:leave_type_id => leave_type )
+     @leavemanagement.save!
+   end   
+   respond_to do |format|
+       format.html { redirect_to @leavemanagement, notice: 'Leavemanagement was successfully created.' }
+       format.json {render :json => {:data => params }}
+   end
   end
 
   # PUT /leavemanagements/1

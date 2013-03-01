@@ -2,12 +2,15 @@ $(document).ready(function () {
     $('#event_create').on('click', function () {
         var start_date = $('#start_date').val();
         var end_date = $('#end_date').val();
+        var type_leave_id = $('#type_leave_id').val()
+        var type_leave = $('#type_leave_id option:selected').text()
         $('#calenderevent').modal('hide');
         $.ajax({
             dataType:'json',
             type:'post',
             url:"leavemanagements/",
             data:{
+                'leavemanagement[leave_type]':type_leave_id,
                 'leavemanagement[start_date]':start_date,
                 'leavemanagement[end_date]':end_date,
                 '_method':'POST'
@@ -16,7 +19,7 @@ $(document).ready(function () {
             success:function (data) {
                 $('#calendar').fullCalendar('renderEvent',
                     {
-                        title:'Leave',
+                        title:type_leave,
                         start:new Date(start_date.substring(6), start_date.substring(3, 5) - 1, start_date.substring(0, 2)),
                         end:new Date(end_date.substring(6), end_date.substring(3, 5) - 1, end_date.substring(0, 2)),
                         allDay:true
@@ -48,7 +51,8 @@ $(document).ready(function () {
                 }
             });
 
-            if (okToAdd) {
+            if (okToAdd) 
+            {
                 var year = startDate.getFullYear();
                 var month = startDate.getMonth();
                 month++;
@@ -63,6 +67,10 @@ $(document).ready(function () {
             calendar.fullCalendar('unselect');
 
 
+        },
+        eventClick: function(event) {
+            calendar.fullCalendar('refetchEvents');
+            alert(event.title)
         },
         events:function (start, end, callback) {
             $.ajax({
