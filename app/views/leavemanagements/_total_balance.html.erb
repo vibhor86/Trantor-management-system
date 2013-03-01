@@ -1,0 +1,1 @@
+<%=  select_tag "balance" , options_for_select((0..@balance).step(1).to_a.map{|s| ["#{s}", s]})%>
