@@ -1,46 +1,38 @@
 TrantorManagementSystem::Application.routes.draw do
  
-  resources :events
-
+  resources :events do 
+    collection do 
+     get :remove_event
+    end
+  end
   resources :holidays
-
   resources :leavemanagements  do
     collection do
       get :add,:total_balance
     end
   end
-
   resources :leave_configs
-
   resources :banks
-
- resources   :employees do
+  resources   :employees do
     collection do
       get :unconfirmed_user,:csv_import,:all_employees,:history ,:render_projects
     end
   end
-  
-  
   resources :projects do
     collection do
      get :all_record
     end
   end
-
-
   resources :bands do
     collection do
      get :all_record
     end
   end
-
-
   resources :designations do
     collection do
      get :all_record
     end
   end
-
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   get "document/index"

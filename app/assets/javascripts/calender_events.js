@@ -64,13 +64,26 @@ $(document).ready(function () {
                 $('#end_date').val(day + "-" + month + "-" + year)
                 $('#calenderevent').modal('show');
             }
+            
             calendar.fullCalendar('unselect');
 
 
         },
         eventClick: function(event) {
-            calendar.fullCalendar('refetchEvents');
-            alert(event.title)
+            alert(event.start)
+            $.ajax({
+            dataType:'json',
+            type:'post',
+            url:"/events/remove_event",
+            data:{
+                'start_date': event.start               
+            },
+            success:function (data) {
+               calendar.fullCalendar('refetchEvents');
+               alert(event.title)
+            }
+        });
+            
         },
         events:function (start, end, callback) {
             $.ajax({
