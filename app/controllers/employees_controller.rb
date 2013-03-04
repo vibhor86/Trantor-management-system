@@ -73,9 +73,7 @@ require "ruby-debug"
       header_row = row if index == 1
       next if (index += 1) < 3 
       28.times do |col|
-        debugger
         if first_row[col]
-          debugger
           user = reference_model(first_row[col],row[col],user,temp,header_row[col])
         else
 #          user.password = user.password_confirmation = Devise.friendly_token 
@@ -94,13 +92,14 @@ require "ruby-debug"
            balance.user_id = user.id
            balance.save!
         end
-        data =  "create"
+        data =  "Upload Successfully"
       else
         
-        data = user.errors.full_messages
+        data = user.errors.full_messages.join(',')
       end
     end
-    render  :text => data
+    flash[:notice] = data
+    redirect_to :action => "new" 
   end
   
   def reference_model instance , value , user,temp,header_row

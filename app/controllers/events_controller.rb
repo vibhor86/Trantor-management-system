@@ -18,8 +18,15 @@ class EventsController < ApplicationController
 end
 
   def remove_event
+    event = Leavemanagement.first(:conditions => ["DATE(start_date)= ? AND user_id = ? AND approved = ?", params[:start_date].to_date,current_user.id, false] ) 
     
-
+    respond_to do |format|
+      if event 
+        event.destroy
+        format.json {render :json => {:valid => true}}
+      end
+        format.json {render :json => {:data => false}}
+    end
   end  
   
   
