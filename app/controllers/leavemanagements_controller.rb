@@ -37,12 +37,16 @@ class LeavemanagementsController < ApplicationController
   # POST /leavemanagements
   # POST /leavemanagements.json
   def create
+   sequence = ['CO','EL'] 
    totaldata = []
    working_day =  ((params[:leavemanagement][:start_date].to_date)..(params[:leavemanagement][:end_date].to_date)).select {|d| (1..5).include?(d.wday) }
    holidays = Holiday.all(:conditions => ["DATE(date) BETWEEN ? AND ?", params[:leavemanagement][:start_date],params[:leavemanagement][:start_date]]) 
    totaldata =  working_day - holidays.collect!{|holiday| holiday.date.to_date}
    leave_type = params[:leavemanagement][:leave_type]
-   
+   leave_balance_instance = Leavebalance.find_by_user_id_and_leave_type_id(current_user.id,leave_type)
+   leavecalculation leave_balance_instance , totaldata
+    
+    
    totaldata.each do |td|
      @leavemanagement = Leavemanagement.new(:start_date => td,:end_date => td,:user_id => current_user.id,:leave_type_id => leave_type )
      @leavemanagement.save!
@@ -90,6 +94,12 @@ def total_balance
   @balance = balance_instance ? balance_instance.balance.to_i : 0  
   render :partial => "total_balance"
 end  
-  
+ 
+def leavecalculation leave_balance_instance , totaldata
+  if leave_balance_instance && leave_balance_instance.balance < totaldata.count
+      
+  end
+end  
+
 
 end
