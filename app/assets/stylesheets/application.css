@@ -188,5 +188,11 @@ h1.block_heading{
     text-align: center;
 }
 
+.nav > li > a:hover {
+background-color: #2FA4E7 !important;
+}
 
-
+#band_table_wrapper
+{
+    overflow-x: scroll;
+}
