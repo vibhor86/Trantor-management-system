@@ -37,7 +37,6 @@ class LeavemanagementsController < ApplicationController
   # POST /leavemanagements
   # POST /leavemanagements.json
   def create
-   sequence = ['CO','EL'] 
    totaldata = []
    working_day =  ((params[:leavemanagement][:start_date].to_date)..(params[:leavemanagement][:end_date].to_date)).select {|d| (1..5).include?(d.wday) }
    holidays = Holiday.all(:conditions => ["DATE(date) BETWEEN ? AND ?", params[:leavemanagement][:start_date],params[:leavemanagement][:start_date]]) 
@@ -100,6 +99,16 @@ def leavecalculation leave_balance_instance , totaldata
       
   end
 end  
+
+def leave_deduction_sequence
+  {"1" => "CO" ,
+   "2" => "EL",
+   "3" => "CL",
+   "4" => "FSL",
+   "5" => "POD"
+   }
+end  
+
 
 
 end
