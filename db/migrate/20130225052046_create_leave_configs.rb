@@ -5,6 +5,7 @@ class CreateLeaveConfigs < ActiveRecord::Migration
       t.integer :leave_type_id
       t.integer :count
       t.integer :max
+      t.integer :factor
 
       t.timestamps
     end

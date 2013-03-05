@@ -14,17 +14,11 @@ LeaveType.create(:name => "ML")
 LeaveType.create(:name => "OSD")
 LeaveType.create(:name => "COC")
 
-
-
-
-
-
-
 Emptype.create(:name => "probated")
 Emptype.create(:name => "confirmed")
 Emptype.create(:name => "Trainee")
 
-user =  User.new(:email => 'mahinder124@gmail.com', :password => 'rorteam', :password_confirmation => 'rorteam')
+user =  User.new(:email => 'mostwanted181@gmail.com', :password => 'happyarun', :password_confirmation => 'happyarun')
  user.ecode = 'e0001'
  user.name = "mahi"
  user.date_of_joining = "10-12-2001"
