@@ -46,7 +46,7 @@
         Leave Type
       </div>
       <div class="span4">
-        <%=  select_tag "type_of_leave" , options_from_collection_for_select(LeaveType.all , 'id', 'name') , :id => "type_leave_id"%>
+        <%=  select_tag "type_of_leave" , options_from_collection_for_select(current_user.leavebalances.where('balance > 0').collect{|ss| ss.leave_type}-[nil] , 'id', 'name') , :id => "type_leave_id"%>
       </div>
     </div>
     <div class="field row">

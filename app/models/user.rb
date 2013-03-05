@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :designation
   belongs_to :emptype
   belongs_to :manager, :class_name => :user
-
+  has_many :leavebalances
   ROLES = ["admin","hr","manager","individual"]
   has_attached_file :avatar,:styles => { :medium => "300x300>"},:url => "/system/:class/:ecode.:extension",:path => ":rails_root/public/system/:class/:ecode.:extension"
 
