@@ -1,3 +1,10 @@
+<% if flash[notice] %>
+ <%=  flash[notice]%>
+<%end%>
+
+
+
+
 <h1 class="block_heading">Create Employee</h1>
 <a href="#upload" role="button" class="btn" data-toggle="modal">Upload CSV for Employee Creation</a>
 <div id="upload" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

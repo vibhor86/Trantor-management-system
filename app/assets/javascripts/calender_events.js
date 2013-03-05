@@ -25,6 +25,7 @@ $(document).ready(function () {
                         allDay:true
                     }, true
                 );
+                    location.reload();
             }
         });
     })
@@ -70,8 +71,7 @@ $(document).ready(function () {
 
         },
         eventClick: function(event) {
-            alert(event.start)
-            $.ajax({
+          $.ajax({
             dataType:'json',
             type:'post',
             url:"/events/remove_event",
@@ -79,11 +79,13 @@ $(document).ready(function () {
                 'start_date': event.start               
             },
             success:function (data) {
-               calendar.fullCalendar('refetchEvents');
-               alert(event.title)
+               if(data.valid){
+                 calendar.fullCalendar('refetchEvents');  
+               }else{
+                 alert("You can't remove this is approved leave")  
+               }
             }
         });
-            
         },
         events:function (start, end, callback) {
             $.ajax({
