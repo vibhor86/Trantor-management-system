@@ -50,6 +50,7 @@ class LeavemanagementsController < ApplicationController
     
     if @totaldates.count > @apply_leave_balance && ["CL","FSL","HSL"].include?(apply_leave_type_instance.name)
      leave_deduction_sequence(apply_leave_type_instance).each do |ld|
+      if @totaldates.count > 0	
         other_leave_type_instance =  LeaveType.find_by_name(ld)
         other_balance_instance =  Leavebalance.find_by_user_id_and_leave_type_id(current_user.id,other_balance_instance.id)  
         other_balance_instance_balance =  other_balance_instance ? other_balance_instance.balance : 0
@@ -61,6 +62,7 @@ class LeavemanagementsController < ApplicationController
               if other_balance_instance_balance > 0
                 leave_management = Leavemanagement.new(:start_date => td,:end_date => td,:user_id => current_user.id,:leave_type_id => other_leave_type_instance.id )
                 leave_management.save!
+		@totaldates = @totaldates - td.to_a 
                 other_balance_instance_balance = other_balance_instance_balance - 1
                 other_balance_instance.update_attributes(:balance => other_balance_instance_balance)
               else
@@ -69,10 +71,8 @@ class LeavemanagementsController < ApplicationController
             end
           
 #         end 
-        
-        
-        
-     end
+      end  
+    end
     else  
       @totaldates.each do |td|
         if @apply_leave_balance > 0

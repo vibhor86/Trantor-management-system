@@ -1,6 +1,6 @@
 source 'http://bundler-api.herokuapp.com'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.11'
 gem 'rails_admin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,12 +13,11 @@ gem 'cancan'
 gem 'passenger'
 gem "audited-activerecord", "~> 3.0"
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'paper_trail', '~> 2'
 gem "twitter-bootstrap-rails"
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'therubyracer'
-gem 'libv8'
+
 #gem 'thin'
 gem 'dalli'
 group :assets do
