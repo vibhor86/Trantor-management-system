@@ -4,6 +4,7 @@ $(document).ready(function () {
         var end_date = $('#end_date').val();
         var type_leave_id = $('#type_leave_id').val()
         var type_leave = $('#type_leave_id option:selected').text()
+        var reason = $('#leave_reason').val()
         $('#calenderevent').modal('hide');
         $.ajax({
             dataType:'json',
@@ -13,6 +14,7 @@ $(document).ready(function () {
                 'leavemanagement[leave_type]':type_leave_id,
                 'leavemanagement[start_date]':start_date,
                 'leavemanagement[end_date]':end_date,
+                'leavemanagement[reason]':end_date,
                 '_method':'POST'
 
             },

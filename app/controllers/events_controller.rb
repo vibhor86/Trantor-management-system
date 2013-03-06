@@ -28,14 +28,6 @@ end
       else
         render :text => "Can't remove this leave because this is approved leave"
       end  
-      
-    #    respond_to do |format|
-#      if event 
-#        event.destroy
-#        format.json {render :json => {:valid => true }}
-#      end
-#        format.json {render :json => {:valid => false}}
-#    end
   end  
   
   

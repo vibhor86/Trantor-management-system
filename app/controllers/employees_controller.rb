@@ -14,6 +14,7 @@ require "ruby-debug"
   def create
     @user = User.new(@data)
     if @user.save
+      @user.create_from_csv = true
       flash[:notice] = "User Save"
       redirect_to :action => "new"
     else

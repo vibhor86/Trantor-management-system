@@ -18,8 +18,8 @@ Emptype.create(:name => "probated")
 Emptype.create(:name => "confirmed")
 Emptype.create(:name => "Trainee")
 
-user =  User.new(:email => 'mostwanted181@gmail.com', :password => 'happyarun', :password_confirmation => 'happyarun')
- user.ecode = 'e0001'
+user =  User.new(:email => 'mahinder124@gmail.com', :password => 'happyarun', :password_confirmation => 'happyarun')
+ user.ecode = 'e00001'
  user.name = "mahi"
  user.date_of_joining = "10-12-2001"
  user.date_of_birth = "10-12-2000"

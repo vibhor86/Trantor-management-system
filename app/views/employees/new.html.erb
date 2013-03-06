@@ -57,7 +57,7 @@
       <div class="span4">
         <%= f.label :gender %><%= f.select :gender, options_for_select(["M", "F"]) %>
       </div>
-
+<%= f.hidden_field :create_from_csv , :value => true  %>
       <div class="span4">
         <%= f.label :location %><%= f.text_field :location, :data => "" %>
       </div>

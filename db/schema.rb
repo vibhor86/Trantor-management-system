@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20130225052046) do
     t.integer  "leave_type_id"
     t.integer  "count"
     t.integer  "max"
+    t.integer  "factor"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
