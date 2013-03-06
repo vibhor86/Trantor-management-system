@@ -71,21 +71,18 @@ $(document).ready(function () {
 
         },
         eventClick: function(event) {
-          $.ajax({
-            dataType:'json',
-            type:'post',
-            url:"/events/remove_event",
-            data:{
-                'start_date': event.start               
-            },
-            success:function (data) {
-               if(data.valid){
-                 calendar.fullCalendar('refetchEvents');  
-               }else{
-                 alert("You can't remove this is approved leave")  
-               }
-            }
-        });
+            $.get('/events/remove_event',{'start_date': event.start,'name' : event.title},function(data){
+                if(data == "Can't remove this leave because this is approved leave"){
+                   alert(data)    
+                 }   
+                  else
+                      {
+                        calendar.fullCalendar('refetchEvents');  
+                        $('#leave_balance').empty();
+                        $('#leave_balance').html(data);  
+                      }
+            })
+           
         },
         events:function (start, end, callback) {
             $.ajax({

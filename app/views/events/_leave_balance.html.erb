@@ -1,0 +1,17 @@
+<div class="span12"> 
+    <h3>Leave Balance</h3>
+    <table>
+      <thead>
+        <tr>
+          <%leaves_type.each do |lv| %>
+             <th><%= lv.name %></th>
+          <%end%>
+        </tr>
+      </thead>
+      <tbody>
+        <%leaves_type.each do |lv| %>
+        <td><%= leaves_balances(lv.id) %></td>
+         <%end%>
+      </tbody>
+    </table>
+  </div>
