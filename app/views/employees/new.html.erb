@@ -1,10 +1,6 @@
 <% if flash[notice] %>
  <%=  flash[notice]%>
 <%end%>
-
-
-
-
 <h1 class="block_heading">Create Employee</h1>
 <a href="#upload" role="button" class="btn" data-toggle="modal">Upload CSV for Employee Creation</a>
 <div id="upload" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -38,8 +34,6 @@
       <div class="span4">
         <%= f.label :date_of_joining %><%= f.text_field :date_of_joining, :class => "datepicker", :value => Date.today %>
       </div>
-
-
     </div>
     <div class="field row span12">
       <div class="span4">
@@ -57,7 +51,7 @@
       <div class="span4">
         <%= f.label :gender %><%= f.select :gender, options_for_select(["M", "F"]) %>
       </div>
-<%= f.hidden_field :create_from_csv , :value => true  %>
+      <%= f.hidden_field :create_from_form , :value => true  %>
       <div class="span4">
         <%= f.label :location %><%= f.text_field :location, :data => "" %>
       </div>
