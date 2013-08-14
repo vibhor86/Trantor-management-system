@@ -14,12 +14,6 @@ LeaveType.create(:name => "SL")
 #LeaveType.create(:name => "confirmed")
 #LeaveType.create(:name => "Trainee")
 
-
-
-
-
-
-
 Emptype.create(:name => "probated")
 Emptype.create(:name => "confirmed")
 Emptype.create(:name => "Trainee")
