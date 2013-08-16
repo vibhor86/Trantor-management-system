@@ -1,7 +1,6 @@
 TrantorManagementSystem::Application.routes.draw do
  
   resources :events
-
   resources :holidays
 
   resources :leavemanagements  do
@@ -11,7 +10,6 @@ TrantorManagementSystem::Application.routes.draw do
   end
 
   resources :leave_configs
-
   resources :banks
 
  resources   :employees do
@@ -45,22 +43,18 @@ TrantorManagementSystem::Application.routes.draw do
 
   get "document/index"
   get "document/show"
+
+  devise_for :users, :controllers => { :confirmations => "confirmations" }
   as :user do
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
-  devise_for :users, :controllers => { :confirmations => "confirmations" }
 
   resources :document_templates, :documents
+  
   match 'document' => 'document#document'
-  match 'document/index' =>  'document#index'
-  match 'dashboard' =>  'dashboard#dashboard'
+  match 'document/index' => 'document#index'
+  match 'dashboard' => 'dashboard#dashboard'
   match 'calender' => 'leavemanagements#calender'
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

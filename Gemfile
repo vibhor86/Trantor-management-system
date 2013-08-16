@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 
 gem 'rails_admin'
 gem 'mysql2'
-gem "devise"
+gem 'devise'
 gem 'wisepdf'
 gem 'cancan'
 gem 'passenger'
@@ -21,6 +21,10 @@ group :assets do
   gem 'client_side_validations'
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer'
+end
+
+group :development do
+  gem 'webrick', '~> 1.3.1'
 end
 
 gem 'jquery-datatables-rails', github:'rweng/jquery-datatables-rails'
