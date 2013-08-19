@@ -5,7 +5,7 @@ class CreateLeavemanagements < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.string :reason
-      t.string :type
+      t.integer :leave_type_id
       t.boolean :approved , :default => false
       t.timestamps
     end

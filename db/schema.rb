@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212080510) do
+ActiveRecord::Schema.define(:version => 20130803061010) do
+
+  create_table "absents", :force => true do |t|
+    t.string   "ecode"
+    t.datetime "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -100,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20130212080510) do
     t.integer  "leave_type_id"
     t.integer  "count"
     t.integer  "max"
+    t.integer  "factor"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -112,12 +120,10 @@ ActiveRecord::Schema.define(:version => 20130212080510) do
 
   create_table "leavebalances", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "cl"
-    t.integer  "sl"
-    t.integer  "el"
-    t.integer  "co"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "leave_type_id"
+    t.integer  "balance"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "leavemanagements", :force => true do |t|
@@ -125,10 +131,10 @@ ActiveRecord::Schema.define(:version => 20130212080510) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "reason"
-    t.string   "type"
-    t.boolean  "approved",   :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.integer  "leave_type_id"
+    t.boolean  "approved",      :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "placeholders", :force => true do |t|
@@ -159,30 +165,30 @@ ActiveRecord::Schema.define(:version => 20130212080510) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                                 :default => "",        :null => false
-    t.string   "encrypted_password",                                    :default => "",        :null => false
+    t.string   "email",                                                       :default => "",        :null => false
+    t.string   "encrypted_password",                                          :default => "",        :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                         :default => 0
+    t.integer  "sign_in_count",                                               :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                                   :null => false
-    t.datetime "updated_at",                                                                   :null => false
-    t.boolean  "admin",                                                 :default => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
+    t.boolean  "admin",                                                       :default => false
     t.string   "ecode"
     t.string   "role"
     t.string   "name"
     t.string   "gender"
-    t.string   "confirmation_status",                                   :default => "pending"
+    t.string   "confirmation_status",                                         :default => "pending"
     t.string   "blood_group"
     t.string   "marital_status"
     t.string   "pan_no"
     t.string   "father_name"
     t.string   "spouse_name"
-    t.decimal  "salary",                 :precision => 10, :scale => 0
+    t.decimal  "salary",                       :precision => 10, :scale => 0
     t.string   "bank_number"
     t.date     "date_of_anniversary"
     t.date     "date_of_birth"
@@ -202,6 +208,16 @@ ActiveRecord::Schema.define(:version => 20130212080510) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "bu"
+    t.string   "bu_head"
+    t.string   "bank_address"
+    t.string   "bank_ifsc"
+    t.string   "lta_option"
+    t.string   "madical_reimbursement_option"
+    t.string   "pf_no"
+    t.date     "pf_enrollment_date"
+    t.string   "esi_no"
+    t.string   "gpa_option"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

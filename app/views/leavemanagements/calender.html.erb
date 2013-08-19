@@ -46,11 +46,7 @@
         Leave Type
       </div>
       <div class="span4">
-        <select>
-          <option>Casual Leave</option>
-          <option>Sick Leave</option>
-          <option>Earned Leave</option>
-        </select>
+        <%=  select_tag "type_of_leave" , options_from_collection_for_select(LeaveType.all , 'id', 'name') , :id => "type_leave_id"%>
       </div>
     </div>
     <div class="field row">
@@ -61,24 +57,20 @@
         <%= text_field "startdate" ,"",:data => "" ,:class => "datepicker" , :id => "start_date" %>
       </div>
     </div>
-    <div class="field row">
-      <div class="span2 offset1">
-        Number of Days
-      </div>
-      <div class="span4">
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-      </div>
-    </div>
+    <%#*<div class="field row">%>
+      <%#*<div class="span2 offset1">%>
+        <%#*Number of Days%>
+      <%#*</div>%>
+      <%#*<div class="span4" id ="balance_change">%>
+        <%#=  select_tag "balance" , options_from_collection_for_select([] , 'id', 'name') , :id => "balance_id"%>
+      <%#*</div>%>
+    <%#*</div>%>
     <div class="field row">
       <div class="span2 offset1">
         End Date
       </div>
       <div class="span4">
-        <%= text_field "enddate" ,"",:data => "" ,:id => "end_date"%>
+        <%= text_field "enddate" ,"",:data => "" ,:id => "end_date",:class => "datepicker"%>
       </div>
     </div>
     <div class="field row">
@@ -96,5 +88,7 @@
   </div>
 </div>
 
-
+<div class="row-fluid" id ="leave_balance">
+  <%=  render :partial => "/events/leave_balance" %>
+ </div>
 <div id='calendar'></div>

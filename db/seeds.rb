@@ -4,25 +4,21 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-LeaveType.create(:name => "EL")
-LeaveType.create(:name => "CL")
-LeaveType.create(:name => "SL")
-#LeaveType.create(:name => "probated")
-#LeaveType.create(:name => "confirmed")
-#LeaveType.create(:name => "Trainee")
-#LeaveType.create(:name => "probated")
-#LeaveType.create(:name => "confirmed")
-#LeaveType.create(:name => "Trainee")
+LeaveType.create(:name => "Earned Leave")
+LeaveType.create(:name => "Casual Leave")
+LeaveType.create(:name => "Sick Leave")
+LeaveType.create(:name => "Maternity Leave" )
+LeaveType.create(:name => "Onsite/On Office Duty/Work From Home/Present but Card not shown")
 
-Emptype.create(:name => "probated")
-Emptype.create(:name => "confirmed")
+Emptype.create(:name => "Probation")
+Emptype.create(:name => "Confirmed")
 Emptype.create(:name => "Trainee")
 
-user =  User.new(:email => 'mahinder124@gmail.com', :password => 'rorteam', :password_confirmation => 'rorteam')
- user.ecode = 'e0001'
- user.name = "mahi"
- user.date_of_joining = "10-12-2001"
- user.date_of_birth = "10-12-2000"
+user =  User.new(:email => 'nidhi.ayri@trantorinc.com', :password => 'password', :password_confirmation => 'password')
+ user.ecode = 'e00015'
+ user.name = "Nidhi"
+ user.date_of_joining = "15-04-2012"
+ user.date_of_birth = "22-11-1980"
 user.role = "admin"
 user.emptype_id = 2
  user.save!

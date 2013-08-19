@@ -1,19 +1,85 @@
-<% if can? :manage, :all %>
-    <ul class="admin-dashboard-list"><h1>Settings</h1>
-      <li><a href="/bands/all_record">Manage Bands</a></li>
-      <li><a href="/designations/all_record">Manage designations</a></li>
-      <li><a href="/projects/all_record">Manage projects</a></li>
-      <li><a href="/banks/new">Create banks</a></li>
-      <li><a href="/banks/">Manage banks</a></li>
-    </ul>
-    <ul class="admin-dashboard-list"><h1>Employee Management</h1>
-      <li><a href="/employees/all_employees">All Employees</a></li>
-      <li><a href="/employees/new">Create Employee</a></li>
-      <li><a href="/employees/history">Employee History</a></li>
-    </ul>
-    <ul class="admin-dashboard-list"><h1>Document Management </h1>
-      <li><%= link_to "Create Document Template", new_document_template_path %></li>
-      <li><%= link_to "Edit Document Template", document_templates_path %></li>
-    </ul>
-<% end %>
+<div class="row-fluid">
+  <div class="span12"> 
+    <h3>Weekly Attendance</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% 5.times do |time| %>
+  <%#unless @dates.blank? %>
+          <% first =  @fist_day_of_week + (time.to_i).day%>
+        <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
+  <%#end%>
+      <%end%>
+      </tbody>
+    </table>
+  </div>
+  <div class="span12"> 
+    <h3>Approve Leaves </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ecode</th>
+          <th>Name</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Type of leave</th>
+          <th>Reason for leave</th>
+          <th>Clubbing of leaves (Yes/No)</th>
+          <th>Reason for Clubbing</th>
+          <th>Approve/Disapprove</th>
+          <th>Reason for Disapproval (filled by manager)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%@not_accepted_leaves.each do |leave|%>
+        <tr>  
+          <td><%=leave.user.ecode%></td>
+          <td><%=leave.user.name%></td>
+          <td><%=leave.start_date%></td>
+          <td><%=leave.end_date%></td>
+          <td><%=leave.leave_type.name%></td>
+          <td><%=leave.reason%></td>
+          <td></td>
+          <td></td>
+          <td><%= select_tag "aprove" , options_for_select([["select", "n"],["approve", "approve"], ["disapprove", "disapprove"]])%></td>
+          <td><input type="text" name ="resion for disaprove"></td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">  
+    <% if can? :manage, :all %>
+      <ul class="admin-dashboard-list"><h1>Settings</h1>
+        <li><a href="/bands/all_record">Manage Bands</a></li>
+        <li><a href="/designations/all_record">Manage designations</a></li>
+        <li><a href="/projects/all_record">Manage projects</a></li>
+        <li><a href="/banks/new">Create banks</a></li>
+        <li><a href="/banks/">Manage banks</a></li>
+      </ul>
+      <ul class="admin-dashboard-list"><h1>Employee Management</h1>
+        <li><a href="/employees/all_employees">All Employees</a></li>
+        <li><a href="/employees/new">Create Employee</a></li>
+        <li><a href="/employees/history">Employee History</a></li>
+      </ul>
+      <ul class="admin-dashboard-list"><h1>Document Management </h1>
+        <li><%= link_to "Create Document Template", new_document_template_path %></li>
+        <li><%= link_to "Edit Document Template", document_templates_path %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+
+
 

@@ -1,3 +1,6 @@
+<% if flash[notice] %>
+ <%=  flash[notice]%>
+<%end%>
 <h1 class="block_heading">Create Employee</h1>
 <a href="#upload" role="button" class="btn" data-toggle="modal">Upload CSV for Employee Creation</a>
 <div id="upload" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -29,10 +32,8 @@
         <%= f.label :name %><%= f.text_field :name, :data => "" %>
       </div>
       <div class="span4">
-        <%= f.label :date_of_joining %><%= f.text_field :date_of_joining, :class => "datepicker", :value => Date.today %>
+        <%= f.label :date_of_joining %><%= f.text_field :date_of_joining, :class => "datepicker", :value => Date.today  ,:readonly => true%>
       </div>
-
-
     </div>
     <div class="field row span12">
       <div class="span4">
@@ -50,7 +51,7 @@
       <div class="span4">
         <%= f.label :gender %><%= f.select :gender, options_for_select(["M", "F"]) %>
       </div>
-
+      <%= f.hidden_field :create_from_form , :value => true  %>
       <div class="span4">
         <%= f.label :location %><%= f.text_field :location, :data => "" %>
       </div>
@@ -108,7 +109,7 @@
         <%= f.select :emptype_id, options_for_select(Emptype.all.map { |d| ["#{d.name} ", d.id] }, "select") %>
       </div>
       <div class="span4">
-        <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Unmarried", "Married", "divorced"]) %>
+        <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Single", "Married"]) %>
       </div>
 
     </div>

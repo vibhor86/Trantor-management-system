@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   before_filter :check_confimation
   before_filter :blacklist , :only => [:create,:update]
   load_and_authorize_resource :class => "User"
-
+require "ruby-debug"
   def new
     @user = User.new
     @projects = []
@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
   def create
     @user = User.new(@data)
     if @user.save
+      @user.create_from_csv = true
       flash[:notice] = "User Save"
       redirect_to :action => "new"
     else
@@ -59,39 +60,51 @@ class EmployeesController < ApplicationController
   end
   def csv_import
     data = nil
-    user_attributes = []
-    user = User.new
     index = 0
+    user_attributes = []  
     header_row = first_row = nil
-    user.attributes.each do |key,val|
+    User.column_names.each do |key,val|
       user_attributes << key   
     end
-    CSV.foreach(params[:dump][:file].tempfile.to_path.to_s) do |row|
+
+     CSV.foreach(params[:dump][:file].tempfile.to_path.to_s) do |row|
+           debugger
+      user = User.new     
+      temp = [] 
       first_row = row  if index == 0
       header_row = row if index == 1
       next if (index += 1) < 3 
-      user_attributes.count.times do |col|
+      28.times do |col|
         if first_row[col]
-          user = reference_model(first_row[col],row[col],user)
+          user = reference_model(first_row[col],row[col],user,temp,header_row[col])
         else
 #          user.password = user.password_confirmation = Devise.friendly_token 
-          if header_row[col] && !header_row[col].scan("date").empty?
+          if header_row[col] && !header_row[col].scan("date").empty? && !row[col].nil?
             user.send(header_row[col]+'=',Date.parse(row[col])) if user_attributes.include?(header_row[col])
           else
             user.send(header_row[col]+'=',row[col]) if user_attributes.include?(header_row[col])
           end
         end 
       end
-      if user.save
-        data =  "create"
+      puts user.attributes
+      if user.save!
+        data = ""
+        temp.each do |id|
+           balance = Leavebalance.find_by_id(id)  if id
+           balance.user_id = user.id
+           balance.save!
+        end
+        data =  "Upload Successfully"
       else
-        data = user.errors
+        
+        data = user.errors.full_messages.join(',')
       end
     end
-    render  :text => data
+    flash[:notice] = data
+    redirect_to :action => "new" 
   end
   
-  def reference_model instance , value , user
+  def reference_model instance , value , user,temp,header_row
     if ["Band","Designation"].include?(instance)
       object = instance.constantize.find_by_name value
       user.send(instance.downcase+'_id=',object.id) if object
@@ -99,6 +112,13 @@ class EmployeesController < ApplicationController
       project = Project.find_by_manager_ecode value
       user.send('project_id=',project.id) if project
       user.send('manager_ecode=',value)
+    elsif instance == "LeaveType"
+      object = instance.constantize.find_by_name header_row
+      leave = Leavebalance.create!(:leave_type_id => object.id , :balance => value) if object
+      temp << leave.id 
+     elsif instance == "Emptype"
+      object = instance.constantize.find_by_name value
+      user.send(instance.downcase+'_id=',object.id) if object  
     end
     return user
   end

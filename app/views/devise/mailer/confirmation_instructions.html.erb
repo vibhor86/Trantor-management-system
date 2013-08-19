@@ -1,6 +1,12 @@
-<p>Welcome <%= @resource.email %>!</p>
+<p>Welcome <%= @resource.name %>!</p>
 <% pass = Devise.friendly_token %>
-<p>Your current password is : <%= pass %></p>
-<% @resource.update_attributes( { :password => pass, :password_confirmation => pass }) %>  
-<p>You can confirm your account email through the link below:</p>
-  <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p>Welcome to Trantor family and Trantor Management System!
+Trantor Management System in tool wherein you can manage your personal information as well as your leaves. You are requested activate you account by clicking on <%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %> and verify your information as available with HR.
+
+Your default password is <%= pass %>.
+<% @resource.update_attributes( { :password => pass, :password_confirmation => pass }) %>
+In case of any queries, send mail to hr@trantorinc.com </p>
+
+Regards
+
+Team HR

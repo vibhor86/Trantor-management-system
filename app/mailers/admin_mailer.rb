@@ -14,10 +14,16 @@ class AdminMailer < ActionMailer::Base
 
   def unconfirmation_mail message , user
      mail(:from => user.email,
-      :to => "mahinder.kumar@trantorinc.com",
+      :to => hr_email,
       :subject => "reason for unconfirm",
       :body => message)
   end
-  
+  def exceed  message , user , user_to, hr 
+      email =   hr ? "mahinder124@gmail.com" : user_to.email
+     mail(:from => user.email,
+      :to => email,
+      :subject => "Notification For EL",
+      :body => message)
+  end
   
 end

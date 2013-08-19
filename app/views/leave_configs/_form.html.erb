@@ -1,4 +1,4 @@
-<%= form_for(@leave_config) do |f| %>
+<%= form_for(@leave_config, :validate => true, :validate => :user_validators) do |f| %>
   <% if @leave_config.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@leave_config.errors.count, "error") %> prohibited this leave_config from being saved:</h2>
@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :emptype %><br />
-    <%= f.text_field :emptype %>
+    <%= f.label :emptype_id %><br />
+    <%= f.select :emptype_id , options_for_select(Emptype.all.map{|d| ["#{d.name}",d.id] }, :selected => @leave_config.emptype_id) %>
   </div>
   <div class="field">
-    <%= f.label :sl %><br />
-    <%= f.number_field :sl %>
+    <%= f.label :leave_type_id %><br />
+    <%= f.select :leave_type_id , options_for_select(LeaveType.all.map{|d| ["#{d.name}",d.id] }, :selected => @leave_config.leave_type_id) %>
   </div>
   <div class="field">
-    <%= f.label :cl %><br />
-    <%= f.number_field :cl %>
+    <%= f.label :count %><br />
+    <%= f.number_field :count %>
   </div>
   <div class="field">
-    <%= f.label :el %><br />
-    <%= f.number_field :el %>
+    <%= f.label :max %><br />
+    <%= f.number_field :max %>
   </div>
   <div class="actions">
     <%= f.submit %>

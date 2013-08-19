@@ -4,74 +4,63 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title><%= content_for?(:title) ? yield(:title) : "TrantorManagementSystem" %></title>
-  
   <%= csrf_meta_tags %>
   <%= javascript_include_tag :application, '/ckeditor/ckeditor', '/assets/jquery.pageslide.min.js' %>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "rails.validations", "rails.validations.custom" %>
   <%= favicon_link_tag '/assets/favicon.ico', :rel => 'shortcut icon' %>
-  
   <%= yield(:user_validators) %>
-  
   <link rel='stylesheet' type='text/css' href='cupertino/theme.css' />
   <link rel='stylesheet' type='text/css' href='./fullcalendar/fullcalendar.css' />
   <link rel='stylesheet' type='text/css' href='./fullcalendar/fullcalendar.print.css' media='print' />
-  
 </head>
-	<body>
-		<div class="navbar navbar-fixed-top">
-		  <div class="navbar-inner">
-		    <div class="container-fluid">
-		      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </a>
-		      <a class="brand" href="/dashboard">Trantor Inc.</a>
-		
-		      <div class="container-fluid nav-collapse">
-		        <ul class="nav pull-right">
-		          <% if user_signed_in? %>
-	              <li><%= link_to "Profile", "/employees/#{current_user.id}" %></li>
-	              <li><%= link_to "Welcome  " + current_user.email, "/dashboard" %></li>
-	              
-	              <% if %w[admin hr].include?(current_user.role) %>
-	                  <li><%= link_to "Admin Dashboard", "/admin" %></li>
-	              <% end %>
-	              
-	              <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-		          <% end %>
-		        </ul>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		
-		<div class="container-fluid">
-		  <div class="row-fluid">
-		    
-		    <% if user_signed_in? && current_user.confirmed? %>
-		        <div class="span2" style="-webkit-box-shadow: 0px 0px 8px !important">
-		          <%= render 'layouts/sidebar' %>
-		        </div>
-		    <% end %>
-		    
-		    <% if user_signed_in? %>
-		        <div class="<%=setspan%>" style="border-radius: 4px;padding: 0.833em; background: white url(/assets/bg_kiri.png) repeat;-webkit-box-shadow: 0px 0px 8px !important;min-height: 40em;">
-		          <p class ="notice"><%= notice %></p>
-		          <%= yield %>
-		        </div>
-		    <% else %>
-		        <%= yield %>
-		    <% end %>
-		    
-		  </div>
-		  
-		  <footer></footer>
-		  
-		</div>
-		
-	</body>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/dashboard">Trantor Inc.</a>
+
+      <div class="container-fluid nav-collapse">
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+              <li><%= link_to "Home", "/dashboard" %></li>
+              <li><%= link_to "Profile", "/employees/#{current_user.id}" %></li>
+              <li><%= link_to "Calender", "/calender" %></li>
+              <li><%= link_to "Welcome  "+current_user.name, "/dashboard" %></li>
+              <% if %w[admin hr].include? current_user.role %>
+                  <li><%= link_to "Admin Dashboard", "/admin" %></li>
+              <% end %>
+              <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <% if user_signed_in? && current_user.confirmed? %>
+        <div class="span2" style="-webkit-box-shadow: 0px 0px 8px !important">
+          <%= render 'layouts/sidebar' %>
+        </div>
+    <% end %>
+    <% if user_signed_in? %>
+        <div class="<%=setspan%>" style="border-radius: 4px;padding: 0.833em; background: white url(/assets/bg_kiri.png) repeat;-webkit-box-shadow: 0px 0px 8px !important;min-height: 40em;">
+          <p class ="notice"><%= notice %></p>
+          <%= yield %>
+        </div>
+    <% else %>
+        <%= yield %>
+    <% end %>
+  </div>
+  <footer>
+  </footer>
+</div>
+</body>
 </html>

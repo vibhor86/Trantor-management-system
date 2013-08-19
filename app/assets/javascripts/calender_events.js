@@ -2,27 +2,40 @@ $(document).ready(function () {
     $('#event_create').on('click', function () {
         var start_date = $('#start_date').val();
         var end_date = $('#end_date').val();
-        $('#calenderevent').modal('hide');
+        var type_leave_id = $('#type_leave_id').val()
+        var type_leave = $('#type_leave_id option:selected').text()
+        var reason = $('#leave_reason').val()
+        
         $.ajax({
             dataType:'json',
             type:'post',
             url:"leavemanagements/",
             data:{
+                'leavemanagement[leave_type]':type_leave_id,
                 'leavemanagement[start_date]':start_date,
                 'leavemanagement[end_date]':end_date,
+                'leavemanagement[reason]':end_date,
                 '_method':'POST'
 
             },
             success:function (data) {
+               if(data.valid) 
+                {   
                 $('#calendar').fullCalendar('renderEvent',
                     {
-                        title:'Leave',
+                        title:type_leave,
                         start:new Date(start_date.substring(6), start_date.substring(3, 5) - 1, start_date.substring(0, 2)),
                         end:new Date(end_date.substring(6), end_date.substring(3, 5) - 1, end_date.substring(0, 2)),
                         allDay:true
                     }, true
                 );
-            }
+                    location.reload();
+                }
+                else
+                    {
+                        alert("No sufficent balance")
+                    }
+        }
         });
     })
     var calendar = $('#calendar').fullCalendar({
@@ -48,7 +61,8 @@ $(document).ready(function () {
                 }
             });
 
-            if (okToAdd) {
+            if (okToAdd) 
+            {
                 var year = startDate.getFullYear();
                 var month = startDate.getMonth();
                 month++;
@@ -60,9 +74,24 @@ $(document).ready(function () {
                 $('#end_date').val(day + "-" + month + "-" + year)
                 $('#calenderevent').modal('show');
             }
+            
             calendar.fullCalendar('unselect');
 
 
+        },
+        eventClick: function(event) {
+            $.get('/events/remove_event',{'start_date': event.start,'name' : event.title},function(data){
+                if(data == "Can't remove this leave because this is approved leave"){
+                   alert(data)    
+                 }   
+                  else
+                      {
+                        calendar.fullCalendar('refetchEvents');  
+                        $('#leave_balance').empty();
+                        $('#leave_balance').html(data);  
+                      }
+            })
+           
         },
         events:function (start, end, callback) {
             $.ajax({
@@ -84,6 +113,4 @@ $(document).ready(function () {
             });
         }
     });
-
-
 });
