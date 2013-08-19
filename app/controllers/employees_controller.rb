@@ -60,15 +60,16 @@ require "ruby-debug"
   end
   def csv_import
     data = nil
-    user_attributes = []
-    user = User.new
     index = 0
+    user_attributes = []  
     header_row = first_row = nil
-    user.attributes.each do |key,val|
+    User.column_names.each do |key,val|
       user_attributes << key   
     end
-    
+
      CSV.foreach(params[:dump][:file].tempfile.to_path.to_s) do |row|
+           debugger
+      user = User.new     
       temp = [] 
       first_row = row  if index == 0
       header_row = row if index == 1
@@ -78,7 +79,7 @@ require "ruby-debug"
           user = reference_model(first_row[col],row[col],user,temp,header_row[col])
         else
 #          user.password = user.password_confirmation = Devise.friendly_token 
-          if header_row[col] && !header_row[col].scan("date").empty?
+          if header_row[col] && !header_row[col].scan("date").empty? && !row[col].nil?
             user.send(header_row[col]+'=',Date.parse(row[col])) if user_attributes.include?(header_row[col])
           else
             user.send(header_row[col]+'=',row[col]) if user_attributes.include?(header_row[col])
@@ -86,7 +87,7 @@ require "ruby-debug"
         end 
       end
       puts user.attributes
-      if user.save
+      if user.save!
         data = ""
         temp.each do |id|
            balance = Leavebalance.find_by_id(id)  if id

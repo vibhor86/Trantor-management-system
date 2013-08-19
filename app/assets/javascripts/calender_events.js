@@ -5,7 +5,7 @@ $(document).ready(function () {
         var type_leave_id = $('#type_leave_id').val()
         var type_leave = $('#type_leave_id option:selected').text()
         var reason = $('#leave_reason').val()
-        $('#calenderevent').modal('hide');
+        
         $.ajax({
             dataType:'json',
             type:'post',
@@ -19,6 +19,8 @@ $(document).ready(function () {
 
             },
             success:function (data) {
+               if(data.valid) 
+                {   
                 $('#calendar').fullCalendar('renderEvent',
                     {
                         title:type_leave,
@@ -28,7 +30,12 @@ $(document).ready(function () {
                     }, true
                 );
                     location.reload();
-            }
+                }
+                else
+                    {
+                        alert("No sufficent balance")
+                    }
+        }
         });
     })
     var calendar = $('#calendar').fullCalendar({

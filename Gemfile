@@ -17,8 +17,11 @@ gem "twitter-bootstrap-rails"
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'therubyracer'
-
-#gem 'thin'
+group :development do
+  gem "better_errors"
+end
+gem "binding_of_caller"
+gem 'thin'
 gem 'dalli'
 group :assets do
 
@@ -34,7 +37,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-datatables-rails',github:'rweng/jquery-datatables-rails'
+gem 'jquery-datatables-rails',git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
 gem 'delayed_job_active_record'
@@ -43,7 +46,7 @@ gem "rspec-rails",:group => [:development, :test]
 gem "debugger",:group => [:development, :test]
 gem "factory_girl_rails",:group => [:development, :test]
 gem "email_spec",:group => :test
-gem "cucumber-rails", :group => :test, :require => false
+#gem "cucumber-rails", :group => :test, :require => false
 gem "capybara",:git => 'git://github.com/jnicklas/capybara.git',:group => [:development, :test]
 gem "launchy", :group => :test
 gem "database_cleaner",:group => [:development, :test]
@@ -62,4 +65,4 @@ gem 'rufus-scheduler'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'

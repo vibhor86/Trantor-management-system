@@ -29,9 +29,10 @@
       <div class="container-fluid nav-collapse">
         <ul class="nav pull-right">
           <% if user_signed_in? %>
+              <li><%= link_to "Home", "/dashboard" %></li>
               <li><%= link_to "Profile", "/employees/#{current_user.id}" %></li>
-              <li><%= link_to "calender", "/calender" %></li>
-              <li><%= link_to "Welcome  "+current_user.email, "/dashboard" %></li>
+              <li><%= link_to "Calender", "/calender" %></li>
+              <li><%= link_to "Welcome  "+current_user.name, "/dashboard" %></li>
               <% if %w[admin hr].include? current_user.role %>
                   <li><%= link_to "Admin Dashboard", "/admin" %></li>
               <% end %>

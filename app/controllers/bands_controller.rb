@@ -11,10 +11,7 @@ class BandsController < ApplicationController
       format.json { render json: @bands }
     end
   end
-  
-  
-  
-  
+ 
   def index
     @bands = Band.all
     @band = Band.new

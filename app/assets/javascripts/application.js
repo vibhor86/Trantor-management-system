@@ -21,9 +21,12 @@
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard.js
 $(function() {
-        $( ".datepicker" ).datepicker({dateFormat: 'dd-mm-yy',
-        changeMonth: true,
-        changeYear: true});
+        $( ".datepicker" ).datepicker({
+		dateFormat: 'dd-mm-yy',
+	        changeMonth: true,
+        	changeYear: true,
+		yearRange: "1920:2025"
+	});
 
 
     $('li a').filter(function(){

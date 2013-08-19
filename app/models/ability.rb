@@ -5,7 +5,7 @@ class Ability
       can :manage, :all
     elsif user.hr?
       can :manage, :all
-    elsif user.employee?
+    elsif user.individual?
       can :manage, User, :id => user.id
     elsif user.manager?
       can :manage, User, :id => user.id

@@ -14,4 +14,20 @@
          <%end%>
       </tbody>
     </table>
+
+    <%unless @not_apply_date.blank?%>
+  <div class="span12"style="overflow-x: auto;">
+    <h3>Leaves to be applied </h3>
+    <i>Click on coresponding date in calender below to apply for leave</i>
+    <table>
+     <tbody>
+        <% @not_apply_date.each do |date|%>
+            <td><%=date%></td>
+          <%end%>
+      </tbody>
+    </table>
+  </div>
+  <%end%>
+
+
   </div>

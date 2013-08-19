@@ -1,76 +1,91 @@
 <h1 class="block_heading">Employee Profile</h1>
 <div class="row" style="margin: 10px;">
-<div class="span3">
-      <%= image_tag @user.avatar.url(:thumb) %>
- </div>
- <div class="span9">
- <div class="field row ">
-  <div class="span4">
-      Ecode :   <%= @user.ecode  %>
-    </div>
-    <div class="span4">
-      Name :   <%= @user.name  %>
-    </div>
-    <div class="span4">
-      Date of joining :   <%= @user.date_of_joining %>
-    </div>
+  <div class="span3">
+    <%= image_tag @user.avatar.url(:thumb) %>
   </div>
-<div class="field row ">
-   <div class="span4">
-      Designation :   <%= @user.designation.name unless @user.designation.nil? %>
-    </div> 
-  <div class="span4">
-      Band :   <%= @user.band.name unless @user.band.nil? %>
-    </div> 
-  <div class="span4">
-      Email :   <%= @user.email %>
+  <div class="span9">
+    <div class="field row ">
+      <div class="span4">
+        Ecode :   <%= @user.ecode  %>
+      </div>
+      <div class="span4">
+        Name :   <%= @user.name  %>
+      </div>
+      <div class="span4">
+        Date of joining :   <%= @user.date_of_joining %>
+      </div>
     </div>
-  </div>
-  <div class="field row ">
-    <div class="span4">
-      Gender :   <%= @user.gender %>
+    <div class="field row ">
+      <div class="span4">
+        Designation :   <%= @user.designation.name unless @user.designation.nil? %>
+      </div>
+      <div class="span4">
+        Band :   <%= @user.band.name unless @user.band.nil? %>
+      </div>
+      <div class="span4">
+        Email :   <%= @user.email %>
+      </div>
     </div>
-    <div class="span4">
-      Location :   <%= @user.location %>
+    <div class="field row ">
+      <div class="span4">
+        Gender :   <%= @user.gender %>
+      </div>
+      <div class="span4">
+        Location :   <%= @user.location %>
+      </div>
+      <div class="span4">
+        Blood_group :   <%= @user.blood_group %>
+      </div>
     </div>
-    <div class="span4">
-      Manager ecode :   <%= @user.manager_ecode %>
-    </div>
-  </div>
-  <div class="field row ">
-    <div class="span4">
-      Blood_group :   <%= @user.blood_group %>
-    </div>
+    <div class="field row ">
 
-    <div class="span4">
-      Date_of_birth :   <%= @user.date_of_birth %>
-    </div>
 
-    <div class="span4">
-      Marital_status :   <%= @user.marital_status%>
-    </div>
-  </div>
-  <div class="field row">
-    <div class="span4">
-      Date of anniversary :   <%= @user.date_of_anniversary %>
-    </div>
+      <div class="span4">
+        Date_of_birth :   <%= @user.date_of_birth %>
+      </div>
 
-    <div class="span4">
-      Pan_no :   <%= @user.pan_no %>
+      <div class="span4">
+        Marital_status :   <%= @user.marital_status%>
+      </div>
+      <div class="span4">
+        Date of anniversary :   <%= @user.date_of_anniversary %>
+      </div>
     </div>
+    <div class="field row">
 
-    <div class="span4">
-      Bank Number :   <%= @user.bank_number %>
-    </div>
-  </div>
-  <div class="field row">
-    <div class="span4">
-      Father_name :   <%= @user.father_name %>
-    </div>
 
-    <div class="span4">
-      Spouse_name :   <%= @user.spouse_name %>
+      <div class="span4">
+        Pan_no :   <%= @user.pan_no %>
+      </div>
+      <div class="span4">
+        Father_name :   <%= @user.father_name %>
+      </div>
+      <div class="span4">
+        Spouse_name :   <%= @user.spouse_name %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="span4">
+        Project :   <%= @user.project.name if @user.project%>
+      </div>
+      <div class="span4">
+        <%manager = User.find_by_ecode(@user.manager_ecode)%>
+        Manager :   <%=  manager.name if manager %>
+      </div>
+      <div class="span4">
+        Bank Name :   <%= @user.bank.name if @user.bank %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="span4">
+        Bank Address :   <%= @user.bank_address %>
+      </div>
+      <div class="span4">
+        IFSC :   <%=  @user.bank_ifsc %>
+      </div>
+      <div class="span4">
+        Bank A/C No:   <%= @user.bank_number %>
+      </div>
     </div>
   </div>
-  </div>
-  </div>
+</div>

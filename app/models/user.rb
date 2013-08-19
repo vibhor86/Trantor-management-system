@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   belongs_to :project
   belongs_to :designation
   belongs_to :emptype
+  belongs_to :bank
+  has_many :leavebalances
+  has_many  :leavemanagements  
 # belongs_to :manager, :class_name => :user
   has_many :leavebalances
   after_create :assign_leave_balance
