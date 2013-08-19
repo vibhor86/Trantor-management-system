@@ -27,3 +27,4 @@ public/uploads
 .rspec
 .ruby-gemset
 *.yml
+.project
