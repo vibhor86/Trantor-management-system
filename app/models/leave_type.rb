@@ -1,8 +1,7 @@
 class LeaveType < ActiveRecord::Base
   
-  attr_accessible :name
+  attr_accessible :name, :code, :description
   
-  validates :name, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
   
-  has_many :leavebalances
 end

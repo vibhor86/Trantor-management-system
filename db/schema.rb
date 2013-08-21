@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803061010) do
+ActiveRecord::Schema.define(:version => 20130821123051) do
 
   create_table "absents", :force => true do |t|
-    t.string   "ecode"
-    t.datetime "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.date     "date_of_absence"
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "audits", :force => true do |t|
@@ -43,14 +45,25 @@ ActiveRecord::Schema.define(:version => 20130803061010) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "description"
+    t.integer  "updater_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
+
+  add_index "bands", ["name"], :name => "index_bands_on_name"
 
   create_table "banks", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "code"
+    t.text     "address"
+    t.string   "ifsc_code"
+    t.string   "contact_person"
+    t.string   "contact_number"
+    t.boolean  "activated"
+    t.integer  "updater_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -71,9 +84,15 @@ ActiveRecord::Schema.define(:version => 20130803061010) do
 
   create_table "designations", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "description"
+    t.boolean  "activated"
+    t.integer  "updater_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
+
+  add_index "designations", ["activated"], :name => "index_designations_on_activated"
+  add_index "designations", ["name"], :name => "index_designations_on_name"
 
   create_table "document_templates", :force => true do |t|
     t.string   "title"
@@ -82,8 +101,9 @@ ActiveRecord::Schema.define(:version => 20130803061010) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "emptypes", :force => true do |t|
-    t.string   "name"
+  create_table "emp_types", :force => true do |t|
+    t.string   "title"
+    t.text     "remark"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -97,44 +117,52 @@ ActiveRecord::Schema.define(:version => 20130803061010) do
 
   create_table "holidays", :force => true do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "day"
+    t.text     "remark"
+    t.integer  "updater_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "leave_configs", :force => true do |t|
-    t.integer  "emptype_id"
+  create_table "leave_applications", :force => true do |t|
+    t.integer  "user_id"
     t.integer  "leave_type_id"
-    t.integer  "count"
-    t.integer  "max"
-    t.integer  "factor"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "reason"
+    t.boolean  "approved"
+    t.integer  "creator_id"
+    t.integer  "updater_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "leave_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "leave_applications", ["leave_type_id"], :name => "index_leave_applications_on_leave_type_id"
+  add_index "leave_applications", ["user_id"], :name => "index_leave_applications_on_user_id"
 
-  create_table "leavebalances", :force => true do |t|
+  create_table "leave_managers", :force => true do |t|
     t.integer  "user_id"
     t.integer  "leave_type_id"
     t.integer  "balance"
+    t.integer  "count"
+    t.integer  "max"
+    t.integer  "factor"
+    t.integer  "creator_id"
+    t.integer  "updater_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "leavemanagements", :force => true do |t|
-    t.integer  "user_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "reason"
-    t.integer  "leave_type_id"
-    t.boolean  "approved",      :default => false
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+  add_index "leave_managers", ["user_id"], :name => "index_leave_managers_on_user_id"
+
+  create_table "leave_types", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "placeholders", :force => true do |t|
@@ -144,12 +172,34 @@ ActiveRecord::Schema.define(:version => 20130803061010) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "projects", :force => true do |t|
-    t.string   "name"
-    t.string   "manager_ecode"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "preferences", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "lta"
+    t.boolean  "medical_reimbursement"
+    t.date     "pf_enrollment_date"
+    t.boolean  "gpa"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
+
+  add_index "preferences", ["user_id"], :name => "index_preferences_on_user_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "manager_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "contact_person"
+    t.integer  "updater_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "projects", ["end_date"], :name => "index_projects_on_end_date"
+  add_index "projects", ["manager_id"], :name => "index_projects_on_manager_id"
+  add_index "projects", ["start_date"], :name => "index_projects_on_start_date"
+  add_index "projects", ["title"], :name => "index_projects_on_title"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -165,63 +215,62 @@ ActiveRecord::Schema.define(:version => 20130803061010) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                                       :default => "",        :null => false
-    t.string   "encrypted_password",                                          :default => "",        :null => false
+    t.integer  "manager_id"
+    t.integer  "band_id"
+    t.integer  "bank_id"
+    t.integer  "designation_id"
+    t.integer  "project_id"
+    t.integer  "emp_type_id"
+    t.integer  "preference_id"
+    t.string   "ecode"
+    t.string   "name"
+    t.string   "email",                                                                 :null => false
+    t.string   "mobile"
+    t.string   "gender"
+    t.string   "father_name"
+    t.string   "spouse_name"
+    t.date     "date_of_birth"
+    t.string   "marital_status"
+    t.date     "date_of_anniversary"
+    t.text     "address"
+    t.date     "date_of_joining"
+    t.string   "blood_group"
+    t.string   "pan_no"
+    t.string   "pf_no"
+    t.string   "esi_no"
+    t.string   "role"
+    t.decimal  "salary",                 :precision => 10, :scale => 0
+    t.integer  "creator"
+    t.integer  "updator"
+    t.string   "encrypted_password",                                    :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                               :default => 0
+    t.integer  "sign_in_count",                                         :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                                         :null => false
-    t.datetime "updated_at",                                                                         :null => false
-    t.boolean  "admin",                                                       :default => false
-    t.string   "ecode"
-    t.string   "role"
-    t.string   "name"
-    t.string   "gender"
-    t.string   "confirmation_status",                                         :default => "pending"
-    t.string   "blood_group"
-    t.string   "marital_status"
-    t.string   "pan_no"
-    t.string   "father_name"
-    t.string   "spouse_name"
-    t.decimal  "salary",                       :precision => 10, :scale => 0
-    t.string   "bank_number"
-    t.date     "date_of_anniversary"
-    t.date     "date_of_birth"
-    t.integer  "photo_id"
-    t.string   "manager_ecode"
-    t.text     "location"
-    t.integer  "band_id"
-    t.date     "date_of_joining"
-    t.integer  "designation_id"
-    t.integer  "bank_id"
-    t.integer  "project_id"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.integer  "emptype_id"
+    t.datetime "created_at",                                                            :null => false
+    t.datetime "updated_at",                                                            :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "bu"
-    t.string   "bu_head"
-    t.string   "bank_address"
-    t.string   "bank_ifsc"
-    t.string   "lta_option"
-    t.string   "madical_reimbursement_option"
-    t.string   "pf_no"
-    t.date     "pf_enrollment_date"
-    t.string   "esi_no"
-    t.string   "gpa_option"
   end
 
+  add_index "users", ["band_id"], :name => "index_users_on_band_id"
+  add_index "users", ["bank_id"], :name => "index_users_on_bank_id"
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
+  add_index "users", ["designation_id"], :name => "index_users_on_designation_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["emp_type_id"], :name => "index_users_on_emp_type_id"
+  add_index "users", ["manager_id"], :name => "index_users_on_manager_id"
+  add_index "users", ["preference_id"], :name => "index_users_on_preference_id"
+  add_index "users", ["project_id"], :name => "index_users_on_project_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

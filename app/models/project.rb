@@ -1,8 +1,8 @@
 class Project < ActiveRecord::Base
   
-  attr_accessible  :name ,:manager_ecode
+  attr_accessible  :title, :description, :manager_id, :start_date, :end_date, :contact_person 
   
-  validates :name, :uniqueness => true
-  validates :name,:manager_ecode , presence: true
+  validates :title, uniqueness: true
+  validates :title, :manager_id, presence: true
   
 end
