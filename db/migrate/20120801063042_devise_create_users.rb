@@ -6,7 +6,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :band_id
       t.integer :bank_id
       t.integer :designation_id
-      t.integer :project_id
       t.integer :emp_type_id
       t.integer :preference_id
       
@@ -31,6 +30,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.decimal :salary
       t.integer :creator
       t.integer :updator
+      t.boolean :soft_delete, :default => 0
       
       ## Database authenticatable
       t.string :encrypted_password, :null => false, :default => ""
@@ -69,7 +69,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :email, :unique => true
     add_index :users, :reset_password_token, :unique => true
     add_index :users, :confirmation_token, :unique => true
-    [:manager_id, :bank_id, :band_id, :designation_id, :project_id, :emp_type_id, :preference_id].each do |field|
+    [:manager_id, :bank_id, :band_id, :designation_id, :emp_type_id, :preference_id].each do |field|
       add_index :users, field
     end
     

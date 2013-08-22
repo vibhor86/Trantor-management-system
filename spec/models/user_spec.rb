@@ -1,3 +1,55 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  manager_id             :integer
+#  band_id                :integer
+#  bank_id                :integer
+#  designation_id         :integer
+#  project_id             :integer
+#  emp_type_id            :integer
+#  preference_id          :integer
+#  ecode                  :string(255)
+#  name                   :string(255)
+#  email                  :string(255)      not null
+#  mobile                 :string(255)
+#  gender                 :string(255)
+#  father_name            :string(255)
+#  spouse_name            :string(255)
+#  date_of_birth          :date
+#  marital_status         :string(255)
+#  date_of_anniversary    :date
+#  address                :text
+#  date_of_joining        :date
+#  blood_group            :string(255)
+#  pan_no                 :string(255)
+#  pf_no                  :string(255)
+#  esi_no                 :string(255)
+#  role                   :string(255)
+#  salary                 :integer
+#  creator                :integer
+#  updator                :integer
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
+#
+
 require 'spec_helper'
 
 describe User do

@@ -1,23 +1,77 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  manager_id             :integer
+#  band_id                :integer
+#  bank_id                :integer
+#  designation_id         :integer
+#  emp_type_id            :integer
+#  preference_id          :integer
+#  ecode                  :string(255)
+#  name                   :string(255)
+#  email                  :string(255)      not null
+#  mobile                 :string(255)
+#  gender                 :string(255)
+#  father_name            :string(255)
+#  spouse_name            :string(255)
+#  date_of_birth          :date
+#  marital_status         :string(255)
+#  date_of_anniversary    :date
+#  address                :text
+#  date_of_joining        :date
+#  blood_group            :string(255)
+#  pan_no                 :string(255)
+#  pf_no                  :string(255)
+#  esi_no                 :string(255)
+#  role                   :string(255)
+#  salary                 :integer
+#  creator                :integer
+#  updator                :integer
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
+#
+
 class User < ActiveRecord::Base
 
   audited
-  devise :database_authenticatable, 
-    :recoverable, :rememberable, :trackable, :validatable,:registerable, :confirmable, :async
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable,:registerable, 
+  :confirmable, :async
   attr_accessible :confirmed_at, :password, :password_confirmation, :blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_id, :father_name, :spouse_name,:ecode, :name, :gender, :manager_id, :email, :designation_id, :project_id, :remember_me ,:ecode, :name, :date_of_joining, :band_id, :address, :id ,:role ,:emp_type_id
   
   validates  :ecode, :presence => true, :uniqueness => true
   validates  :name, :date_of_joining, :date_of_birth, :emp_type_id, :presence => true
   
   belongs_to :band
-  belongs_to :project
-  belongs_to :designation
-  belongs_to :emptype
   belongs_to :bank
-  # belongs_to :manager, :class_name => :user
+  belongs_to :designation
+  belongs_to :emp_type
+  belongs_to :manager, :foreign_key => :manager_id, :class_name => 'User', :dependent => :destroy
+    
+  has_one :leave_manager
   
-  has_many :leavebalances
-  has_many  :leavemanagements
-  has_many :leavebalances
+  has_many :projects_users, :dependent => :destroy
+  has_many :projects, :through => :projects_users, :dependent => :destroy
+  
+  has_many :absents, :dependent => :destroy
+  has_many :leave_applications, :dependent => :destroy
   
   after_create :assign_leave_balance
   

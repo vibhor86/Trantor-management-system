@@ -44,3 +44,4 @@ gem "database_cleaner",:group => [:development, :test]
 gem 'jquery-datatables-tabletools-rails' ,:git => 'git://github.com/kindjal/jquery-datatables-tabletools-rails.git'
 gem 'rufus-scheduler'
 gem 'debugger'
+gem 'annotate', ">=2.5.0"

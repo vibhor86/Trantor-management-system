@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-   config.excluded_models = [DocumentTemplate, Placeholder, Leavemanagement]
+  # config.excluded_models = [DocumentTemplate, Placeholder, Leavemanagement]
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [DocumentTemplate, Placeholder, User]

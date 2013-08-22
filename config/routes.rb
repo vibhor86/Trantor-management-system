@@ -5,24 +5,23 @@ TrantorManagementSystem::Application.routes.draw do
      get :remove_event
     end
   end
+
   resources :holidays
-  resources :leavemanagements  do
-    collection do
-      get :add,:total_balance
-    end
-  end
-  resources :leave_configs
+
   resources :banks
+  
   resources   :employees do
     collection do
       get :unconfirmed_user,:csv_import,:all_employees,:history ,:render_projects
     end
   end
+  
   resources :projects do
     collection do
      get :all_record
     end
   end
+  
   resources :bands do
     collection do
      get :all_record
@@ -33,22 +32,22 @@ TrantorManagementSystem::Application.routes.draw do
      get :all_record
     end
   end
+  
+  devise_for :users, :controllers => { :confirmations => "confirmations" }
+  
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   get "document/index"
   get "document/show"
+  
   as :user do
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
-  devise_for :users, :controllers => { :confirmations => "confirmations" }
 
-  resources :document_templates, :documents
   match 'document' => 'document#document'
   match 'document/index' =>  'document#index'
   match 'dashboard' =>  'dashboard#dashboard'
   match 'calender' => 'leavemanagements#calender'
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

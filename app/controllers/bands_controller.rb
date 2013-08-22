@@ -3,7 +3,8 @@ class BandsController < ApplicationController
   # GET /bands.json
   load_and_authorize_resource
   require 'net/http'
- def all_record
+  
+  def all_record
     @band = Band.new
     @bands = Band.all
     respond_to do |format|

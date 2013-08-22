@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821123051) do
+ActiveRecord::Schema.define(:version => 20130822121958) do
 
   create_table "absents", :force => true do |t|
     t.integer  "user_id"
@@ -94,13 +94,6 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
   add_index "designations", ["activated"], :name => "index_designations_on_activated"
   add_index "designations", ["name"], :name => "index_designations_on_name"
 
-  create_table "document_templates", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "emp_types", :force => true do |t|
     t.string   "title"
     t.text     "remark"
@@ -165,13 +158,6 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "placeholders", :force => true do |t|
-    t.string   "column_name"
-    t.string   "placeholder_name"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
   create_table "preferences", :force => true do |t|
     t.integer  "user_id"
     t.boolean  "lta"
@@ -187,7 +173,6 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "manager_id"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "contact_person"
@@ -197,9 +182,17 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
   end
 
   add_index "projects", ["end_date"], :name => "index_projects_on_end_date"
-  add_index "projects", ["manager_id"], :name => "index_projects_on_manager_id"
   add_index "projects", ["start_date"], :name => "index_projects_on_start_date"
   add_index "projects", ["title"], :name => "index_projects_on_title"
+
+  create_table "projects_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "projects_users", ["user_id", "project_id"], :name => "index_projects_users_on_user_id_and_project_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -219,12 +212,11 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
     t.integer  "band_id"
     t.integer  "bank_id"
     t.integer  "designation_id"
-    t.integer  "project_id"
     t.integer  "emp_type_id"
     t.integer  "preference_id"
     t.string   "ecode"
     t.string   "name"
-    t.string   "email",                                                                 :null => false
+    t.string   "email",                                                                    :null => false
     t.string   "mobile"
     t.string   "gender"
     t.string   "father_name"
@@ -242,7 +234,8 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
     t.decimal  "salary",                 :precision => 10, :scale => 0
     t.integer  "creator"
     t.integer  "updator"
-    t.string   "encrypted_password",                                    :default => "", :null => false
+    t.boolean  "soft_delete",                                           :default => false
+    t.string   "encrypted_password",                                    :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -254,8 +247,8 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.datetime "created_at",                                                            :null => false
-    t.datetime "updated_at",                                                            :null => false
+    t.datetime "created_at",                                                               :null => false
+    t.datetime "updated_at",                                                               :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -270,7 +263,6 @@ ActiveRecord::Schema.define(:version => 20130821123051) do
   add_index "users", ["emp_type_id"], :name => "index_users_on_emp_type_id"
   add_index "users", ["manager_id"], :name => "index_users_on_manager_id"
   add_index "users", ["preference_id"], :name => "index_users_on_preference_id"
-  add_index "users", ["project_id"], :name => "index_users_on_project_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

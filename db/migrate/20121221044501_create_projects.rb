@@ -4,7 +4,6 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :title
       t.text :description
-      t.integer :manager_id
       t.date :start_date
       t.date :end_date
       t.string :contact_person
@@ -12,7 +11,7 @@ class CreateProjects < ActiveRecord::Migration
       t.timestamps
     end
     
-    [:title, :manager_id, :start_date, :end_date].each do |field|
+    [:title, :start_date, :end_date].each do |field|
       add_index :projects, field
     end
     

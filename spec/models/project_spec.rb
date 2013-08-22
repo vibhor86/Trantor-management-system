@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id             :integer          not null, primary key
+#  title          :string(255)
+#  description    :text
+#  manager_id     :integer
+#  start_date     :date
+#  end_date       :date
+#  contact_person :string(255)
+#  updater_id     :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Project do
