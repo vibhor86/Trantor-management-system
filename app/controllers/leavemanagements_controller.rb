@@ -32,7 +32,7 @@ class LeavemanagementsController < ApplicationController
 
   def calender
     #    expire_action :action => :calender
-    full_data()
+    full_data
   end
 
   # GET /leavemanagements/1/edit

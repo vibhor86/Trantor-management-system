@@ -83,6 +83,30 @@ class User < ActiveRecord::Base
   
   require "ruby-debug"
   
+  def pending?
+    self.emp_type.title == 'Pending'
+  end
+  
+  def confirmed?
+    self.emp_type.title == 'Confirmed'
+  end
+  
+  def probation?
+    self.emp_type.title == 'Probation'
+  end
+  
+  def trainee?
+    self.emp_type.title == 'Trainee'
+  end
+  
+  def contractual?
+    self.emp_type.title == 'Contractual'
+  end
+  
+  def short_name
+    name.split(' ').first
+  end
+  
   def attempt_set_password(params)
     p = {}
     p[:password] = params[:password]

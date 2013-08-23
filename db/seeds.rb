@@ -1,5 +1,5 @@
 ## Employee Types
-['Confirmed', 'Probation', 'Trainee', 'Contractual'].each do |emp_type|
+['Pending', 'Confirmed', 'Probation', 'Trainee', 'Contractual'].each do |emp_type|
   EmpType.where(:title => emp_type).create(:title => emp_type)  
 end
 

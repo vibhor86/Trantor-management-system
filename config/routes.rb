@@ -1,5 +1,18 @@
 TrantorManagementSystem::Application.routes.draw do
  
+  # Devise
+  devise_for :users, :controllers => { :confirmations => "confirmations" }
+  as :user do
+    match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
+  end
+  
+  # Admin
+  match '/admin' => 'admin/users#index', :as => :admin
+  
+  namespace :admin do
+    resources :users do as_routes end
+  end
+  
   resources :events do 
     collection do 
      get :remove_event
@@ -7,10 +20,9 @@ TrantorManagementSystem::Application.routes.draw do
   end
 
   resources :holidays
-
   resources :banks
   
-  resources   :employees do
+  resources :employees do
     collection do
       get :unconfirmed_user,:csv_import,:all_employees,:history ,:render_projects
     end
@@ -27,22 +39,15 @@ TrantorManagementSystem::Application.routes.draw do
      get :all_record
     end
   end
+  
   resources :designations do
     collection do
      get :all_record
     end
   end
   
-  devise_for :users, :controllers => { :confirmations => "confirmations" }
-  
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
   get "document/index"
   get "document/show"
-  
-  as :user do
-    match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
-  end
 
   match 'document' => 'document#document'
   match 'document/index' =>  'document#index'
@@ -95,7 +100,7 @@ TrantorManagementSystem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'dashboard#dashboard'
+  root :to => 'dashboard#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -87,7 +87,6 @@ class DesignationsController < ApplicationController
     @designation = Designation.find(params[:id])
     @designation.destroy
     respond_to do |format|
-      #format.html { redirect_to :controller => "dashboard",:action => "dashboard" }
       format.json { render :json => {:valid => true } }
     end
   end

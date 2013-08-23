@@ -19,7 +19,7 @@ class LeaveManager < ActiveRecord::Base
   
   attr_accessible :user_id, :leave_type_id, :balance, :count, :max, :factor
   
-  validates :user_id, :leave_type_id, :balance, :count, :max, :factor
+  validates :user_id, :leave_type_id, :balance, :presence => true
   
   belongs_to :user
   

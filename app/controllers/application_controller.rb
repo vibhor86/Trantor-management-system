@@ -27,7 +27,6 @@ class ApplicationController < ActionController::Base
     fist_day_of_month = Date.today.beginning_of_month
     fist_day_of_fatch_month = fist_day_of_month - 2.month
     confirmed_at = current_user.confirmed_at
-    #fist_day_of_fatch_month  = confirmed_at.to_date > fist_day_of_fatch_month ? confirmed_at : fist_day_of_fatch_month.to_date
     fist_day_of_fatch_month  = fist_day_of_fatch_month.to_date
     
     begin
@@ -39,12 +38,13 @@ class ApplicationController < ActionController::Base
     holidays = Holiday.all(:conditions => ["DATE(date) BETWEEN ? AND ?", fist_day_of_fatch_month.to_date, Date.today])
     working_days = ((fist_day_of_fatch_month.to_date)..(Date.today-1.day) ).select {|d| (1..5).include?(d.wday) }
     missing = working_days - @jsons_dates  - holidays.collect!{|holiday| holiday.date.to_date}
-    leave_apply = Leavemanagement.all(:conditions => ["user_id =  ? AND DATE(start_date) BETWEEN ? AND ?", current_user.id,  fist_day_of_fatch_month.to_date, Date.today])
-    @not_apply_date =  missing - leave_apply.collect{|ap| ap.start_date.to_date} 
+    
+    leave_apply = LeaveApplication.all(:conditions => ["user_id =  ? AND DATE(start_date) BETWEEN ? AND ?", current_user.id,  fist_day_of_fatch_month.to_date, Date.today])
+    @not_apply_date =  missing - leave_apply.collect{|ap| ap.start_date.to_date}
   end
 
   def check_confimation
-    if current_user && current_user.confirmation_status == "pending"
+    if current_user && current_user.pending?
       flash[:notice] = "Please First Confirm your Account"
       redirect_to "/users/edit"
     end

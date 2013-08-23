@@ -1,3 +1,7 @@
+<% if true %>
+	Welcome <%= current_user.name %>
+<% else %>
+<% # <!-- Old Code --> %>
 <div class="row-fluid">
   <div class="span12"> 
     <h3>Weekly Attendance</h3>
@@ -13,10 +17,8 @@
       </thead>
       <tbody>
         <% 5.times do |time| %>
-  <%#unless @dates.blank? %>
           <% first =  @fist_day_of_week + (time.to_i).day%>
         <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
-  <%#end%>
       <%end%>
       </tbody>
     </table>
@@ -67,19 +69,13 @@
         <li><a href="/banks/new">Create banks</a></li>
         <li><a href="/banks/">Manage banks</a></li>
       </ul>
+      
       <ul class="admin-dashboard-list"><h1>Employee Management</h1>
         <li><a href="/employees/all_employees">All Employees</a></li>
         <li><a href="/employees/new">Create Employee</a></li>
         <li><a href="/employees/history">Employee History</a></li>
       </ul>
-      <ul class="admin-dashboard-list"><h1>Document Management </h1>
-        <li><%= link_to "Create Document Template", new_document_template_path %></li>
-        <li><%= link_to "Edit Document Template", document_templates_path %></li>
-      </ul>
     <% end %>
   </div>
 </div>
-
-
-
-
+<% end %>

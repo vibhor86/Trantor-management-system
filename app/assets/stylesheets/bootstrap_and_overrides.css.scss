@@ -1,0 +1,11 @@
+$bodyBackground: #fff;
+@import "bootstrap";
+
+.navbar .nav > li > a { padding: 10px;}
+.text-box-wide{ width:300px; }
+.text-box-narrow{ width:140px; }
+.text-box-small{width:88px;}
+.btn-wide{ width:300px; }
+legend{
+  color: #333;font-size: 16px; margin: 0; padding: 10px; line-height: 0; border: 0; width: auto;
+}

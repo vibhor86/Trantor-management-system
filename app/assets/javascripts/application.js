@@ -11,28 +11,25 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require twitter/bootstrap
+//= require jquery-ui
 //= require document_templates.js
 //= require document_index.js
 //= require_tree .
-//= require rails.validations
-//= require dataTables/jquery.dataTables
-//= require dataTables/extras/TableTools
-//= require dataTables/extras/ZeroClipboard.js
+//= require active_scaffold
+//= require jquery_ujs
+
 $(function() {
-        $( ".datepicker" ).datepicker({
+	$( ".datepicker" ).datepicker({
 		dateFormat: 'dd-mm-yy',
-	        changeMonth: true,
-        	changeYear: true,
+    changeMonth: true,
+  	changeYear: true,
 		yearRange: "1920:2025"
 	});
 
-
-    $('li a').filter(function(){
-        return $(this).attr('href') == document.location.pathname
-    }).parent('li').addClass('active')
-        .parents('.collapse').collapse('show');
-    });
+	$('li a').filter(function(){
+	  return $(this).attr('href') == document.location.pathname
+	}).parent('li').addClass('active').parents('.collapse').collapse('show');
+	
+});
 
 

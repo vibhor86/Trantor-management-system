@@ -5,18 +5,18 @@ class DashboardController < ApplicationController
   
   before_filter :check_confimation
   
-  skip_authorize_resource :only => :dashboard
+  skip_authorize_resource :only => :index
   
-  def dashboard
+  def index
     @not_accepted_leaves = []
     
-    full_data()
+    full_data
     
-    users = User.find_all_by_manager_ecode(current_user.ecode)
+    users = User.find_all_by_manager_id(current_user.manager.id)
     
     users.each do |user|
-      Leavemanagement.find(:all,:conditions => {:user_id => user.id ,:approved => false   }).each do |leave|
-       @not_accepted_leaves <<  leave
+      LeaveApplication.find(:all,:conditions => {:user_id => user.id ,:approved => false }).each do |leave|
+        @not_accepted_leaves <<  leave
       end
     end
     
