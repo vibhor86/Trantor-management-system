@@ -30,7 +30,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.decimal :salary
       t.integer :creator
       t.integer :updator
-      t.boolean :soft_delete, :default => 0
+      t.boolean :soft_delete, :default => false
       
       ## Database authenticatable
       t.string :encrypted_password, :null => false, :default => ""
