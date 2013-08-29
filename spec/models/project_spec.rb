@@ -5,7 +5,6 @@
 #  id             :integer          not null, primary key
 #  title          :string(255)
 #  description    :text
-#  manager_id     :integer
 #  start_date     :date
 #  end_date       :date
 #  contact_person :string(255)

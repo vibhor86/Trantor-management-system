@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     @not_apply_date =  missing - leave_apply.collect{|ap| ap.start_date.to_date}
   end
 
-  def check_confimation
+  def check_confirmation
     if current_user && current_user.pending?
       flash[:notice] = "Please First Confirm your Account"
       redirect_to "/users/edit"

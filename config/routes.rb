@@ -8,9 +8,10 @@ TrantorManagementSystem::Application.routes.draw do
   
   # Admin
   match '/admin' => 'admin/users#index', :as => :admin
-  
   namespace :admin do
     resources :users do as_routes end
+    resources :bands do as_routes end
+    resources :banks do as_routes end
   end
   
   resources :events do 
@@ -19,9 +20,6 @@ TrantorManagementSystem::Application.routes.draw do
     end
   end
 
-  resources :holidays
-  resources :banks
-  
   resources :employees do
     collection do
       get :unconfirmed_user,:csv_import,:all_employees,:history ,:render_projects
@@ -106,5 +104,5 @@ TrantorManagementSystem::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-   match ':controller(/:action(/:id))(.:format)'
+  # match ':controller(/:action(/:id))(.:format)'
 end
