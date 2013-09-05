@@ -98,7 +98,6 @@ GEM
     coffee-script-source (1.6.3)
     columnize (0.3.6)
     commonjs (0.2.6)
-    dalli (2.6.4)
     database_cleaner (1.1.1)
     debug_inspector (0.0.2)
     debugger (1.6.1)
@@ -259,7 +258,6 @@ DEPENDENCIES
   capybara
   client_side_validations
   coffee-rails (~> 3.2.1)
-  dalli
   database_cleaner
   debugger
   delayed_job_active_record

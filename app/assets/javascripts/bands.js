@@ -1,3 +1,4 @@
+/*
 var updateband = function(data) {
     $.get('/bands', function(data) {
         $('#change_table').empty();
@@ -147,6 +148,6 @@ $(document).ready(function() {
 } );
 
 
-
+*/
 
 

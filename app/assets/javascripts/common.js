@@ -2,6 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
 $(".collapse").collapse();
 
 function configureTable(tableNode) {
@@ -29,3 +31,4 @@ $('#user_manager_ecode').change(function(){
     })
 });
 });
+*/

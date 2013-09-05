@@ -1,3 +1,4 @@
+/*
 var updateproject = function(data) {
     $.get('/projects', function(data) {
         $('#change_table').empty();
@@ -159,6 +160,6 @@ $(document).ready(function() {
 } );
 
 
-
+*/
 
 

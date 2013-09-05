@@ -1,3 +1,4 @@
+/*
 var updatedesignation = function(data) {
     $.get('/designations', function(data) {
         $('#change_table').empty();
@@ -160,5 +161,5 @@ $(document).ready(function() {
 
 
 
-
+*/
 

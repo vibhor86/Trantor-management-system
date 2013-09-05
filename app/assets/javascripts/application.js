@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require document_templates.js
-//= require document_index.js
 //= require_tree .
 //= require active_scaffold
 //= require jquery_ujs

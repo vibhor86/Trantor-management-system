@@ -27,8 +27,8 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'pry'
-  gem "debugger"
-  gem "database_cleaner"
+  gem 'debugger'
+  gem 'database_cleaner'
 end
 
 group :production do
@@ -36,23 +36,26 @@ group :production do
   gem 'unicorn'
 end
 
-gem "devise"
-gem 'wisepdf'
-gem 'cancan'
-gem "audited-activerecord", "~> 3.0"
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+# group :ui
 gem 'bootstrap-sass', ">= 2.2.2.0"
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'jquery-datatables-tabletools-rails' ,:git => 'git://github.com/kindjal/jquery-datatables-tabletools-rails.git'
+# end
+
+gem 'cancan'
+gem 'devise'
+gem 'wisepdf'
+gem "audited-activerecord", "~> 3.0"
 gem 'therubyracer'
 gem "binding_of_caller"
-gem 'dalli'
-gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-gem 'jquery-ui-rails'
-gem 'jquery-rails'
+#gem 'dalli'
 gem 'delayed_job_active_record'
-gem "devise-async"
-gem 'jquery-datatables-tabletools-rails' ,:git => 'git://github.com/kindjal/jquery-datatables-tabletools-rails.git'
+gem 'devise-async'
 gem 'rufus-scheduler'
 gem 'debugger'
 gem 'annotate', '>=2.5.0'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'active_scaffold', :git => 'git://github.com/activescaffold/active_scaffold.git'
