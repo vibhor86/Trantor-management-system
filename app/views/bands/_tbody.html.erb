@@ -1,5 +1,0 @@
-<tr>
-  <td><%= check_box_tag "band" %></td>
-  <td id ="name_<%=  band.id%>"><%= band.name %></td>
-  <td class="action"><%= link_to  "", edit_band_path(band),:title => "Edit" ,:class => "band_update  icon-pencil" , :data => band.id %><%= link_to "", band, :title => "Delete"  ,:class => "band_delete  icon-remove" , :data => band.id%></td>
-</tr>

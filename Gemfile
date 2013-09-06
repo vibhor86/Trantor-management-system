@@ -37,12 +37,12 @@ group :production do
 end
 
 # group :ui
-gem 'bootstrap-sass', ">= 2.2.2.0"
-gem 'twitter-bootstrap-rails'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-gem 'jquery-datatables-tabletools-rails' ,:git => 'git://github.com/kindjal/jquery-datatables-tabletools-rails.git'
+  gem 'bootstrap-sass', ">= 2.2.2.0"
+  gem 'twitter-bootstrap-rails'
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
+  gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+  gem 'jquery-datatables-tabletools-rails' ,:git => 'git://github.com/kindjal/jquery-datatables-tabletools-rails.git'
 # end
 
 gem 'cancan'
@@ -51,7 +51,6 @@ gem 'wisepdf'
 gem "audited-activerecord", "~> 3.0"
 gem 'therubyracer'
 gem "binding_of_caller"
-#gem 'dalli'
 gem 'delayed_job_active_record'
 gem 'devise-async'
 gem 'rufus-scheduler'

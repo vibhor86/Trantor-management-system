@@ -15,6 +15,8 @@ class Admin::BandsController < Admin::ApplicationController
     # Nested Links
     config.nested.add_link(:users, :label => 'Users')
     
+    config.create.link.page = config.update.link.page = true
+    
   end
   
 end

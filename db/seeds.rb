@@ -42,10 +42,10 @@ User.where(:email => 'vibhor@trantorinc.com').first_or_create(
   :password => 'password', 
   :password_confirmation => 'password',
   :ecode => 'manager',
-  :name => 'Super Manager',
+  :name => 'Vibhor Mahajan',
   :date_of_joining => Date.today.to_s(:db),
   :date_of_birth => 20.years.ago.to_s(:db),
-  :role => 'admin',
+  :role => 'manager',
   :designation_id => Designation.find_by_name('Project Manager').id
 )
 
@@ -55,7 +55,7 @@ User.where(:email => 'moinhaidar@gmail.com').first_or_create(
   :password => 'password', 
   :password_confirmation => 'password',
   :ecode => 'admin',
-  :name => 'Super Admin',
+  :name => 'Moin Haidar',
   :date_of_joining => Date.today.to_s(:db),
   :date_of_birth => 20.years.ago.to_s(:db),
   :role => 'admin',

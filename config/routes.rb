@@ -12,6 +12,8 @@ TrantorManagementSystem::Application.routes.draw do
     resources :users do as_routes end
     resources :bands do as_routes end
     resources :banks do as_routes end
+    resources :designations do as_routes end
+    resources :emp_types do as_routes end
   end
   
   resources :events do 

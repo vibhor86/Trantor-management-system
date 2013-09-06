@@ -1,0 +1,37 @@
+h1. TMS
+
+Trantor Management System
+
+h2. Ruby on Rails
+
+This application requires:
+
+* Ruby version 1.9.3
+* Rails version 3.2.13
+
+Learn more about "Installing Rails":http://railsapps.github.com/installing-rails.html.
+
+h2. Database
+
+MySQL
+
+h2. Development
+
+* Template Engine: ERB
+* Front-end Framework: Twitter Bootstrap
+* Authentication: Devise
+* Authorization: CanCan
+
+h2. Getting Started
+
+* Fork
+* Clone
+* Bundle
+* rake db:setup
+
+h2. Pull Request
+* Welcome
+
+h2. Documentation and Support
+
+Catch Dev
