@@ -14,6 +14,9 @@ TrantorManagementSystem::Application.routes.draw do
     resources :banks do as_routes end
     resources :designations do as_routes end
     resources :emp_types do as_routes end
+    resources :holidays do as_routes end
+    resources :leave_types do as_routes end
+    resources :projects do as_routes end
   end
   
   resources :events do 

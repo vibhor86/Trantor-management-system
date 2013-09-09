@@ -8,5 +8,14 @@ module ApplicationHelper
   def leaves_balances(type_id)
     balance_instance =  Leavebalance.find_by_user_id_and_leave_type_id(current_user.id,type_id)
     balance_instance ?  balance_instance.balance : 0
-  end  
+  end
+  
+  def admin_links
+    ['Bank', 'Band', 'Designation', 'EmpType', 'Holiday', 'LeaveType', 'Project', 'User']
+  end
+  
+  def moderator_links
+    # TODO
+  end
+  
 end
