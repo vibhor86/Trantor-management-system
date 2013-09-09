@@ -18,4 +18,8 @@ module ApplicationHelper
     # TODO
   end
   
+  def ctrl_klassname
+    controller.class.name.split('::').last.gsub('Controller', '').downcase
+  end
+  
 end

@@ -11,6 +11,7 @@
         	<ul class="nav pull-right">
         		<% admin_links.each do |admin_link| %>
         			<% table = admin_link.constantize.table_name %>
+        			<% highlight = (ctrl_klassname == table) ? 'header_links' : '' %>
         			<li><%= link_to(admin_link, send("admin_#{table}_path")) %></li>
         		<% end -%>
         		

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822121958) do
+ActiveRecord::Schema.define(:version => 20130909140114) do
 
   create_table "absents", :force => true do |t|
     t.integer  "user_id"
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20130822121958) do
   create_table "holidays", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "date"
+    t.date     "date"
     t.string   "day"
     t.text     "remark"
     t.integer  "updater_id"
