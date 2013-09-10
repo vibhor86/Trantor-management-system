@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   attr_accessible :confirmed_at, :password, :password_confirmation, :blood_group, :date_of_birth, :marital_status, :date_of_anniversary, :pan_no, :bank_id, :father_name, :spouse_name,:ecode, :name, :gender, :manager_id, :email, :designation_id, :project_id, :remember_me ,:ecode, :name, :date_of_joining, :band_id, :address, :id ,:role ,:emp_type_id
   
   validates  :ecode, :presence => true, :uniqueness => true
-  validates  :name, :emp_type_id, :manager_id, :date_of_joining, :date_of_birth, :presence => true
+  validates  :name, :emp_type_id, :date_of_joining, :date_of_birth, :presence => true
   
   belongs_to :band
   belongs_to :bank
