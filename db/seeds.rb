@@ -26,8 +26,7 @@ end
 end
 
 ## Designations
-['Analyst', 'Assistant Manager - HR', 'Associate Software Engineer', 'Business Operation Manager', 'Contractor', 'Data Analyst', 'Delivery Manager', 'Digital Marketing Team Lead', 'Director - India Delivery Center', "Director - Managed Business Service Unit", 'HR Executive', 'Inside Sales Executive', 'Internet Marketing Team lead', 'Manager - Finance', 'Manager - HR', 'Project Coordinator', 'Project Lead', 'Project Manager', 'Senior Business Analyst', 'Senior DBA', 'Senior Engagement Manager - AML', 'Senior Inside Sales Executive', 'Senior IT Manager', 'Senior Resercher', 'Senior Software Engineer', 'Senior Sys Admin', 'Senior Tech Architect', 'Senior Technical Recruiter', 'Senior Technical Writer',
-'Software Engineer', 'Team Lead', 'Tech Lead', 'Technical Manager', 'Technical Writer']. each do |designation|
+['Analyst', 'Assistant Manager - HR', 'Associate Software Engineer', 'Business Operation Manager', 'Contractor', 'Data Analyst', 'Delivery Manager', 'Digital Marketing Team Lead', 'Director - India Delivery Center', "Director - Managed Business Service Unit", 'HR Executive', 'Inside Sales Executive', 'Internet Marketing Team lead', 'Manager - Finance', 'Manager - HR', 'Project Coordinator', 'Project Lead', 'Project Manager', 'Senior Business Analyst', 'Senior DBA', 'Senior Engagement Manager - AML', 'Senior Inside Sales Executive', 'Senior IT Manager', 'Senior Resercher', 'Senior Software Engineer', 'Senior Sys Admin', 'Senior Tech Architect', 'Senior Technical Recruiter', 'Senior Technical Writer','Software Engineer', 'Team Lead', 'Tech Lead', 'Technical Manager', 'Technical Writer']. each do |designation|
   Designation.where(:name => designation).create(:name => designation)
 end
 
@@ -37,11 +36,11 @@ end
 end
 
 ## Sample Manager
-User.where(:email => 'vibhor@trantorinc.com').first_or_create(
+User.where(:email => 'mahinder124@gmail.com').first_or_create!(
   :emp_type_id => EmpType.find_by_title('Confirmed').id,
   :password => 'password', 
   :password_confirmation => 'password',
-  :ecode => 'manager',
+  :ecode => 'e00001',
   :name => 'Vibhor Mahajan',
   :date_of_joining => Date.today.to_s(:db),
   :date_of_birth => 20.years.ago.to_s(:db),
@@ -50,12 +49,12 @@ User.where(:email => 'vibhor@trantorinc.com').first_or_create(
 )
 
 ## Sample User
-User.where(:email => 'moinhaidar@gmail.com').first_or_create(
+User.where(:email => 'mahinder.kumar@trantorinc.com').first_or_create(
   :emp_type_id => EmpType.find_by_title('Confirmed').id,
   :password => 'password', 
   :password_confirmation => 'password',
-  :ecode => 'admin',
-  :name => 'Moin Haidar',
+  :ecode => 'e00050',
+  :name => 'mahinder',
   :date_of_joining => Date.today.to_s(:db),
   :date_of_birth => 20.years.ago.to_s(:db),
   :role => 'admin',
