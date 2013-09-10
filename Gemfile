@@ -54,7 +54,6 @@ gem "binding_of_caller"
 gem 'delayed_job_active_record'
 gem 'devise-async'
 gem 'rufus-scheduler'
-gem 'debugger'
 gem 'annotate', '>=2.5.0'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'active_scaffold', :git => 'git://github.com/activescaffold/active_scaffold.git'
