@@ -72,8 +72,12 @@ module TrantorManagementSystem
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
     hr_email =  "moinhaidar@gmail.com"
+    
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    # Heroku
+    config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

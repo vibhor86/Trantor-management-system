@@ -7,7 +7,7 @@ class Admin::BandsController < Admin::ApplicationController
     
     config.create.columns = config.update.columns = [:name, :description]
     
-    config.show.columns = [:name, :description, :updator, :created_at, :updated_at]
+    config.show.columns = [:name, :description, :updater_id, :created_at, :updated_at]
       
     # Sorting
     list.sorting = {:updated_at => 'DESC'}
