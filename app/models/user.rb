@@ -82,8 +82,6 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar,:styles => { :medium => "300x300>"},:url => "/system/:class/:ecode.:extension",:path => ":rails_root/public/system/:class/:ecode.:extension"
   
-  require "ruby-debug"
-  
   def pending?
     self.emp_type.title == 'Pending'
   end

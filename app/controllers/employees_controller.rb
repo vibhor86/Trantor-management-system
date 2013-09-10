@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   before_filter :check_confimation
   before_filter :blacklist , :only => [:create,:update]
   load_and_authorize_resource :class => "User"
-require "ruby-debug"
+
   def new
     @user = User.new
     @projects = []

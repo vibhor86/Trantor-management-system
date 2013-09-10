@@ -1,6 +1,5 @@
 class DashboardController < ApplicationController
   
-  require "ruby-debug"
   require "net/http"
   
   before_filter :check_confirmation
