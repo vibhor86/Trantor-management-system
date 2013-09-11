@@ -2,7 +2,7 @@
 # Range : 2-4 Unicorn worker processes but may vary specific memory footprint
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 
-# timeout 15
+timeout 15
 
 # reduces the startup time of individual Unicorn worker_processes
 preload_app true

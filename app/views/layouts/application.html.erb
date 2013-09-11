@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		
 		<meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  
 	  <title><%= content_for?(:title) ? yield(:title) : "TrantorManagementSystem" %></title>
-	  <%= stylesheet_link_tag "application", :media => "all" %>
-	  <%= javascript_include_tag "application" %>
+	  
+	  <%= stylesheet_link_tag 'application', :media => "all" %>
+	  <%= javascript_include_tag 'application' %>
 	  <%= csrf_meta_tags %>
+	  
 	  <%#= javascript_include_tag "rails.validations", "rails.validations.custom" %>
 	  <%= favicon_link_tag '/assets/favicon.ico', :rel => 'shortcut icon' %>
 	  <%= yield(:user_validators) %>
+	
 	</head>
 	<body>
 		<%# <!-- Header -->%>
