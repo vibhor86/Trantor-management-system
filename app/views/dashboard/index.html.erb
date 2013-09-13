@@ -1,81 +1,207 @@
+<style>
+  
+  #mytable td {width:250px;}
+  #mytable .left {text-align:left;font-weight:bold;}
+  #mytable .right {text-align:left;}
+</style>
+
 <% if true %>
-	Welcome <%= current_user.name %>
-<% else %>
-<% # <!-- Old Code --> %>
-<div class="row-fluid">
-  <div class="span12"> 
-    <h3>Weekly Attendance</h3>
-    <table>
-      <thead>
+  Welcome <%= current_user.name %>
+
+  <h1 class="block_heading">Employee Profile</h1>
+  <div class="row" style="margin: 10px;">
+    <div class="span2">
+      <%= image_tag @user.avatar.url(:thumb) %>
+    </div>
+    <div class="span4">
+      <table id="mytable">
         <tr>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% 5.times do |time| %>
-          <% first =  @fist_day_of_week + (time.to_i).day%>
-        <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
-      <%end%>
-      </tbody>
-    </table>
-  </div>
-  <div class="span12"> 
-    <h3>Approve Leaves </h3>
-    <table>
-      <thead>
+          <td class="left">Name :</td>
+          <td class="right"> <%= @user.name  %></td>
+        </tr> 
         <tr>
-          <th>Ecode</th>
-          <th>Name</th>
-          <th>From</th>
-          <th>To</th>
-          <th>Type of leave</th>
-          <th>Reason for leave</th>
-          <th>Clubbing of leaves (Yes/No)</th>
-          <th>Reason for Clubbing</th>
-          <th>Approve/Disapprove</th>
-          <th>Reason for Disapproval (filled by manager)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%@not_accepted_leaves.each do |leave|%>
-        <tr>  
-          <td><%=leave.user.ecode%></td>
-          <td><%=leave.user.name%></td>
-          <td><%=leave.start_date%></td>
-          <td><%=leave.end_date%></td>
-          <td><%=leave.leave_type.name%></td>
-          <td><%=leave.reason%></td>
-          <td></td>
-          <td></td>
-          <td><%= select_tag "aprove" , options_for_select([["select", "n"],["approve", "approve"], ["disapprove", "disapprove"]])%></td>
-          <td><input type="text" name ="resion for disaprove"></td>
-        </tr>
+          <td class="left">Ecode :</td>
+          <td class="right"><%= @user.ecode %></td>
+        </tr> 
+        <tr>
+          <td class="left">Date of joining :</td>
+          <td class="right"><%= @user.date_of_joining  %></td>
+        </tr> 
+        <tr>
+          <td class="left">Designation :</td>
+          <td class="right"><%= @user.designation.name unless @user.designation.nil? %></td>
+        </tr> 
+        <tr>
+          <td class="left">Email : </td>
+          <td class="right"><%= @user.email %></td>
+        </tr> 
+        <tr>
+          <td class="left">Band :</td>
+          <td class="right"><%= @user.band.name unless @user.band.nil? %></td>
+        </tr> 
+        <tr>
+          <td class="left"> Gender :</td>
+          <td class="right"><%= @user.gender %></td>
+        </tr> 
+        <tr>
+          <td class="left">Location :</td>
+          <td class="right"><%#= @user.location %></td>
+        </tr> 
+        <tr>
+          <td class="left">Blood_group :</td>
+          <td class="right"> <%= @user.blood_group %></td>
+        </tr> 
+        <tr>
+          <td class="left">Date_of_birth :</td>
+          <td class="right"><%= @user.date_of_birth %></td>
+        </tr> 
+        <tr>
+          <td class="left">Marital_status :</td>
+          <td class="right"><%= @user.marital_status%></td>
+        </tr> 
+
+        <tr>
+          <td class="left">Date of anniversary :</td>
+          <td class="right"><%= @user.date_of_anniversary %></td>
+        </tr> 
+        <tr>
+          <td class="left">  Pan_no :</td>
+          <td class="right"><%= @user.pan_no  %></td>
+        </tr> 
+        <tr>
+          <td class="left">Father_name :</td>
+          <td class="right"><%=@user.father_name %></td>
+        </tr> 
+        <tr>
+          <td class="left">Spouse_name :</td>
+          <td class="right"> <%= @user.spouse_name %></td>
+        </tr> 
+        <tr>
+          <td class="left">Project :</td>
+          <td class="right"><%#= @user.project.name if @user.project %></td>
+        </tr> 
+        <tr>
+        <%#manager = User.find_by_ecode(@user.manager_ecode)%>
+          <td class="left">Manager :</td>
+          <td class="right"><%#=  manager.name if manager%></td>
+        </tr> 
+        <tr>
+          <td class="left">Bank Name :</td>
+          <td class="right"> <%= @user.bank.name if @user.bank   %></td>
+        </tr> 
+        <tr>
+          <td class="left">Bank Address :</td>
+          <td class="right"><%#= @user.bank_address%></td>
+        </tr> 
+        <tr>
+          <td class="left">IFSC :</td>
+          <td class="right"><%#= @user.bank_ifsc  %></td>
+        </tr> 
+        <tr>
+          <td class="left">Bank A/C No :</td>
+          <td class="right"><%#= @user.bank_number %></td>
+        </tr> 
+      </table>  
+    </div>
+    <div class="span4 offset1">
+        <h3>Weekly Attendance</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% 5.times do |time| %>
+            <% first =  @fist_day_of_week + (time.to_i).day%>
+          <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
         <%end%>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </div>     
+<% else %>
+  <% # <!-- Old Code --> %>
+  <div class="row-fluid">
+    <div class="span12"> 
+      <h3>Weekly Attendance</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% 5.times do |time| %>
+            <% first =  @fist_day_of_week + (time.to_i).day%>
+          <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
+        <%end%>
+        </tbody>
+      </table>
+    </div>
+    <div class="span12"> 
+      <h3>Approve Leaves </h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Ecode</th>
+            <th>Name</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Type of leave</th>
+            <th>Reason for leave</th>
+            <th>Clubbing of leaves (Yes/No)</th>
+            <th>Reason for Clubbing</th>
+            <th>Approve/Disapprove</th>
+            <th>Reason for Disapproval (filled by manager)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@not_accepted_leaves.each do |leave|%>
+            <tr>  
+              <td><%=leave.user.ecode%></td>
+              <td><%=leave.user.name%></td>
+              <td><%=leave.start_date%></td>
+              <td><%=leave.end_date%></td>
+              <td><%=leave.leave_type.name%></td>
+              <td><%=leave.reason%></td>
+              <td></td>
+              <td></td>
+              <td><%= select_tag "aprove" , options_for_select([["select", "n"],["approve", "approve"], ["disapprove", "disapprove"]])%></td>
+              <td><input type="text" name ="resion for disaprove"></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-<div class="row-fluid">
-  <div class="span12">  
-    <% if can? :manage, :all %>
-      <ul class="admin-dashboard-list"><h1>Settings</h1>
-        <li><a href="/bands/all_record">Manage Bands</a></li>
-        <li><a href="/designations/all_record">Manage designations</a></li>
-        <li><a href="/projects/all_record">Manage projects</a></li>
-        <li><a href="/banks/new">Create banks</a></li>
-        <li><a href="/banks/">Manage banks</a></li>
-      </ul>
-      
-      <ul class="admin-dashboard-list"><h1>Employee Management</h1>
-        <li><a href="/employees/all_employees">All Employees</a></li>
-        <li><a href="/employees/new">Create Employee</a></li>
-        <li><a href="/employees/history">Employee History</a></li>
-      </ul>
-    <% end %>
+  <div class="row-fluid">
+    <div class="span12">  
+      <% if can? :manage, :all %>
+        <ul class="admin-dashboard-list"><h1>Settings</h1>
+          <li><a href="/bands/all_record">Manage Bands</a></li>
+          <li><a href="/designations/all_record">Manage designations</a></li>
+          <li><a href="/projects/all_record">Manage projects</a></li>
+          <li><a href="/banks/new">Create banks</a></li>
+          <li><a href="/banks/">Manage banks</a></li>
+        </ul>
+
+        <ul class="admin-dashboard-list"><h1>Employee Management</h1>
+          <li><a href="/employees/all_employees">All Employees</a></li>
+          <li><a href="/employees/new">Create Employee</a></li>
+          <li><a href="/employees/history">Employee History</a></li>
+        </ul>
+      <% end %>
+    </div>
   </div>
-</div>
 <% end %>
