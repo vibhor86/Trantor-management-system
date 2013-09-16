@@ -13,7 +13,7 @@
     <div class="span5">
       <table id="mytable">
         <tr>
-          <td class="left" colspan="2"><h4>Personal Information</h4></td>
+          <td class="left" colspan="2"><h4 style="color: red;">Personal Information</h4></td>
         </tr> 
         <tr>
           <td class="left">Name :</td>
@@ -36,8 +36,8 @@
           <td class="right"><%= @user.gender %></td>
         </tr>
         <tr>
-          <td class="left">Location :</td>
-          <td class="right"><%#= @user.location %></td>
+          <td class="left">Address :</td>
+          <td class="right"><%= @user.address %></td>
         </tr>
         <tr>
           <td class="left">Blood_group :</td>
@@ -60,7 +60,7 @@
           <td class="right"><%= @user.pan_no  %></td>
         </tr> 
         <tr>
-          <td class="left" colspan="2"><h4>Professional Information</h4></td>
+          <td class="left" colspan="2"><h4 style="color: red;">Professional Information</h4></td>
         </tr>
         <tr>
           <td class="left">Ecode :</td>
@@ -80,15 +80,18 @@
         </tr>
         <tr>
           <td class="left">Project :</td>
-          <td class="right"><%#= @user.project.name if @user.project %></td>
+          <td class="right">
+            <%@user.projects.each do |project|%>
+                <%= project.title %>
+            <%end%>
+          </td>
         </tr> 
-        <tr>
-        <%#manager = User.find_by_ecode(@user.manager_ecode)%>
+        <tr>  
           <td class="left">Manager :</td>
-          <td class="right"><%#=  manager.name if manager%></td>
+          <td class="right"><%=  @user.manager%></td>
         </tr> 
         <tr>
-          <td class="left" colspan="2"><h4>Bank Information</h4></td>
+          <td class="left" colspan="2"><h4 style="color: red;">Bank Information</h4></td>
         </tr>
         <tr>
           <td class="left">Bank Name :</td>
@@ -96,20 +99,20 @@
         </tr> 
          <tr>
           <td class="left">Bank Address :</td>
-          <td class="right"><%#= @user.bank_address%></td>
+          <td class="right"><%= @user.bank.address if @user.bank %></td>
         </tr> 
         <tr>
           <td class="left">IFSC :</td>
-          <td class="right"><%#= @user.bank_ifsc  %></td>
+          <td class="right"><%= @user.bank.ifsc_code if @user.bank  %></td>
         </tr> 
         <tr>
           <td class="left">Bank A/C No :</td>
-          <td class="right"><%#= @user.bank_number %></td>
+          <td class="right"><%= @user.bank.number if @user.bank %></td>
         </tr> 
       </table>  
     </div>
     <div class="span4 offset1">
-        <h3>Weekly Attendance</h3>
+        <h3  style="color: red;">Weekly Attendance</h3>
       <table>
         <thead>
           <tr>
