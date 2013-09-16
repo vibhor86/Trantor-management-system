@@ -10,14 +10,14 @@ class DashboardController < ApplicationController
     @not_accepted_leaves = []
     
     full_data
-    
-    users = User.find_all_by_manager_id(current_user.manager.id)
-    
-    users.each do |user|
-      LeaveApplication.find(:all,:conditions => {:user_id => user.id ,:approved => false }).each do |leave|
-        @not_accepted_leaves <<  leave
-      end
-    end
+    @user = current_user
+#    users = User.find_all_by_manager_id(current_user.manager.id)
+#    
+#    users.each do |user|
+#      LeaveApplication.find(:all,:conditions => {:user_id => user.id ,:approved => false }).each do |leave|
+#        @not_accepted_leaves <<  leave
+#      end
+#    end
     
   end
 end
