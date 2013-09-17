@@ -89,7 +89,24 @@
         <tr>  
           <td class="left">Manager :</td>
           <td class="right"><%=  @user.manager%></td>
-        </tr> 
+        </tr>
+        
+        <tr>
+          <td class="left">Lta :</td>
+          <td class="right"><%= @user.preference.lta if @user.preference%></td>
+        </tr>
+        <tr>
+          <td class="left">M Reimbursement :</td>
+          <td class="right"><%= @user.preference.medical_reimbursement if @user.preference %></td>
+        </tr>
+        <tr>
+          <td class="left">PF Enrollment Date :</td>
+          <td class="right"><%= @user.preference.pf_enrollment_date if @user.preference%></td>
+        </tr>
+        <tr>
+          <td class="left">GPA :</td>
+          <td class="right"><%= @user.preference.gpa if @user.preference%></td>
+        </tr>
         <tr>
           <td class="left" colspan="2"><h4 style="color: red;">Bank Information</h4></td>
         </tr>
