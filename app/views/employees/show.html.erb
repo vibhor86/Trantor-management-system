@@ -26,6 +26,7 @@
         Email :   <%= @user.email %>
       </div>
     </div>
+    
     <div class="field row ">
       <div class="span4">
         Gender :   <%= @user.gender %>
@@ -39,7 +40,6 @@
     </div>
     <div class="field row ">
 
-
       <div class="span4">
         Date_of_birth :   <%= @user.date_of_birth %>
       </div>
@@ -51,9 +51,8 @@
         Date of anniversary :   <%= @user.date_of_anniversary %>
       </div>
     </div>
+    
     <div class="field row">
-
-
       <div class="span4">
         Pan_no :   <%= @user.pan_no %>
       </div>
@@ -64,6 +63,7 @@
         Spouse_name :   <%= @user.spouse_name %>
       </div>
     </div>
+    
     <div class="field row">
       <div class="span4">
         Project :   <%= @user.project.name if @user.project%>
@@ -76,6 +76,7 @@
         Bank Name :   <%= @user.bank.name if @user.bank %>
       </div>
     </div>
+    
     <div class="field row">
       <div class="span4">
         Bank Address :   <%= @user.bank_address %>
@@ -87,5 +88,6 @@
         Bank A/C No:   <%= @user.bank_number %>
       </div>
     </div>
+    
   </div>
 </div>

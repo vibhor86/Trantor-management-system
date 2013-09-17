@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
   belongs_to :designation
   belongs_to :emp_type
   belongs_to :manager, :foreign_key => :manager_id, :class_name => 'User', :dependent => :destroy
-    
+  has_one :preference  
   has_one :leave_manager
   
   has_many :projects_users, :dependent => :destroy
