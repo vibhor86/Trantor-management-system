@@ -44,10 +44,10 @@ class ApplicationController < ActionController::Base
   end
 
   def check_confirmation
-    if current_user && current_user.pending?
-      flash[:notice] = "Please First Confirm your Account"
-      redirect_to "/users/edit"
-    end
+#    if current_user &&  current_user.confirmed_at == ""
+#      flash[:notice]  =  "Please First Confirm your Account"
+#      redirect_to "/users/edit"
+#    end
   end
   
   def included_types

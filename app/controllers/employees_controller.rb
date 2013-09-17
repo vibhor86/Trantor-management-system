@@ -1,14 +1,13 @@
 class EmployeesController < ApplicationController
   require 'date'
   require 'csv'
-  before_filter :check_confimation
+  before_filter :check_confirmation
   before_filter :blacklist , :only => [:create,:update]
   load_and_authorize_resource :class => "User"
 
   def new
     @user = User.new
     @projects = []
-    @managers = User.find(:all,:conditions => {:role => "manager"})
   end
 
   def create
@@ -31,14 +30,15 @@ class EmployeesController < ApplicationController
   def edit
     @projects = []
     @user = User.find(params[:id])
-    @managers = User.find(:all,:conditions => {:role => "manager"})
+   
   end
 
   def update
-    @user = User.find(params[:user][:id])
+    @user = User.find(params[:id])
+    debugger
     respond_to do |format|
       if @user.update_attributes(@data)
-        format.html { redirect_to "/employees/all_employees", notice: 'Employee was successfully updated.' }
+        format.html { redirect_to request.referer, notice: 'Employee was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -144,7 +144,7 @@ private
     access_role = ["admin","hr"]
     @data = params[:user]
     decline = ["manager_ecode","email","designation_id","project_id", "remember_me" ,"ecode","name", "date_of_joining", "band_id", "gender", "location", "id"]
-    @data.delete_if {|key, value| dicline.include? key  puts "" }   unless access_role.include? current_user.role
+    @data.delete_if {|key, value| decline.include? key }   unless access_role.include? current_user.role
 
   end
   

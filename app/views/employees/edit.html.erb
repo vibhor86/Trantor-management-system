@@ -1,6 +1,6 @@
 <h1 class="block_heading">Edit Employees</h1>
 <div class="row" style="margin: 10px;">
-  <%= form_for(:user ,:url => "/employees/update/",:html => { :_method => :put, :multipart => true}) do |f| %>
+  <%= form_for(:user ,:url => "/employees/#{@user.id}",:html => { :multipart => true},method: :put) do |f| %>
       <div >
        <%= f.file_field :avatar %>
       </div>
@@ -39,11 +39,11 @@
             </div>
 
             <div class="span4">
-              <%= f.label :location %><%= f.text_field :location ,:data => "" %>
+              <%= f.label :Address %><%= f.text_field :address ,:data => "" %>
             </div>
 
             <div class="span4">
-              <%= f.label :manager_ecode %><%= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name} #{d.ecode}",d.ecode]} , :selected => @user.manager_ecode), :prompt => "select" unless @managers.nil?%>
+              <%#= f.label :manager_ecode %><%#= f.select :manager_ecode, options_for_select(@managers.map{|d| ["#{d.name} #{d.ecode}",d.ecode]} , :selected => @user.manager_ecode), :prompt => "select" unless @managers.nil?%>
             </div>
           </div>
 
@@ -55,9 +55,9 @@
             <div class="span4">
               <%= f.label :date_of_birth %><%= f.text_field :date_of_birth ,:class=>"datepicker" ,:readonly => true%>
             </div>
-            <%=hidden_field "user","project_id", :value => @user.id %>
+            <%#=hidden_field "user","project_id", :value => @user.id %>
             <div class="span4" id="replace_products" >
-              <%= render :partial => 'project' %>
+              <%#= render :partial => 'project' %>
             </div>
 
           </div>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="span4">
-              <%= f.label :bank_number %><%= f.text_field :bank_number ,:data => "" %>
+              <%#= f.label :bank_number %><%#= f.text_field :bank_number ,:data => "" %>
             </div>
           </div>
           <div class="field row span12">
@@ -92,8 +92,8 @@
               <%= f.label :role %><%= f.select :role, options_for_select(User::ROLES.map{|d| ["#{d}"]}, :selected => @user.role) %>
             </div>
             <div class="span4">
-              <%= f.label "Emp Type" %>
-              <%= f.select :emptype_id, options_for_select(Emptype.all.map{|d| ["#{d.name} ",d.id]}, :selected => @user.emptype_id) %>
+              <%#= f.label "Emp Type" %>
+              <%#= f.select :emptype_id, options_for_select(Emptype.all.map{|d| ["#{d.name} ",d.id]}, :selected => @user.emptype_id) %>
             </div>
             <div class="span4">
               <%= f.label :marital_status %><%= f.select :marital_status, options_for_select(["Unmarried","Married","divorced"], :selected => @user.marital_status)%>
