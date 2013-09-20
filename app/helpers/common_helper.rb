@@ -45,7 +45,7 @@ module CommonHelper
   end
   
   def options_for_role_select
-    [['None',''], ['Admin', 'admin'], ['Manager', 'manager'], ['Employee', 'employee'], ['User', 'user']]
+    User::ROLES.collect{|role| [(role == 'hr' ? role.upcase : role.capitalize), role]}
   end
   
 end

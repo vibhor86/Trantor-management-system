@@ -1,135 +1,151 @@
 <style>
-  
   #mytable td {width:250px;}
   #mytable .left {text-align:left;font-weight:bold;}
   #mytable .right {text-align:left;}
 </style>
 
 <% if true %>
-  <div class="row" style="margin: 10px;">
-    <div class="span2">
-      <%= image_tag @user.avatar.url(:thumb) %>
-    </div>
-    <div class="span5">
-      <table id="mytable">
-        <tr>
-          <td class="left" colspan="2"><h4 style="color: red;">Personal Information</h4></td>
-        </tr> 
-        <tr>
-          <td class="left">Name :</td>
-          <td class="right"> <%= @user.name  %></td>
-        </tr> 
-        <tr>
-          <td class="left">Father_name :</td>
-          <td class="right"><%=@user.father_name %></td>
-        </tr>
-        <tr>
-          <td class="left">Spouse_name :</td>
-          <td class="right"> <%= @user.spouse_name %></td>
-        </tr>
-        <tr>
-          <td class="left">Email : </td>
-          <td class="right"><%= @user.email %></td>
-        </tr>
-        <tr>
-          <td class="left"> Gender :</td>
-          <td class="right"><%= @user.gender %></td>
-        </tr>
-        <tr>
-          <td class="left">Address :</td>
-          <td class="right"><%= @user.address %></td>
-        </tr>
-        <tr>
-          <td class="left">Blood_group :</td>
-          <td class="right"> <%= @user.blood_group %></td>
-        </tr>
-        <tr>
-          <td class="left">Date_of_birth :</td>
-          <td class="right"><%= @user.date_of_birth %></td>
-        </tr> 
-        <tr>
-          <td class="left">Marital_status :</td>
-          <td class="right"><%= @user.marital_status%></td>
-        </tr>
-        <tr>
-          <td class="left">Date of anniversary :</td>
-          <td class="right"><%= @user.date_of_anniversary %></td>
-        </tr>
-        <tr>
-          <td class="left">  Pan_no :</td>
-          <td class="right"><%= @user.pan_no  %></td>
-        </tr> 
-        <tr>
-          <td class="left" colspan="2"><h4 style="color: red;">Professional Information</h4></td>
-        </tr>
-        <tr>
-          <td class="left">Ecode :</td>
-          <td class="right"><%= @user.ecode %></td>
-        </tr>
-        <tr>
-          <td class="left">Date of joining :</td>
-          <td class="right"><%= @user.date_of_joining  %></td>
-        </tr>
-        <tr>
-          <td class="left">Designation :</td>
-          <td class="right"><%= @user.designation.name unless @user.designation.nil? %></td>
-        </tr>
-        <tr>
-          <td class="left">Band :</td>
-          <td class="right"><%= @user.band.name unless @user.band.nil? %></td>
-        </tr>
-        <tr>
-          <td class="left">Project :</td>
-          <td class="right">
-            <%@user.projects.each do |project|%>
-                <%= project.title %>
-            <%end%>
-          </td>
-        </tr> 
-        <tr>  
-          <td class="left">Manager :</td>
-          <td class="right"><%=  @user.manager%></td>
-        </tr>
-        
-        <tr>
-          <td class="left">Lta :</td>
-          <td class="right"><%= @user.preference.lta if @user.preference%></td>
-        </tr>
-        <tr>
-          <td class="left">M Reimbursement :</td>
-          <td class="right"><%= @user.preference.medical_reimbursement if @user.preference %></td>
-        </tr>
-        <tr>
-          <td class="left">PF Enrollment Date :</td>
-          <td class="right"><%= @user.preference.pf_enrollment_date if @user.preference%></td>
-        </tr>
-        <tr>
-          <td class="left">GPA :</td>
-          <td class="right"><%= @user.preference.gpa if @user.preference%></td>
-        </tr>
-        <tr>
-          <td class="left" colspan="2"><h4 style="color: red;">Bank Information</h4></td>
-        </tr>
-        <tr>
-          <td class="left">Bank Name :</td>
-          <td class="right"> <%= @user.bank.name if @user.bank   %></td>
-        </tr> 
-         <tr>
-          <td class="left">Bank Address :</td>
-          <td class="right"><%= @user.bank.address if @user.bank %></td>
-        </tr> 
-        <tr>
-          <td class="left">IFSC :</td>
-          <td class="right"><%= @user.bank.ifsc_code if @user.bank  %></td>
-        </tr> 
-        <tr>
-          <td class="left">Bank A/C No :</td>
-          <td class="right"><%= @user.acc_number if @user.bank %></td>
-        </tr> 
-      </table>  
-    </div>
-    <div class="span4 offset1">
-        <h3  style="color: red;">Weekly Attendance</h3>
+
+	<div style="margin: 3px; display: inline-block;width:100%;">
+		
+		<div style="float: left; width: 20%;margin-right: 10px;">
+			<div style='margin-bottom: 50px;'>
+	      <%= image_tag @user.avatar.url(:thumb) %>
+	    </div>
+	    
+    	<div>
+				<ul id="tabs" class="nav nav-tabs nav-stacked" data-tabs="tabs">
+	        <li class="active"><a href="#info-personal" data-toggle="tab">Personal</a></li>
+	        <li><a href="#info-professional" data-toggle="tab">Professional</a></li>
+	        <li><a href="#info-bank" data-toggle="tab">Bank</a></li>
+	    	</ul>
+	    </div>
+	    
+		</div>
+
+		<div id="my-tab-content" class="tab-content" style="float: left; width: 45%;margin-right: 10px;">
+			<div class="tab-pane active" id="info-personal">
+				<div class='row'></div>
+      	<table id="mytable">
+	        <tr>
+	          <td class="left">Name :</td>
+	          <td class="right"> <%= @user.name  %></td>
+	        </tr> 
+	        <tr>
+	          <td class="left">Father_name :</td>
+	          <td class="right"><%=@user.father_name %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Spouse_name :</td>
+	          <td class="right"> <%= @user.spouse_name %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Email : </td>
+	          <td class="right"><%= @user.email %></td>
+	        </tr>
+	        <tr>
+	          <td class="left"> Gender :</td>
+	          <td class="right"><%= @user.gender %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Address :</td>
+	          <td class="right"><%= @user.address %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Blood_group :</td>
+	          <td class="right"> <%= @user.blood_group %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Date_of_birth :</td>
+	          <td class="right"><%= @user.date_of_birth %></td>
+	        </tr> 
+	        <tr>
+	          <td class="left">Marital_status :</td>
+	          <td class="right"><%= @user.marital_status%></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Date of anniversary :</td>
+	          <td class="right"><%= @user.date_of_anniversary %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">  Pan_no :</td>
+	          <td class="right"><%= @user.pan_no  %></td>
+	        </tr> 
+	      </table>
+      </div>
+      <div class="tab-pane" id="info-professional">
+        <table id='mytable'>
+        	<tr>
+	          <td class="left">Ecode :</td>
+	          <td class="right"><%= @user.ecode %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Date of joining :</td>
+	          <td class="right"><%= @user.date_of_joining  %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Designation :</td>
+	          <td class="right"><%= @user.designation.name unless @user.designation.nil? %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Band :</td>
+	          <td class="right"><%= @user.band.name unless @user.band.nil? %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">Project :</td>
+	          <td class="right">
+	            <%@user.projects.each do |project|%>
+	                <%= project.title %>
+	            <%end%>
+	          </td>
+	        </tr> 
+	        <tr>  
+	          <td class="left">Manager :</td>
+	          <td class="right"><%=  @user.manager%></td>
+	        </tr>
+	        
+	        <tr>
+	          <td class="left">Lta :</td>
+	          <td class="right"><%= @user.preference.lta if @user.preference%></td>
+	        </tr>
+	        <tr>
+	          <td class="left">M Reimbursement :</td>
+	          <td class="right"><%= @user.preference.medical_reimbursement if @user.preference %></td>
+	        </tr>
+	        <tr>
+	          <td class="left">PF Enrollment Date :</td>
+	          <td class="right"><%= @user.preference.pf_enrollment_date if @user.preference%></td>
+	        </tr>
+	        <tr>
+	          <td class="left">GPA :</td>
+	          <td class="right"><%= @user.preference.gpa if @user.preference%></td>
+	        </tr>
+        </table>
+      </div>
+      <div class="tab-pane" id="info-bank">
+      	<table id='mytable'>
+      		<tr>
+	          <td class="left">Bank Name :</td>
+	          <td class="right"> <%= @user.bank.name if @user.bank   %></td>
+	        </tr> 
+	         <tr>
+	          <td class="left">Bank Address :</td>
+	          <td class="right"><%= @user.bank.address if @user.bank %></td>
+	        </tr> 
+	        <tr>
+	          <td class="left">IFSC :</td>
+	          <td class="right"><%= @user.bank.ifsc_code if @user.bank  %></td>
+	        </tr> 
+	        <tr>
+	          <td class="left">Bank A/C No :</td>
+	          <td class="right"><%= @user.acc_number if @user.bank %></td>
+	        </tr> 
+      	</table>
+      </div>
+		</div>
+		
+		<div style="float: left; width: 30%;">
+			<h3  style="color: red;">Weekly Attendance</h3>
       <table>
         <thead>
           <tr>
@@ -147,33 +163,13 @@
         <%end%>
         </tbody>
       </table>
-    </div>
+		</div>
+		
+	</div>
     
-    
-  </div>     
 <% else %>
   <% # <!-- Old Code --> %>
   <div class="row-fluid">
-    <div class="span12"> 
-      <h3>Weekly Attendance</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% 5.times do |time| %>
-            <% first =  @fist_day_of_week + (time.to_i).day%>
-          <td> <%if @jsons_dates.include? first %> P <%elsif first <= Date.today-1.day%> A <%else%> - <%end%> </td>
-        <%end%>
-        </tbody>
-      </table>
-    </div>
     <div class="span12"> 
       <h3>Approve Leaves </h3>
       <table>

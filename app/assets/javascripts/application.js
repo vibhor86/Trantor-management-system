@@ -11,10 +11,13 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery_ujs
+//= require twitter/bootstrap
+//= require bootstrap
 //= require jquery.ui.all
 //= require_tree .
 //= require active_scaffold
-//= require jquery_ujs
+
 
 $(function() {
 	$( ".datepicker" ).datepicker({

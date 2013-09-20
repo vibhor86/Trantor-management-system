@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  name        :string(255)
 #  description :text
-#  date        :datetime
+#  date        :date
 #  day         :string(255)
 #  remark      :text
 #  updater_id  :integer
