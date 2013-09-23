@@ -16,11 +16,16 @@ text-align: center;
 
 <% if true %>
 <div class="row">
-  <div class="span10">
+  <div class="span10" style="margin-top: 10px;">
     <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
     <li style="margin-bottom: 30px;margin-right: 30px;">
-        <%= image_tag @user.avatar.url(:thumb) %>
+      <% if File.exist?(@user.avatar.url(:thumb)) %>
+        <%= image_tag (@user.avatar.url(:thumb)) %>
+      <% else %>
+        <%= image_tag 'user.jpg' %>
+      <% end %>
+        
     </li>
           <li class="active"><a href="#info-personal" data-toggle="tab">Personal</a></li>
           <li><a href="#info-professional" data-toggle="tab">Professional</a></li>
@@ -149,8 +154,8 @@ text-align: center;
   </div>
 </div>
   </div>
-      <table class="att_tab">
-        <h3  style="color: red;">Weekly Attendance</h3>
+      <table class="att_tab" border="1"style="color: gray;">
+        <h3>Weekly Attendance</h3>
         <thead>
           <tr>
             <th>Mon</th>
