@@ -2,7 +2,7 @@ development: &BASE
   adapter: mysql2
   database: ems_dev
   username: root
-  password: redhat
+  password: root
   host: 127.0.0.1
   timeout: 5000
 
