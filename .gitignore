@@ -30,3 +30,4 @@ public/uploads
 .project
 .idea
 /public/assets
+database.yml
