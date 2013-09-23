@@ -11,8 +11,6 @@ class DashboardController < ApplicationController
     
     full_data
     @user = current_user
-#    users = User.find_all_by_manager_id(current_user.manager.id)
-#    
 #    users.each do |user|
 #      LeaveApplication.find(:all,:conditions => {:user_id => user.id ,:approved => false }).each do |leave|
 #        @not_accepted_leaves <<  leave
