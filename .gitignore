@@ -29,3 +29,4 @@ public/uploads
 *.yml
 .project
 .idea
+/public/assets

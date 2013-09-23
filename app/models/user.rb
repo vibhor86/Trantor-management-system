@@ -26,6 +26,7 @@
 #  pf_no                  :string(255)
 #  esi_no                 :string(255)
 #  role                   :string(255)
+#  acc_number             :string(255)
 #  salary                 :integer
 #  creator                :integer
 #  updator                :integer
@@ -78,9 +79,15 @@ class User < ActiveRecord::Base
   
   attr_accessor :create_from_form
   
-  ROLES = ["admin","hr","manager","individual"]
+  ROLES = ['none', 'admin', 'manager', 'employee', 'hr']
   
   has_attached_file :avatar,:styles => { :medium => "300x300>"},:url => "/system/:class/:ecode.:extension",:path => ":rails_root/public/system/:class/:ecode.:extension"
+  
+  ROLES.each do |role|
+    define_method "#{role}?" do
+      self.role == role
+    end
+  end
   
   def pending?
     self.emp_type.title == 'Pending'
@@ -129,12 +136,6 @@ class User < ActiveRecord::Base
       false
     else
       !password.nil? || !password_confirmation.nil?
-    end
-  end
-
-  ROLES.each do |role|
-    define_method "#{role}?" do
-      self.role == role
     end
   end
 

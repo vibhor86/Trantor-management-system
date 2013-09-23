@@ -3,8 +3,10 @@ source 'http://bundler-api.herokuapp.com'
 ruby '1.9.3'
 gem 'rails', '3.2.13'
 
+gem 'therubyracer'
+gem 'sass-rails',   '~> 3.2.3'
+
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem "less-rails"
   gem 'client_side_validations'
@@ -49,7 +51,6 @@ gem 'cancan'
 gem 'devise'
 gem 'wisepdf'
 gem "audited-activerecord", "~> 3.0"
-gem 'therubyracer'
 gem "binding_of_caller"
 gem 'delayed_job_active_record'
 gem 'devise-async'
