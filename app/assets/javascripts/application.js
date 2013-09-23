@@ -23,11 +23,6 @@ $(function() {
   	changeYear: true,
 		yearRange: "1920:2025"
 	});
-
-	$('li a').filter(function(){
-	  return $(this).attr('href') == document.location.pathname
-	}).parent('li').addClass('active').parents('.collapse').collapse('show');
-	
 });
 
 
