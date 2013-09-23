@@ -35,7 +35,6 @@ class EmployeesController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    debugger
     respond_to do |format|
       if @user.update_attributes(@data)
         format.html { redirect_to request.referer, notice: 'Employee was successfully updated.' }
@@ -68,7 +67,6 @@ class EmployeesController < ApplicationController
     end
 
      CSV.foreach(params[:dump][:file].tempfile.to_path.to_s) do |row|
-           debugger
       user = User.new     
       temp = [] 
       first_row = row  if index == 0
