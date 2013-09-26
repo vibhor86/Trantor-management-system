@@ -107,7 +107,7 @@ text-align: center;
           </tr> 
           <tr>  
             <td class="left">Manager :</td>
-            <td class="right"><%=  @user.manager%></td>
+            <td class="right"><%=  @user.manager.name if @user.manager %></td>
           </tr>
 
           <tr>
