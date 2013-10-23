@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     fist_day_of_fatch_month  = fist_day_of_fatch_month.to_date
     
     begin
-      response = Net::HTTP.post_form(URI.parse('http://192.168.0.50:4567/attendance.json'), {"ecode" => "#{ecode}", "start_date" => "#{fist_day_of_fatch_month.to_date}", "end_date" => "#{Date.today}"})
+      response = Net::HTTP.post_form(URI.parse('http://112.196.25.153:4567/attendance.json'), {"ecode" => "#{ecode}", "start_date" => "#{fist_day_of_fatch_month.to_date}", "end_date" => "#{Date.today}"})
     rescue
     end
     
