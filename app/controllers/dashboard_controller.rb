@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
   def index
     @not_accepted_leaves = []
     
-#    full_data
+    full_data
     @user = current_user
 #    users.each do |user|
 #      LeaveApplication.find(:all,:conditions => {:user_id => user.id ,:approved => false }).each do |leave|
